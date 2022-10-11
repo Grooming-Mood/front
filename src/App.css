@@ -25,3 +25,34 @@
     height: 80%;
     border-radius: 20px;
 }
+
+.home-logo {
+
+}
+
+.home-logo img {
+    width: 228px;
+    height: 226px;
+    margin-bottom: 2%;
+}
+
+.home-title {
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 30px;
+    color: #060606;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 2%;
+}
+
+.home-sub {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    color: #060606;
+    text-align: center;
+    line-height: 36px;
+}
