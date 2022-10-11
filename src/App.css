@@ -24,6 +24,7 @@
     width: 80%;
     height: 80%;
     border-radius: 20px;
+
 }
 
 .home-logo {
@@ -55,4 +56,14 @@
     color: #060606;
     text-align: center;
     line-height: 36px;
+}
+
+
+
+.nav-bar {
+
+}
+
+.nav-item {
+    display: inline-block;
 }
