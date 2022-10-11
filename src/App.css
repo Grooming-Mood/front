@@ -1,7 +1,30 @@
+/** 전체 적용 **/
 .App {
   text-align: center;
 }
 
+a {
+    text-decoration: none;
+    cursor:grab;
+}
+
+a:link {
+    color: #000;
+}
+
+a:hover {
+    color: #22BA8E;
+}
+
+a:active {
+    color: #000;
+}
+
+a:visited {
+    color: #000;
+}
+
+/** Main Home **/
 .home {
     position: relative;
     background-color: #22BA8E;
@@ -24,4 +47,50 @@
     width: 80%;
     height: 80%;
     border-radius: 20px;
+
+}
+
+.home-logo {
+
+}
+
+.home-logo img {
+    width: 228px;
+    height: 226px;
+    margin-bottom: 2%;
+}
+
+.home-title {
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 30px;
+    color: #060606;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 2%;
+}
+
+.home-sub {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    color: #060606;
+    text-align: center;
+    line-height: 36px;
+}
+
+
+
+.nav-bar {
+
+}
+
+.nav-item {
+
+}
+
+.nav-mypage {
+
 }
