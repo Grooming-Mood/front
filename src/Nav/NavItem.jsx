@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
 const Item = styled.li`
-  width: 4%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10% 50%;
+  padding: 20% 0%;
+  border: 1px solid #888686;
+  height: 5%;
 `;
 
 function NavItem({children}) {

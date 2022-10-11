@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Navigation = styled.nav`
-  width: 4%;
+  width: 6%;
   height: 5%;
 `;
 

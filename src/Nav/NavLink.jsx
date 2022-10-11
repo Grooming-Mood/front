@@ -6,6 +6,11 @@ function isCurrent(to) {
 
 const Link = styled.a`
   display: block;
+  text-decoration: none;
+  font-family: "Apple Chancery", cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
   text-align: center;
 `;
 
