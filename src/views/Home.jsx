@@ -1,6 +1,8 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import Logo from "../assets/image/logo.png";
+import SideMenu from "./SideMenu";
+
 
 function Home(props) {
 
@@ -8,7 +10,7 @@ function Home(props) {
         <div className="home">
             <div className="home-container">
                 <div className="home-logo">
-                    <img src={Logo}></img>
+                    <img src={Logo} alt={Logo}></img>
                 </div>
 
                 <div className="home-title">
@@ -26,8 +28,10 @@ function Home(props) {
                         어루만지는 AI 일기
                     </span>
                 </div>
-
             </div>
+
+            <SideMenu></SideMenu>
+
         </div>
     );
 }
