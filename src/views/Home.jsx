@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import Logo from "../assets/image/logo.png";
+import Logo from "../assets/image/splash/all-icon.png";
 import SideMenu from "./SideMenu";
 
 
