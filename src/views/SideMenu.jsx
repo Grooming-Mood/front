@@ -8,7 +8,7 @@ import SettingIcon from "../assets/image/splash/setting-icon.png";
 
 function SideMenu() {
   return (
-      <Nav className={"nav-bar"}>
+      <Nav>
           <Nav.List>
               <Nav.Item className={"nav-item"}>
                   <Nav.Link
