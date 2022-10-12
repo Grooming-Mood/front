@@ -10,7 +10,7 @@ const Link = styled.a`
   font-family: "Apple Chancery", cursive;
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 25px;
   text-align: center;
 `;
 

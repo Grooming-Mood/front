@@ -8,6 +8,7 @@ function Home(props) {
 
     return (
         <div className="home">
+
             <div className="home-container">
                 <div className="home-logo">
                     <img src={Logo} alt={Logo}></img>
@@ -20,7 +21,6 @@ function Home(props) {
                 <div className="home-sub">
                     <span style={{
                         fontSize: "25px",
-
                         src: "https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap",
                         color: "#060606"
                     }}>
@@ -29,10 +29,9 @@ function Home(props) {
                     </span>
                 </div>
             </div>
-
             <SideMenu></SideMenu>
-
         </div>
+
     );
 }
 
