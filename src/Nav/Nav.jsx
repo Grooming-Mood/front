@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 const Navigation = styled.nav`
   width: 6%;
-  height: 5%;
+  display: flex;
+  flex-direction: column;
 `;
 
 function Nav({children}) {

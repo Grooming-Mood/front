@@ -21,7 +21,6 @@ function Home(props) {
                 <div className="home-sub">
                     <span style={{
                         fontSize: "25px",
-
                         src: "https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap",
                         color: "#060606"
                     }}>

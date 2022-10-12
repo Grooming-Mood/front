@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 
-// 1366
-// 768
-
 const List = styled.ul`
   background-color: #F9F9F9;
   list-style: none;
-  margin: 0;
+  margin: 10em 0 0 0;
   padding: 0;
+  
 `;
 
 function NavList({children}) {
