@@ -2,7 +2,7 @@ import React from "react";
 import { withRouter, Link } from "react-router-dom";
 import Logo from "../assets/image/splash/all-icon.png";
 import SideMenu from "./SideMenu";
-
+import Button from "./Button";
 
 function Home(props) {
 
@@ -22,7 +22,7 @@ function Home(props) {
                     <div className="home-logo">
                         <img src={Logo} alt={Logo}></img>
                     </div>
-
+                    {/*<Button children={"회원가입 하러 가기"}></Button>*/}
                     <div className="home-title">
                         Grooming Mood
                     </div>
