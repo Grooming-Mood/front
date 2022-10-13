@@ -18,23 +18,23 @@ function Home(props) {
             </div>
 
             <div className="home-content">
-            <div className="home-container">
-                <div className="home-logo">
-                    <img src={Logo} alt={Logo}></img>
-                </div>
+                <div className="home-container">
+                    <div className="home-logo">
+                        <img src={Logo} alt={Logo}></img>
+                    </div>
 
-                <div className="home-title">
-                    Grooming Mood
-                </div>
+                    <div className="home-title">
+                        Grooming Mood
+                    </div>
 
-                <div className="home-sub">
-                    <span>
-                        당신의 감정을<br/>
-                        어루만지는 AI 일기
-                    </span>
+                    <div className="home-sub">
+                        <span>
+                            당신의 감정을<br/>
+                            어루만지는 AI 일기
+                        </span>
+                    </div>
                 </div>
-            </div>
-            <SideMenu></SideMenu>
+                <SideMenu></SideMenu>
             </div>
         </div>
 
