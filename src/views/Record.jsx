@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useState } from 'react';
 import { withRouter, Link } from "react-router-dom";
-import Logo from "../assets/image/splash/all-icon.png";
 import SideMenu from "./SideMenu";
-import Button from "./Button";
+import WebCam from "../assets/webcam/webcam";
 
 function Record(props) {
 
@@ -28,12 +27,16 @@ function Record(props) {
                             </span>
                         </div>
                 </div>
-
+                
                 <div className="record-right">
 
-                        <div className="record-title">
-                            <WebCam></WebCam>
-                        </div>
+                    <div>{/*여기를 매번 렌더링 해줘야 할듯 여기를 바꾸면 잘 작동*/}
+                        <video id="video-output"></video>
+                        <button id="start-btn">일기 기록 시작</button>
+                        <button id="finish-btn">일기 기록 종료</button>
+                        <button id="download-btn">녹화 영상 다운링딩동</button>
+                        <WebCam></WebCam>
+                    </div>
                         
                 </div>
 

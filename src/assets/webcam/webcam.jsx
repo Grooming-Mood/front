@@ -2,11 +2,8 @@ import React, { useEffect } from "react";
 
 
 
-
 function WebCam(props){
-
-    console.log("*******지금*****************")
-    console.log("웹 캠 렌더링...");
+    console.log("************렌더링********");
 
     const constraints = {audio: false, video: true};
     const videoOutput = document.getElementById("video-output");
@@ -14,7 +11,7 @@ function WebCam(props){
     const startBtn = document.getElementById("start-btn"); //녹화시작 버튼
     const finishBtn = document.getElementById("finish-btn"); //녹화 종료 버튼
     const downloadBtn = document.getElementById("download-btn"); //녹화 다운로드 버튼
-
+    
     let mediaRecorder = null; //생성자
     let recordedMediaUrl = null; //녹화영상 url
 
@@ -22,17 +19,14 @@ function WebCam(props){
     navigator.mediaDevices.getUserMedia(constraints)
         .then(function(mediaStream){
             console.log(mediaStream);
-
+            console.log("videoOutput:", videoOutput);
+            console.log("startBtn: ", startBtn);
             // MediaStream을 HTMLVideoElement의 source로 설정
-            console.log(videoOutput);
-
             videoOutput.srcObject = mediaStream;
-            console.log(videoOutput.srcObject);
-
+            console.log("srcObject:",videoOutput.srcObject);
             // metadata가 로드될 때 실행되는 이벤트
             videoOutput.onloadedmetadata = function() {
             // HTMLVideoElement로 카메라의 화면을 출력하기 시작
-                console.log("비디오 플레이");
                 videoOutput.play();
             };
         
@@ -95,17 +89,12 @@ function WebCam(props){
         });
 
 
-    })   
-
-
+    })
     return(
         <div>
-            <video id="video-output"></video>
-            <button id="download-btn">다운로드</button>
-            <button id="start-btn">녹화 시작</button>
-            <button id="finish-btn">녹화 종료</button>
+            
         </div>
-    )
+    );
 }
 
 export default WebCam;
