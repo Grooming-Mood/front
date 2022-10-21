@@ -36,6 +36,7 @@ a:visited {
     background-color: #22BA8E;
     width: 100%;
     height: 1080px;
+    
 }
 
 .home-header {
@@ -44,7 +45,8 @@ a:visited {
 }
 
 .home-header .header-link {
-    font-family: 'Poppins';
+    /* font-family: 'Poppins'; */
+    font-family: 'KyoboHand';
     font-style: italic;
     font-size: 30px;
     color: #fff;
@@ -56,7 +58,8 @@ a:visited {
 }
 
 .home-header p {
-    font-family: 'Noto Sans KR';
+    /* font-family: 'Noto Sans KR'; */
+    font-family: 'KyoboHand';
     font-style: normal;
     font-weight: 500;
     font-size: 15px;
@@ -84,7 +87,7 @@ a:visited {
     justify-content: center;
 
     width: 80%;
-    height: 80%;
+    height: 700px;
     border-radius: 20px;
     padding: 8% 0% 10% 0;
     margin: 0% 0% 8% 0%;
@@ -101,7 +104,8 @@ a:visited {
 }
 
 .home-title {
-    font-family: 'Poppins';
+    /* font-family: 'Poppins'; */
+    font-family: 'KyoboHand';
     font-style: italic;
     font-size: 30px;
     color: #060606;
@@ -111,7 +115,8 @@ a:visited {
 }
 
 .home-sub {
-    font-family: 'Noto Sans KR', sans-serif;
+    /* font-family: 'Noto Sans KR', sans-serif; */
+    font-family: 'KyoboHand';
     font-style: normal;
     font-weight: 500;
     font-size: 25px;
@@ -123,7 +128,8 @@ a:visited {
 
 /** Record 화면 **/
 .record-title {
-    font-family: 'Poppins';
+    /* font-family: 'Poppins'; */
+    font-family: 'KyoboHand';
     font-style: normal;
     font-size: 30px;
     color: #060606;
@@ -133,7 +139,8 @@ a:visited {
 }
 
 .record-sub {
-    font-family: 'Poppins';
+    /* font-family: 'Poppins'; */
+    font-family: 'KyoboHand';
     font-style: normal;
     font-size: 20px;
     color: #060606;
@@ -171,4 +178,11 @@ a:visited {
     border-radius: 20px;
     padding: 8% 0% 10% 0;
     margin: 0% 0% 8% 0%;
+}
+
+@font-face {
+    font-family: 'KyoboHand';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/KyoboHand.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
