@@ -32,7 +32,7 @@ function Record(props) {
                 <div className="record-right">
 
                         <div className="record-title">
-                            웹캠
+                            <WebCam></WebCam>
                         </div>
                         
                 </div>
