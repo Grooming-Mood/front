@@ -36,6 +36,8 @@ function Home(props) {
                 </div>
                 <SideMenu></SideMenu>
             </div>
+
+            
         </div>
 
     );

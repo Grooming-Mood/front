@@ -16,6 +16,11 @@ function SideMenu() {
                   </Nav.Link>
               </Nav.Item>
               <Nav.Item>
+                <Nav.Link to="/record"> {/*녹화 메뉴 추가*/}
+                    Record
+                </Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
                   <Nav.Link to="/feed">
                       ALL
                   </Nav.Link>
