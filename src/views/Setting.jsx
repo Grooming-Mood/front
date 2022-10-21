@@ -17,13 +17,7 @@ function Setting(props) {
 
             <div className="home-content">
                 <div className="home-container">
-                    <div style = "float: right">
-                        마이페이지
-                    </div>
-                    <div style = "float: left">
-                        마이페이지
-                    </div>
-
+                    
                 </div>
                 <SideMenu></SideMenu>
             </div>
