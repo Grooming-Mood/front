@@ -27,32 +27,32 @@ function SideMenu() {
               </Nav.Item>
               <Nav.Item>
                   <Nav.Link to="/happy-feed">
-                      <img src={HappyIcon} alt="Happy" style={{"width":"35px", "hight":"35px"}}/>
+                      <img src={HappyIcon} alt="Happy" style={{"width":"25px", "hight":"25px"}}/>
                   </Nav.Link>
               </Nav.Item>
               <Nav.Item>
                   <Nav.Link to="/sad-feed">
-                      <img src={SadIcon} alt="Sad" style={{"width":"35px","hight":"35px"}}/>
+                      <img src={SadIcon} alt="Sad" style={{"width":"30px","hight":"30px"}}/>
                   </Nav.Link>
               </Nav.Item>
               <Nav.Item>
                   <Nav.Link to="/angry-feed">
-                      <img src={AngryIcon} alt="Angry" style={{"width":"35px","hight":"35px"}}/>
+                      <img src={AngryIcon} alt="Angry" style={{"width":"30px","hight":"30px"}}/>
                   </Nav.Link>
               </Nav.Item>
               <Nav.Item>
                   <Nav.Link to="/nomal-feed">
-                      <img src={NormalIcon} alt="Normal" style={{"width":"35px","hight":"35px"}}/>
+                      <img src={NormalIcon} alt="Normal" style={{"width":"30px","hight":"30px"}}/>
                   </Nav.Link>
               </Nav.Item>
               <Nav.Item>
                   <Nav.Link to="/setting">
-                      <img src={SettingIcon} alt="Setting" style={{"width":"35px","hight":"35px"}}/>
+                      <img src={SettingIcon} alt="Setting" style={{"width":"30px","hight":"30px"}}/>
                   </Nav.Link>
               </Nav.Item>
               <Nav.Item>
                   <Nav.Link to="/chatbot">
-                      <img src={ChatbotIcon} alt="Chatbot" style={{"width":"35px","hight":"35px"}}/>
+                      <img src={ChatbotIcon} alt="Chatbot" style={{"width":"28px","hight":"28px"}}/>
                   </Nav.Link>
               </Nav.Item>
           </Nav.List>
