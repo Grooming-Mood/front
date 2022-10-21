@@ -3,6 +3,7 @@ import { withRouter, Link } from "react-router-dom";
 import Logo from "../assets/image/splash/all-icon.png";
 import SideMenu from "./SideMenu";
 import Button from "./Button";
+import WebCam from "../webcam/webcam";
 
 function Record(props) {
 
@@ -16,28 +17,42 @@ function Record(props) {
             </div>
 
             <div className="home-content">
-                <div className="record-left">
-
-                        <div className="record-title">
-                            오늘의 일기를 기록해주세요!
+                <div className="record-left"> {/*안내문*/}
+                        <div className="home-logo">
+                            <img src={Logo} alt={Logo}></img>
                         </div>
-
+                        <div className="record-title">
+                            오늘의 일기를 기록해주세요!<br/>
+                        </div>
                         <div className="record-sub">
-                            <span>
-                                Grooming Mood가 당신의 감정과 일기를 자동으로 작성해줍니다.
-                            </span>
+                            Grooming Mood가 당신의 감정과 일기를<br/> 자동으로 작성해줍니다.<br/>
+                        </div>
+                        <div className="record-sub">
+                            <ul>
+                                <li>PC 내 카메라와 마이크 접근을 허용해주세요.</li>
+                                <li>카메라는 정면을 응시해주세요.</li>
+                                <li>어두운 곳에서의 촬영은 피해주세요.</li>
+                                <li>1분 이내로 촬영해주세요.</li>
+                                <li>기록 후에는 기록 완료 버튼을 눌러주세요.</li>
+                            </ul>
+                        </div>
+                            
+
+                </div>
+
+
+
+
+                <div className="record-right"> {/*웹캠*/}
+                        <div>
+                            <WebCam></WebCam>
                         </div>
                 </div>
 
-                <div className="record-right">
 
-                        <div className="record-title">
-                            웹캠
-                        </div>
-                        
-                </div>
 
-                <SideMenu></SideMenu>
+
+                <SideMenu></SideMenu> {/*사이드 메뉴*/}
 
             </div>  
 
