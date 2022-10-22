@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import { withRouter, Link } from "react-router-dom";
 import SideMenu from "./SideMenu";
 import User from "../assets/image/user/user.png";
+import UserUpdate from "../assets/image/user/user_update.png";
+import Logout from "../assets/image/user/logout.png";
 
 function Setting(props) {
 
@@ -16,7 +18,7 @@ function Setting(props) {
 
             <div className="home-content">
                 <div className="setting-parent">
-                    <div className="setting-child">
+                    <div className="setting-left">
                         <div style={{"font-size": "30px"}}>
                             <p>마이 페이지</p>
                         </div>
@@ -25,15 +27,23 @@ function Setting(props) {
                             <p>김세종 님</p>
                         </div>
                     </div>
-                    <div className="setting-child">
+                    <div className="setting-right">
                         <div>
-                            <p>회원정보 수정</p>
+                            <p>
+                                <img src={UserUpdate} alt={UserUpdate} style={{"width":"30px","hight":"30px"}}></img>
+                                    회원정보 수정
+                            </p>
                         </div>
                         <div>
-                            <p>로그아웃</p>
+                            <p>
+                                <img src={Logout} alt={Logout} style={{"width":"30px","hight":"30px"}}></img>
+                                로그아웃
+                            </p>
                         </div>
                         <div>
-                            <p>회원탈퇴</p>
+                            <p>
+                                <img src={Logout} alt={Logout} style={{"width":"30px","hight":"30px"}}></img>
+                                회원탈퇴</p>
                         </div>
                     </div>
                 </div>

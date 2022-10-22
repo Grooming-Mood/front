@@ -196,9 +196,17 @@ a:visited {
     margin: 0% 0% 8% 0%;
 }
 
-.setting-child{
+.setting-left{
     /* font-family: 'KyoboHand'; */
     font-size: 20px;
+    flex: 1;
+    float: left;
+    flex-direction: column;
+}
+.setting-right{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    text-align: left;
     flex: 1;
     float: left;
     flex-direction: column;
