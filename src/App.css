@@ -180,6 +180,31 @@ a:visited {
     margin: 0% 0% 8% 0%;
 }
 
+.setting-parent{
+    box-sizing: border-box;
+    border: 1px dashed #888787;
+    background-color: #F9F9F9;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    width: 80%;
+    height: 700px;
+    border-radius: 20px;
+    padding: 8% 0% 10% 0;
+    margin: 0% 0% 8% 0%;
+}
+
+.setting-child{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    flex: 1;
+    float: left;
+    flex-direction: column;
+}
+
+
 @font-face {
     font-family: 'KyoboHand';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/KyoboHand.woff') format('woff');

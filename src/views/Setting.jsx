@@ -1,8 +1,7 @@
 import React from "react";
 import { withRouter, Link } from "react-router-dom";
-import Logo from "../assets/image/splash/all-icon.png";
 import SideMenu from "./SideMenu";
-import Button from "./Button";
+import User from "../assets/image/user/user.png";
 
 function Setting(props) {
 
@@ -16,8 +15,27 @@ function Setting(props) {
             </div>
 
             <div className="home-content">
-                <div className="home-container">
-                    
+                <div className="setting-parent">
+                    <div className="setting-child">
+                        <div style={{"font-size": "30px"}}>
+                            <p>마이 페이지</p>
+                        </div>
+                        <img src={User} alt={User} style={{"width":"200px","hight":"200px"}}></img>
+                        <div>
+                            <p>김세종 님</p>
+                        </div>
+                    </div>
+                    <div className="setting-child">
+                        <div>
+                            <p>회원정보 수정</p>
+                        </div>
+                        <div>
+                            <p>로그아웃</p>
+                        </div>
+                        <div>
+                            <p>회원탈퇴</p>
+                        </div>
+                    </div>
                 </div>
                 <SideMenu></SideMenu>
             </div>
