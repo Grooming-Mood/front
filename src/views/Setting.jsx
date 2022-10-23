@@ -5,6 +5,8 @@ import User from "../assets/image/user/user.png";
 import UserUpdate from "../assets/image/user/user_update.png";
 import Logout from "../assets/image/user/logout.png";
 
+
+
 function Setting(props) {
 
     return (
@@ -29,10 +31,10 @@ function Setting(props) {
                     </div>
                     <div className="setting-right">
                         <div>
-                            <p>
+                            <div>
                                 <img src={UserUpdate} alt={UserUpdate} style={{"width":"30px","hight":"30px"}}></img>
-                                    회원정보 수정
-                            </p>
+                                <Link to="/setting_convert">회원 정보 수정</Link>
+                            </div>
                         </div>
                         <div>
                             <p>
