@@ -2,6 +2,52 @@ import { Link, withRouter } from "react-router-dom";
 import SideMenu from "./SideMenu";
 import React from "react";
 
+
+const dummyList = [
+    {
+        id: 1,
+        feeling: "ANGRY",
+        content: "하이",
+        date: "2021-08-01",
+    },
+    {
+        id: 2,
+        feeling: "ANGRY",
+        content: "하이",
+        date: "2021-08-01",
+    },
+    {
+        id: 3,
+        feeling: "ANGRY",
+        content: "하이",
+        date: "2021-08-01",
+    },
+];
+
+const FeedList = ({ dataList }) => {
+    return (
+        <div>
+            <div>
+                {dataList.map((it) => {
+                    return (
+                      <div key = {it.id}>
+                          <div>
+                              <span>감정: { it.feeling }</span>
+                          </div>
+                          <div>
+                              <span>내용 : { it.content }</span>
+                          </div>
+                          <div>
+                              <span>보고 : { it.datetime }</span>
+                          </div>
+                      </div>
+                    );
+                })}
+            </div>
+        </div>
+    );
+};
+
 function Feed(props) {
     return (
         <div className="home">
@@ -13,20 +59,13 @@ function Feed(props) {
 
             <div className="feed-content">
                 <div className="feed-container">
-                    <div className="feelingHistory-container">
-                        <h2 className="feelingHistory-title">
-                            내 감정 통계
-                        </h2>
-                        <span className="feelingHistory-description">
-                            최근 일주일동안 화가 많았어요
-                        </span>
-                    </div>
-
                     <div className="diary-container">
                         <h2 className="diary-title">
                             나의 감정일기
                         </h2>
                     </div>
+
+                    <FeedList dataList={dummyList}  />
 
                 </div>
                 <SideMenu></SideMenu>
