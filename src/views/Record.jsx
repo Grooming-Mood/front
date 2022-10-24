@@ -31,11 +31,18 @@ function Record(props) {
     const handleStartRecording = () => {
         setIsRecording(true);
         startRecording();
+        console.log("BlobUrl은:", mediaBlobUrl);
     };
     const handleStopRecording = () => {
         setIsRecording(false);
+        
         stopRecording();
+        
     };
+    console.log("BlobUrl은:", mediaBlobUrl);
+
+
+    //영상 분석 요청 버튼 클릭 이벤트
 
 
 
@@ -89,15 +96,19 @@ function Record(props) {
                 <div className="record-right">
                     <div >
                         <div>
-                            <button onClick={() => handleStartRecording()}>일기 기록 시작</button>
-                            <button onClick={() => handleStopRecording()}>일기 기록 종료</button>
+                            <button className="button" onClick={() => handleStartRecording()}>일기 기록 시작</button>
+                            <button className="button" onClick={() => handleStopRecording()}>일기 기록 종료</button>
                             <p>현재 영상 녹화 상태: {status}</p>
                             {isRecording && <VideoPreview stream={previewStream} width={500} height={500} />}
                             {!isRecording && (<video id="recorded" src={mediaBlobUrl} width={500} height={500} controls autoPlay loop />)}
+                            <p>녹화 영상 url = {mediaBlobUrl}</p>
                         </div>
                     </div>
                     <div>
-                        <button>나의 감정 분석하기</button>
+                        <button className="button">
+                            <span>👩‍💻</span>
+                            <sapn>오늘의 일기 분석하기</sapn>
+                        </button>
                     </div>
                 </div>
 
