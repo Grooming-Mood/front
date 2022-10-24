@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import { withRouter, Link } from "react-router-dom";
-import Logo from "../assets/image/splash/all-icon.png";
 import SideMenu from "./SideMenu";
-import Button from "./Button";
+import User from "../assets/image/user/user.png";
+import UserUpdate from "../assets/image/user/user_update.png";
+import Logout from "../assets/image/user/logout.png";
+
+
 
 function Setting(props) {
 
@@ -16,8 +19,35 @@ function Setting(props) {
             </div>
 
             <div className="home-content">
-                <div className="home-container">
-                    
+                <div className="setting-parent">
+                    <div className="setting-left">
+                        <div style={{"font-size": "30px"}}>
+                            <p>마이 페이지</p>
+                        </div>
+                        <img src={User} alt={User} style={{"width":"200px","hight":"200px"}}></img>
+                        <div>
+                            <p>김세종 님</p>
+                        </div>
+                    </div>
+                    <div className="setting-right">
+                        <div>
+                            <div>
+                                <img src={UserUpdate} alt={UserUpdate} style={{"width":"30px","hight":"30px"}}></img>
+                                <Link to="/setting_convert">회원 정보 수정</Link>
+                            </div>
+                        </div>
+                        <div>
+                            <p>
+                                <img src={Logout} alt={Logout} style={{"width":"30px","hight":"30px"}}></img>
+                                로그아웃
+                            </p>
+                        </div>
+                        <div>
+                            <p>
+                                <img src={Logout} alt={Logout} style={{"width":"30px","hight":"30px"}}></img>
+                                회원탈퇴</p>
+                        </div>
+                    </div>
                 </div>
                 <SideMenu></SideMenu>
             </div>
