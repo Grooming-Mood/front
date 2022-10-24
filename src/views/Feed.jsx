@@ -13,8 +13,20 @@ function Feed(props) {
 
             <div className="feed-content">
                 <div className="feed-container">
+                    <div className="feelingHistory-container">
+                        <h2 className="feelingHistory-title">
+                            내 감정 통계
+                        </h2>
+                        <span className="feelingHistory-description">
+                            최근 일주일동안 화가 많았어요
+                        </span>
+                    </div>
 
-
+                    <div className="diary-container">
+                        <h2 className="diary-title">
+                            나의 감정일기
+                        </h2>
+                    </div>
 
                 </div>
                 <SideMenu></SideMenu>

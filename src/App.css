@@ -257,3 +257,31 @@ button{
     font-weight: normal;
     font-style: normal;
 }
+
+
+/** 피드 화면 **/
+.feed-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.feed-container {
+    box-sizing: border-box;
+    border: 1px dashed #888787;
+    background-color: #F9F9F9;
+
+    width: 80%;
+    height: 700px;
+    border-radius: 20px;
+    padding: 8% 0% 10% 0;
+    margin: 0% 0% 8% 0%;
+}
+
+.feelingHistory-title {
+    display: inline-block;
+}
+
+.feelingHistory-description {
+    margin-left: 2%;
+}
