@@ -33,7 +33,7 @@ function Setting(props) {
                         <div>
                             <div>
                                 <img src={UserUpdate} alt={UserUpdate} style={{"width":"30px","hight":"30px"}}></img>
-                                <Link to="/setting_convert">회원 정보 수정</Link>
+                                <Link to="/setting_convert">회원 정보 수정</Link> {/*회원 정보 상세 수정 페이지*/}
                             </div>
                         </div>
                         <div>
