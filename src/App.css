@@ -240,6 +240,8 @@ button{
     flex: 1;
     float: left;
     flex-direction: column;
+
+    border-right: 2px dashed #D7D7D7;
 }
 .setting-right{
     /* font-family: 'KyoboHand'; */
