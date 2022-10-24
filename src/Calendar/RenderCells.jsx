@@ -62,5 +62,5 @@ export const RenderCells = ({ currentMonth, selectedDate, onDateClick }) => {
         days = [];
     }
 
-    return <div className="calendar-body">{rows}</div>
+    return <div className="body">{rows}</div>
 };
