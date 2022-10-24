@@ -1,3 +1,6 @@
+
+### ********************npm i react-media-recorder 추가 설치 해주세요!!****************
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
