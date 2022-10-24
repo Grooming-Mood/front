@@ -32,20 +32,24 @@ function Setting(props) {
                     <div className="setting-right">
                         <div>
                             <div>
+                                &nbsp;&nbsp;
                                 <img src={UserUpdate} alt={UserUpdate} style={{"width":"30px","hight":"30px"}}></img>
-                                <Link to="/setting_convert">회원 정보 수정</Link> {/*회원 정보 상세 수정 페이지*/}
+                                <Link to="/setting_convert">&nbsp;&nbsp;회원 정보 수정</Link>
                             </div>
                         </div>
                         <div>
                             <p>
+                                &nbsp;&nbsp;
                                 <img src={Logout} alt={Logout} style={{"width":"30px","hight":"30px"}}></img>
-                                로그아웃
+                                &nbsp;&nbsp;로그아웃
                             </p>
                         </div>
                         <div>
-                            <p>
+                            <div>
+                                &nbsp;&nbsp;
                                 <img src={Logout} alt={Logout} style={{"width":"30px","hight":"30px"}}></img>
-                                회원탈퇴</p>
+                                &nbsp;&nbsp;회원탈퇴
+                            </div>
                         </div>
                     </div>
                 </div>
