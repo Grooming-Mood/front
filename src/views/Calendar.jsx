@@ -22,18 +22,33 @@ function Calender(props) {
     };
 
     return (
-        <div className="calendar">
-            <CalendarHeader
-                currentMonth={ currentMonth }
-                prevMonth={ prevMonth }
-                nextMonth={ nextMonth }
-            />
-            <RenderDays/>
-            <RenderCells
-                currentMonth={ currentMonth }
-                selectedDate={ selectedDate }
-                onDateClick={ onDateClick }
-            />
+
+        <div className="home">
+
+            <div className="home-header">
+                <Link to="/" className="header-link">GroomingMood</Link>
+                <p>당신의 감정을<br/>어루만지는 AI 일기</p>
+            </div>
+
+            <div className="feed-content">
+                <div className="feed-container">
+                    <div className="calendar">
+                        <CalendarHeader
+                            currentMonth={ currentMonth }
+                            prevMonth={ prevMonth }
+                            nextMonth={ nextMonth }
+                        />
+                        <RenderDays/>
+                        <RenderCells
+                            currentMonth={ currentMonth }
+                            selectedDate={ selectedDate }
+                            onDateClick={ onDateClick }
+                        />
+                    </div>
+                </div>
+                <SideMenu></SideMenu>
+
+            </div>
         </div>
     );
 }

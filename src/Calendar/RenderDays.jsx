@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Icon } from "@iconify/react";
-import { format } from "date-fns";
+
 
 export const RenderDays = () => {
     const days = [];
