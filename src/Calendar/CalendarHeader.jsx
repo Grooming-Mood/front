@@ -7,10 +7,10 @@ export const CalendarHeader = ({ currentMonth, prevMonth, nextMonth }) => {
         <div className="header row">
             <div className="col col-start">
                 <span className="text">
-                    <span className="text month">
+                    <span className="text-month">
                         {format(currentMonth, "M")}월
                     </span>
-                    {format(currentMonth, "yyyy")}
+                    {format(currentMonth, " yyyy")}
                 </span>
             </div>
 

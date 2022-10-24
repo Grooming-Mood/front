@@ -30,8 +30,8 @@ function Calender(props) {
                 <p>당신의 감정을<br/>어루만지는 AI 일기</p>
             </div>
 
-            <div className="feed-content">
-                <div className="feed-container">
+            <div className="calendar-content">
+                <div className="calendar-container">
                     <div className="calendar">
                         <CalendarHeader
                             currentMonth={ currentMonth }

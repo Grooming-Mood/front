@@ -287,16 +287,35 @@ button{
 }
 
 /** Calendar 화면 **/
+.calendar-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.calendar-container {
+    box-sizing: border-box;
+    border: 1px dashed #888787;
+    background-color: #F9F9F9;
+
+    width: 80%;
+    height: 700px;
+    border-radius: 20px;
+    padding: 8% 0% 10% 0;
+    margin: 0% 0% 8% 0%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .calendar {
-    width: 60%;
-    height: 90%;
+    width: 90%;
+    height: 100%;
 }
 .calendar .header {
     width: 100%;
     height: 7%;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -337,11 +356,12 @@ button{
 .calendar .header .col.col-first .text {
     font-size: 0.8em;
 }
-.calendar .header .col.col-first .text.month {
+.calendar .header .col.col-first .text .text-month {
     margin-right: 5px;
     font-size: 1.6em;
     font-weight: 600;
 }
+
 .calendar .header .col.col-end {
     width: 20%;
     height: 100%;
@@ -405,7 +425,6 @@ button{
 }
 .calendar .days .col {
     width: 12.9%;
-    height: 100%;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -425,7 +444,7 @@ button{
     align-items: flex-start;
     padding-left: 1%;
     background: rgba(235, 207, 198, 0.4);
-    border-radius: 10px;
+    border-radius: 5px;
 }
 .calendar .body {
     width: 100%;
