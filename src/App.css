@@ -365,8 +365,6 @@ button{
 }
 .calendar .header .col.col-end svg {
     width: 11%;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
     height: fit-content;
     margin-left: 5%;
     color: rgba(128, 128, 128, 0.8);
@@ -382,8 +380,6 @@ button{
 }
 .calendar .days {
     width: 100%;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
     height: fit-content;
     display: -webkit-box;
     display: -webkit-flex;
