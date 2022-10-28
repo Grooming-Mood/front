@@ -61,17 +61,17 @@ const
 
 function AngryHome(props) {
     return (
-        <div className="home">
+        <div className="angry-home">
 
-            <div className="home-header">
-                <Link to="/" className="header-link">GroomingMood</Link>
+            <div className="angry-home-header">
+                <Link to="/" className="angry-header-link">GroomingMood</Link>
                 <p>당신의 감정을<br/>어루만지는 AI 일기</p>
             </div>
 
-            <div className="feed-content">
-                <div className="feed-container">
-                    <div className="diary-container">
-                        <h2 className="diary-title">
+            <div className="angry-content">
+                <div className="angry-container">
+                    <div className="angry-diary-container">
+                        <h2 className="angry-diary-title">
                             나의 감정일기
                         </h2>
                     </div>
