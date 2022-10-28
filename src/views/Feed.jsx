@@ -1,6 +1,8 @@
 import { Link, withRouter } from "react-router-dom";
 import SideMenu from "./SideMenu";
 import React from "react";
+import dateFormat from "dateformat";
+import convertImage from "../utils/function";
 
 
 const dummyList = [
@@ -8,37 +10,46 @@ const dummyList = [
         id: 1,
         feeling: "ANGRY",
         content: "하이",
-        date: "2021-08-01",
+        date: "2022-10-17 01:00:00.000000",
     },
     {
         id: 2,
         feeling: "ANGRY",
         content: "하이",
-        date: "2021-08-01",
+        date: "2022-10-17 01:00:00.000000",
     },
     {
         id: 3,
         feeling: "ANGRY",
         content: "하이",
-        date: "2021-08-01",
+        date: "2022-10-17 01:00:00.000000",
     },
 ];
 
-const FeedList = ({ dataList }) => {
+
+const
+    FeedList = ({ dataList }) => {
     return (
         <div>
             <div>
                 {dataList.map((it) => {
                     return (
-                      <div key = {it.id}>
-                          <div>
-                              <span>감정: { it.feeling }</span>
+
+                      <div className="data-container"
+                           key = {it.id}>
+
+                          <div className="data-image">
+                              {
+                                  (convertImage(it.feeling))
+                              }
                           </div>
-                          <div>
-                              <span>내용 : { it.content }</span>
+
+
+                          <div className="data-content">
+                              <span>{ it.content }</span>
                           </div>
-                          <div>
-                              <span>보고 : { it.datetime }</span>
+                          <div className="data-date">
+                              <span>{ dateFormat(it.date, "yyyy-mm-dd HH:mm") }</span>
                           </div>
                       </div>
                     );
