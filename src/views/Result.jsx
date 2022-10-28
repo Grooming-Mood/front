@@ -48,6 +48,26 @@ function Result(props) {
         </div>
 
     );
+
+    /**
+     *  결과가 행복 감정 일 경우
+     */
+    return (
+
+        <div className="result-happy">
+
+            <div className="result-happy-header"> {/*헤더*/}
+                <Link to="/" className="result-happy-header-link">GroomingMood</Link>
+                <p>당신의 감정을<br/>어루만지는 AI 일기</p>
+            </div>
+            <div className="result-happy-content">
+                <div className="result-happy-container">
+                </div>
+                <SideMenu></SideMenu>
+            </div>
+        </div>
+
+    );
 }
 
 export default withRouter(Result);
