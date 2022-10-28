@@ -845,3 +845,71 @@ button{
     text-align: left;
     padding : 0% 0% 0% 10%;
 }
+
+
+/* HAPPY HOME 화면 */
+.happy-home {
+
+    background-color: #FAE992;
+    width: 100%;
+    height: 1080px;
+
+}
+
+.happy-home-header {
+    padding: 1.6% 0 2% 0;
+    background-color: #FAE992;
+}
+
+.happy-home-header .happy-header-link {
+    /* font-family: 'Poppins'; */
+    font-family: 'KyoboHand';
+    font-style: italic;
+    font-size: 30px;
+    color: #fff;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.happy-home-header p {
+    /* font-family: 'Noto Sans KR'; */
+    font-family: 'KyoboHand';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 22px;
+    text-align: right;
+    color: #fff;
+    margin: 0;
+    padding: 0% 1.2% 0% 0%;
+}
+.happy-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.happy-container {
+    box-sizing: border-box;
+    border: 1px dashed #888787;
+    background-color: #F9F9F9;
+
+    width: 80%;
+    height: 700px;
+    border-radius: 20px;
+    padding: 8% 0% 10% 0;
+    margin: 0% 0% 8% 0%;
+}
+
+.happy-diary-container {
+    margin: 0%;
+    padding: 0%;
+}
+
+.happy-diary-title {
+    text-align: left;
+    padding : 0% 0% 0% 10%;
+}
