@@ -2,6 +2,7 @@ import { Link, withRouter } from "react-router-dom";
 import SideMenu from "./SideMenu";
 import React from "react";
 import dateFormat from "dateformat";
+import convertImage from "../utils/function";
 
 
 const dummyList = [
@@ -25,6 +26,7 @@ const dummyList = [
     },
 ];
 
+
 const
     FeedList = ({ dataList }) => {
     return (
@@ -32,11 +34,17 @@ const
             <div>
                 {dataList.map((it) => {
                     return (
+
                       <div className="data-container"
                            key = {it.id}>
+
                           <div className="data-image">
-                              <span>{ it.feeling }</span>
+                              {
+                                  (convertImage(it.feeling))
+                              }
                           </div>
+
+
                           <div className="data-content">
                               <span>{ it.content }</span>
                           </div>

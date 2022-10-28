@@ -281,11 +281,13 @@ button{
 }
 
 .diary-container {
-
+    margin: 0%;
+    padding: 0%;
 }
 
 .diary-title {
-
+    text-align: left;
+    padding : 0% 0% 0% 10%;
 }
 
 .data-container {
