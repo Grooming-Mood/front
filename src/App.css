@@ -295,19 +295,25 @@ button{
     border-bottom: 1px solid #D7D7D7;
     padding: 5% 0%;
 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .data-image {
     flex: 1;
     float: left;
     flex-direction: column;
-    padding: 0% 10%;
+    padding: 0%;
+
 }
 
 .data-content {
     flex: 1;
     float: left;
     flex-direction: column;
+
 }
 
 .data-date {
