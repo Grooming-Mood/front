@@ -9,17 +9,19 @@ import Logout from "../assets/image/user/logout.png";
 
 function Result(props) {
 
+    /**
+     *  결과가 화난 감정 일 경우
+     */
     return (
 
-        <div className="home">
+        <div className="result-angry">
 
-            <div className="home-header"> {/*헤더*/}
-                <Link to="/" className="header-link">GroomingMood</Link>
+            <div className="result-angry-header"> {/*헤더*/}
+                <Link to="/" className="result-angry-header-link">GroomingMood</Link>
                 <p>당신의 감정을<br/>어루만지는 AI 일기</p>
             </div>
-
-            <div className="home-content">
-                <div className="home-container">
+            <div className="result-angry-content">
+                <div className="result-angry-container">
                 </div>
                 <SideMenu></SideMenu>
             </div>
