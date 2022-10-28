@@ -24,21 +24,23 @@ const dummyList = [
     },
 ];
 
-const FeedList = ({ dataList }) => {
+const
+    FeedList = ({ dataList }) => {
     return (
         <div>
             <div>
                 {dataList.map((it) => {
                     return (
-                      <div key = {it.id}>
-                          <div>
-                              <span>감정: { it.feeling }</span>
+                      <div className="data-container"
+                           key = {it.id}>
+                          <div className="data-image">
+                              <span>{ it.feeling }</span>
                           </div>
-                          <div>
-                              <span>내용 : { it.content }</span>
+                          <div className="data-content">
+                              <span>{ it.content }</span>
                           </div>
-                          <div>
-                              <span>보고 : { it.datetime }</span>
+                          <div className="data-date">
+                              <span>{ it.date }</span>
                           </div>
                       </div>
                     );
