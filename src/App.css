@@ -280,6 +280,42 @@ button{
     margin: 0% 0% 8% 0%;
 }
 
+.diary-container {
+    margin: 0%;
+    padding: 0%;
+}
+
+.diary-title {
+    text-align: left;
+    padding : 0% 0% 0% 10%;
+}
+
+.data-container {
+    box-sizing: border-box;
+    border-bottom: 1px solid #D7D7D7;
+    padding: 5% 0%;
+
+}
+
+.data-image {
+    flex: 1;
+    float: left;
+    flex-direction: column;
+    padding: 0% 10%;
+}
+
+.data-content {
+    flex: 1;
+    float: left;
+    flex-direction: column;
+}
+
+.data-date {
+    flex: 1;
+    float: right;
+    flex-direction: column;
+    margin-right: 8%;
+}
 
 /** Calendar 화면 **/
 .calendar-content {
@@ -538,6 +574,7 @@ button{
     font-weight: 600;
 }
 
+
 /** angry result **/
 .result-angry {
     background-color: #E6808E;
@@ -599,3 +636,4 @@ button{
     padding: 8% 0% 10% 0;
     margin: 0% 0% 8% 0%;
 }
+
