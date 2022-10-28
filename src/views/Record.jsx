@@ -105,10 +105,12 @@ function Record(props) {
                         </div>
                     </div>
                     <div>
-                        <button className="button">
-                            <span>👩‍💻</span>
-                            <sapn>오늘의 일기 분석하기</sapn>
-                        </button>
+                        <Link to="/result">
+                            <button className="button">
+                                <span>👩‍💻</span>
+                                <sapn>오늘의 일기 분석하기</sapn>
+                            </button>
+                        </Link>
                     </div>
                 </div>
 
