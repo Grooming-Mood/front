@@ -61,17 +61,17 @@ const
 
 function NormalHome(props) {
     return (
-        <div className="home">
+        <div className="normal-home">
 
-            <div className="home-header">
-                <Link to="/" className="header-link">GroomingMood</Link>
+            <div className="normal-home-header">
+                <Link to="/" className="normal-header-link">GroomingMood</Link>
                 <p>당신의 감정을<br/>어루만지는 AI 일기</p>
             </div>
 
-            <div className="feed-content">
-                <div className="feed-container">
-                    <div className="diary-container">
-                        <h2 className="diary-title">
+            <div className="normal-content">
+                <div className="normal-container">
+                    <div className="normal-diary-container">
+                        <h2 className="normal-diary-title">
                             나의 감정일기
                         </h2>
                     </div>
