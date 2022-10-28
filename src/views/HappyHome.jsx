@@ -61,17 +61,17 @@ const
 
 function HappyHome(props) {
     return (
-        <div className="home">
+        <div className="happy-home">
 
-            <div className="home-header">
-                <Link to="/" className="header-link">GroomingMood</Link>
+            <div className="happy-home-header">
+                <Link to="/" className="happy-header-link">GroomingMood</Link>
                 <p>당신의 감정을<br/>어루만지는 AI 일기</p>
             </div>
 
-            <div className="feed-content">
-                <div className="feed-container">
-                    <div className="diary-container">
-                        <h2 className="diary-title">
+            <div className="happy-content">
+                <div className="happy-container">
+                    <div className="happy-diary-container">
+                        <h2 className="happy-diary-title">
                             나의 감정일기
                         </h2>
                     </div>
