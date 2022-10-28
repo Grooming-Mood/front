@@ -22,7 +22,12 @@ function SideMenu() {
               </Nav.Item>
               <Nav.Item>
                   <Nav.Link to="/feed">
-                      ALL
+                      Feed
+                  </Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                  <Nav.Link to="/calendar">
+                      Cal
                   </Nav.Link>
               </Nav.Item>
               <Nav.Item>
