@@ -1,6 +1,7 @@
 import { Link, withRouter } from "react-router-dom";
 import SideMenu from "./SideMenu";
 import React from "react";
+import dateFormat from "dateformat";
 
 
 const dummyList = [
@@ -8,19 +9,19 @@ const dummyList = [
         id: 1,
         feeling: "ANGRY",
         content: "하이",
-        date: "2021-08-01",
+        date: "2022-10-17 01:00:00.000000",
     },
     {
         id: 2,
         feeling: "ANGRY",
         content: "하이",
-        date: "2021-08-01",
+        date: "2022-10-17 01:00:00.000000",
     },
     {
         id: 3,
         feeling: "ANGRY",
         content: "하이",
-        date: "2021-08-01",
+        date: "2022-10-17 01:00:00.000000",
     },
 ];
 
@@ -40,7 +41,7 @@ const
                               <span>{ it.content }</span>
                           </div>
                           <div className="data-date">
-                              <span>{ it.date }</span>
+                              <span>{ dateFormat(it.date, "yyyy-mm-dd HH:mm") }</span>
                           </div>
                       </div>
                     );

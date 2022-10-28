@@ -299,9 +299,7 @@ button{
     flex: 1;
     float: left;
     flex-direction: column;
-
     padding: 0% 10%;
-
 }
 
 .data-content {
@@ -314,7 +312,7 @@ button{
     flex: 1;
     float: right;
     flex-direction: column;
-    margin-right: 10%;
+    margin-right: 8%;
 }
 
 /** Calendar 화면 **/
