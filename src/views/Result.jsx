@@ -1,7 +1,10 @@
 import React, { useLayoutEffect } from "react";
 import { withRouter, Link } from "react-router-dom";
 import SideMenu from "./SideMenu";
+import SadIcon from "../assets/image/splash/sad-icon.png";
 import AngryIcon from "../assets/image/splash/angry-icon.png";
+import ChatbotIcon from "../assets/image/splash/chatbot-icon.png";
+import SettingIcon from "../assets/image/splash/setting-icon.png";
 
 
 
