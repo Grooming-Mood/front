@@ -767,6 +767,68 @@ button{
     margin: 0% 0% 8% 0%;
 }
 
+/** sad result **/
+.result-sad {
+    background-color: #91B1E3;
+    width: 100%;
+    height: 1080px;
+    
+}
+
+.result-sad-header {
+    padding: 1.6% 0 2% 0;
+    background-color: #91B1E3;
+}
+
+.result-sad-header .result-sad-header-link {
+    /* font-family: 'Poppins'; */
+    font-family: 'KyoboHand';
+    font-style: italic;
+    font-size: 30px;
+    color: #fff;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.result-sad-header p {
+    /* font-family: 'Noto Sans KR'; */
+    font-family: 'KyoboHand';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 22px;
+    text-align: right;
+    color: #fff;
+    margin: 0;
+    padding: 0% 1.2% 0% 0%;
+}
+
+.result-sad-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.result-sad-container {
+    box-sizing: border-box;
+    border: 1px dashed #888787;
+    background-color: #F9F9F9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 80%;
+    height: 700px;
+    border-radius: 20px;
+    padding: 8% 0% 10% 0;
+    margin: 0% 0% 8% 0%;
+}
+
 
 /* ANGRY HOME 화면 */
 .angry-home {
