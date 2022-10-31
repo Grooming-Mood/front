@@ -1134,19 +1134,36 @@ button{
     flex: 1;
     float: center;
     flex-direction: row;
-    margin: 0% 0% 10% 0%;
+    margin: 10% 0% 10% 0%;
+}
+
+.result-container-left-row-first{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    flex: 1;
+    float: top;
+    flex-direction: row;
+    margin: 0% 0% 20% 0%;
 }
 
 .result-container-left-row-first-left{
     /* font-family: 'KyoboHand'; */
-    font-size: 20px;
+    font-size: 30px;
     flex: 1;
-    float: center;
-    flex-direction: row;
-    margin: 0% 0% 10% 0%;
+    float: left;
+    flex-direction: column;
+    margin: 0% 10% 0% 10%;
 }
 
 .result-container-left-row-first-right{
+    /* font-family: 'KyoboHand'; */
+    flex: 1;
+    float: right;
+    flex-direction: column;
+    margin: 0% 10% 0% 0%;
+}
+
+.result-container-left-row-second{
     /* font-family: 'KyoboHand'; */
     font-size: 20px;
     flex: 1;
@@ -1158,10 +1175,13 @@ button{
 .result-container-left-row-third{
     /* font-family: 'KyoboHand'; */
     font-size: 20px;
+    background-color: #FFFFFF;
     flex: 1;
     float: center;
+    box-sizing: border-box;
+    border: 1px solid #888787;
     flex-direction: row;
-    margin: 0% 0% 10% 0%;
+    margin: 10% 10% 10% 10%;
 }
 
 .result-container-right{

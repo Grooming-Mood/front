@@ -24,13 +24,20 @@ function Result(props) {
             <div className="home-content">
                 <div className="result-container">
                     <div className="result-container-left">
-                        <div className="result-container-left-row">
-                            <p>AI 루밍이가 분석한 오늘의 일기입니다!</p>
+                        <div className="result-container-left-row-first">
+                            <div className="result-container-left-row-first-left">
+                                AI 루밍이가 분석한<br/> 오늘의 일기입니다!<br/>
+                            </div>
+                            <div className="result-container-left-row-first-right">
+                                <img src={AngryIcon} alt="Angry" style={{"width":"150px","hight":"150px"}}/>
+                                <br/>
+                            </div>
                         </div>
-                        <div className="result-container-left-row">
-                            AI 루밍이가 분석한 오늘의 일기입니다!
+                        <div className="result-container-left-row-second">
+                            <p>오늘 세종님은 <br/>67% 확률로 화난 날입니다.<br/></p>
+                            
                         </div>
-                        <div className="result-container-left-row">
+                        <div className="result-container-left-row-third">
                             AI 루밍이가 분석한 오늘의 일기입니다!
                         </div>
                     </div>
