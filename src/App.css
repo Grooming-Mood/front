@@ -316,11 +316,20 @@ button{
 
 }
 
+.data-content-user-name {
+    font-weight: bolder;
+    line-height: 30px;
+}
+
 .data-date {
     flex: 1;
     float: right;
     flex-direction: column;
-    margin-right: 8%;
+    margin-right: 1%;
+}
+
+.data-likes {
+    padding: 0%;
 }
 
 /** Calendar 화면 **/

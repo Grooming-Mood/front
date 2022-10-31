@@ -23,7 +23,7 @@ export const FeedList = ({ dataList }) => {
                             </div>
 
                             <div className="data-content">
-                                <span> { it.userName }</span>
+                                <span className="data-content-user-name"> { it.userName }</span>
                                 <br/>
                                 <span>{ it.diaryContent }</span>
                             </div>
@@ -36,7 +36,7 @@ export const FeedList = ({ dataList }) => {
                                 {
                                     (convertIcon(it.feeling))
                                 }
-                                <span>{ it.likes }</span>
+                                <span>( { it.likes } )</span>
                             </div>
                         </div>
                     );
