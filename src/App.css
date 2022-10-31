@@ -1126,6 +1126,7 @@ button{
     float: left;
     flex-direction: column;
     border-right: 2px dashed #D7D7D7;
+    margin: 10% 10% 10% 5%;
 }
 
 .result-container-left-row{
@@ -1143,13 +1144,14 @@ button{
     flex: 1;
     float: top;
     flex-direction: row;
-    margin: 0% 0% 20% 0%;
+    margin: 0% 0% 22% 0%;
 }
 
 .result-container-left-row-first-left{
     /* font-family: 'KyoboHand'; */
     font-size: 30px;
     flex: 1;
+    font-weight: bold;
     float: left;
     flex-direction: column;
     margin: 0% 10% 0% 10%;
@@ -1164,12 +1166,13 @@ button{
 }
 
 .result-container-left-row-second{
-    /* font-family: 'KyoboHand'; */
-    font-size: 20px;
+    font-family: 'KyoboHand';
+    font-size: 25px;
     flex: 1;
     float: center;
+    border: 2px dashed #000;
     flex-direction: row;
-    margin: 0% 0% 10% 0%;
+    margin: 30% 10% 0% 10%;
 }
 
 .result-container-left-row-third{
@@ -1177,16 +1180,17 @@ button{
     font-size: 20px;
     background-color: #FFFFFF;
     flex: 1;
-    float: center;
+    float: bottom;
     box-sizing: border-box;
     border: 1px solid #888787;
     flex-direction: row;
-    margin: 10% 10% 10% 10%;
+    margin: 5% 10% 0% 10%;
 }
 
 .result-container-left-row-third-first{
     /* font-family: 'KyoboHand'; */
     font-size: 20px;
+    font-weight: bold;
     flex: 1;
     float: center;
     flex-direction: row;
@@ -1198,8 +1202,9 @@ button{
     font-size: 15px;
     flex: 1;
     float: left;
+    font-weight: bold;
     flex-direction: column;
-    margin: 2% 0% 5% 10%;
+    margin: 2% 0% 5% 50px;
 }
 .result-container-left-row-third-second-bar{
     /* font-family: 'KyoboHand'; */
@@ -1212,26 +1217,37 @@ button{
     /* font-family: 'KyoboHand'; */
     font-size: 15px;
     flex: 1;
+    font-weight: bold;
     float: right;
     flex-direction: column;
-    margin: 2% 10% 5% 0%;
+    margin: 2% 50px 5% 0%;
+}
+
+.result-container-left-row-third-name{
+    /* font-family: 'KyoboHand'; */
+    font-size: 15px;
+    flex: 1;
+    float: center;
+    flex-direction: row;
+    margin: 10% 0% 5% 2%;
 }
 
 .result-container-left-row-third-face{
     /* font-family: 'KyoboHand'; */
-    font-size: 20px;
+    font-size: 18px;
     flex: 1;
     float: center;
     flex-direction: row;
-    margin: 2% 0% 5% 2%;
+    margin: 10% 0% 5% 2%;
 }
+
 .result-container-left-row-third-voice{
     /* font-family: 'KyoboHand'; */
-    font-size: 20px;
+    font-size: 18px;
     flex: 1;
     float: center;
     flex-direction: row;
-    margin: 2% 0% 5% 2%;
+    margin: 5% 0% 5% 2%;
 }
 
 .result-container-right{
