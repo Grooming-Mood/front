@@ -39,10 +39,10 @@ function Result(props) {
                             
                         </div>
                         <div className="result-container-left-row-third">
-                            AI 루밍이의 분석결과<br/>
-                            ANGRY
-                            <img src={Progressbar} alt="Progressbar" style={{"width":"100px","hight":"100px"}}/>
-                            67%
+                            <div className="result-container-left-row-third-first">AI 루밍이의 분석결과<br/></div>
+                            <span className="result-container-left-row-third-second-feel">ANGRY</span>
+                            <span className="result-container-left-row-third-second-bar"><img src={Progressbar} alt="Progressbar" style={{"width":"100px","hight":"100px"}}/></span>
+                            <span className="result-container-left-row-third-second-percent">67%</span>
                         </div>
                     </div>
                     <div className="result-container-right">
