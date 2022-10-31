@@ -632,7 +632,7 @@ button{
     border: 1px dashed #888787;
     background-color: #F9F9F9;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 
@@ -1099,4 +1099,156 @@ button{
 .happy-diary-title {
     text-align: left;
     padding : 0% 0% 0% 10%;
+}
+
+/*분석결과 css */
+
+.result-container {
+    box-sizing: border-box;
+    border: 1px dashed #888787;
+    background-color: #F9F9F9;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    width: 80%;
+    height: 700px;
+    border-radius: 20px;
+    padding: 8% 0% 10% 0;
+    margin: 0% 0% 8% 0%;
+}
+
+.result-container-left{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    flex: 1;
+    float: left;
+    flex-direction: column;
+    border-right: 2px dashed #D7D7D7;
+}
+
+.result-container-left-row{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    flex: 1;
+    float: center;
+    flex-direction: row;
+    margin: 10% 0% 10% 0%;
+}
+
+.result-container-left-row-first{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    flex: 1;
+    float: top;
+    flex-direction: row;
+    margin: 0% 0% 20% 0%;
+}
+
+.result-container-left-row-first-left{
+    /* font-family: 'KyoboHand'; */
+    font-size: 30px;
+    flex: 1;
+    float: left;
+    flex-direction: column;
+    margin: 0% 10% 0% 10%;
+}
+
+.result-container-left-row-first-right{
+    /* font-family: 'KyoboHand'; */
+    flex: 1;
+    float: right;
+    flex-direction: column;
+    margin: 0% 10% 0% 0%;
+}
+
+.result-container-left-row-second{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    flex: 1;
+    float: center;
+    flex-direction: row;
+    margin: 0% 0% 10% 0%;
+}
+
+.result-container-left-row-third{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    background-color: #FFFFFF;
+    flex: 1;
+    float: center;
+    box-sizing: border-box;
+    border: 1px solid #888787;
+    flex-direction: row;
+    margin: 10% 10% 10% 10%;
+}
+
+.result-container-left-row-third-first{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    flex: 1;
+    float: center;
+    flex-direction: row;
+    margin: 2% 0% 5% 0%;
+}
+
+.result-container-left-row-third-second-feel{
+    /* font-family: 'KyoboHand'; */
+    font-size: 15px;
+    flex: 1;
+    float: left;
+    flex-direction: column;
+    margin: 2% 0% 5% 10%;
+}
+.result-container-left-row-third-second-bar{
+    /* font-family: 'KyoboHand'; */
+    flex: 1;
+    float: center;
+    flex-direction: column;
+    margin: 2% 0% 5% 0%;
+}
+.result-container-left-row-third-second-percent{
+    /* font-family: 'KyoboHand'; */
+    font-size: 15px;
+    flex: 1;
+    float: right;
+    flex-direction: column;
+    margin: 2% 10% 5% 0%;
+}
+
+.result-container-left-row-third-face{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    flex: 1;
+    float: center;
+    flex-direction: row;
+    margin: 2% 0% 5% 2%;
+}
+.result-container-left-row-third-voice{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    flex: 1;
+    float: center;
+    flex-direction: row;
+    margin: 2% 0% 5% 2%;
+}
+
+.result-container-right{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    text-align: left;
+    flex: 1;
+    float: left;
+    flex-direction: column;
+}
+
+.result-container-right-row{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    text-align: center;
+    flex: 1;
+    float: center;
+    flex-direction: row;
+    margin: 0% 0% 10% 0%;
 }
