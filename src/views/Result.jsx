@@ -25,10 +25,13 @@ function Result(props) {
                 <div className="result-container">
                     <div className="result-container-left">
                         <div className="result-container-left-row">
+                            <p>AI 루밍이가 분석한 오늘의 일기입니다!</p>
                         </div>
                         <div className="result-container-left-row">
+                            AI 루밍이가 분석한 오늘의 일기입니다!
                         </div>
                         <div className="result-container-left-row">
+                            AI 루밍이가 분석한 오늘의 일기입니다!
                         </div>
                     </div>
                     <div className="result-container-right">

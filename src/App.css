@@ -1132,8 +1132,36 @@ button{
     /* font-family: 'KyoboHand'; */
     font-size: 20px;
     flex: 1;
-    float: left;
+    float: center;
     flex-direction: row;
+    margin: 0% 0% 10% 0%;
+}
+
+.result-container-left-row-first-left{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    flex: 1;
+    float: center;
+    flex-direction: row;
+    margin: 0% 0% 10% 0%;
+}
+
+.result-container-left-row-first-right{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    flex: 1;
+    float: center;
+    flex-direction: row;
+    margin: 0% 0% 10% 0%;
+}
+
+.result-container-left-row-third{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    flex: 1;
+    float: center;
+    flex-direction: row;
+    margin: 0% 0% 10% 0%;
 }
 
 .result-container-right{
@@ -1148,8 +1176,9 @@ button{
 .result-container-right-row{
     /* font-family: 'KyoboHand'; */
     font-size: 20px;
-    text-align: left;
+    text-align: center;
     flex: 1;
-    float: left;
+    float: center;
     flex-direction: row;
+    margin: 0% 0% 10% 0%;
 }
