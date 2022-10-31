@@ -1184,6 +1184,57 @@ button{
     margin: 10% 10% 10% 10%;
 }
 
+.result-container-left-row-third-first{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    flex: 1;
+    float: center;
+    flex-direction: row;
+    margin: 2% 0% 5% 0%;
+}
+
+.result-container-left-row-third-second-feel{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    flex: 1;
+    float: center;
+    flex-direction: column;
+    margin: 2% 0% 5% 2%;
+}
+.result-container-left-row-third-second-bar{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    flex: 1;
+    float: center;
+    flex-direction: column;
+    margin: 2% 0% 5% 2%;
+}
+.result-container-left-row-third-second-percent{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    flex: 1;
+    float: center;
+    flex-direction: column;
+    margin: 2% 0% 5% 2%;
+}
+
+.result-container-left-row-third-face{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    flex: 1;
+    float: center;
+    flex-direction: row;
+    margin: 2% 0% 5% 2%;
+}
+.result-container-left-row-third-voice{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    flex: 1;
+    float: center;
+    flex-direction: row;
+    margin: 2% 0% 5% 2%;
+}
+
 .result-container-right{
     /* font-family: 'KyoboHand'; */
     font-size: 20px;

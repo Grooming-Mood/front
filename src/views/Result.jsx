@@ -5,6 +5,7 @@ import SadIcon from "../assets/image/splash/sad-icon.png";
 import AngryIcon from "../assets/image/splash/angry-icon.png";
 import ChatbotIcon from "../assets/image/splash/chatbot-icon.png";
 import SettingIcon from "../assets/image/splash/setting-icon.png";
+import Progressbar from "../assets/image/result/progressbar.png";
 
 
 
@@ -38,7 +39,10 @@ function Result(props) {
                             
                         </div>
                         <div className="result-container-left-row-third">
-                            AI 루밍이가 분석한 오늘의 일기입니다!
+                            AI 루밍이의 분석결과<br/>
+                            ANGRY
+                            <img src={Progressbar} alt="Progressbar" style={{"width":"100px","hight":"100px"}}/>
+                            67%
                         </div>
                     </div>
                     <div className="result-container-right">
