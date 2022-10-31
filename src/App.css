@@ -643,24 +643,6 @@ button{
     margin: 0% 0% 8% 0%;
 }
 
-.result-angry-container-left{
-    /* font-family: 'KyoboHand'; */
-    font-size: 20px;
-    flex: 1;
-    float: left;
-    flex-direction: column;
-
-    border-right: 2px dashed #D7D7D7;
-}
-.result-angry-container-right{
-    /* font-family: 'KyoboHand'; */
-    font-size: 20px;
-    text-align: left;
-    flex: 1;
-    float: left;
-    flex-direction: column;
-}
-
 /** normal result **/
 .result-normal {
     background-color: #CCE3E2;
@@ -1117,4 +1099,40 @@ button{
 .happy-diary-title {
     text-align: left;
     padding : 0% 0% 0% 10%;
+}
+
+/*분석결과 css */
+
+.result-container {
+    box-sizing: border-box;
+    border: 1px dashed #888787;
+    background-color: #F9F9F9;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    width: 80%;
+    height: 700px;
+    border-radius: 20px;
+    padding: 8% 0% 10% 0;
+    margin: 0% 0% 8% 0%;
+}
+
+.result-container-left{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    flex: 1;
+    float: left;
+    flex-direction: column;
+
+    border-right: 2px dashed #D7D7D7;
+}
+.result-container-right{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    text-align: left;
+    flex: 1;
+    float: left;
+    flex-direction: column;
 }
