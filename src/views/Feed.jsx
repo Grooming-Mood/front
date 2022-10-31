@@ -2,62 +2,80 @@ import { Link, withRouter } from "react-router-dom";
 import SideMenu from "./SideMenu";
 import React from "react";
 import dateFormat from "dateformat";
-import convertImage from "../utils/function";
+import {convertIcon, convertImage} from "../utils/function";
 
 
 const dummyList = [
     {
-        id: 1,
-        feeling: "ANGRY",
-        content: "하이",
-        date: "2022-10-17 01:00:00.000000",
+        "createdDate": "2022-10-31T07:29:57.732Z",
+        "diaryContent": "하이1",
+        "diaryId": 1,
+        "feeling": "ANGRY",
+        "profileImg": "",
+        "userName": "doha1",
+        "likes" : 5,
     },
     {
-        id: 2,
-        feeling: "ANGRY",
-        content: "하이",
-        date: "2022-10-17 01:00:00.000000",
+        "createdDate": "2022-10-31T07:29:57.732Z",
+        "diaryContent": "하이2",
+        "diaryId": 2,
+        "feeling": "ANGRY",
+        "profileImg": "",
+        "userName": "doha2",
+        "likes" : 5,
     },
     {
-        id: 3,
-        feeling: "ANGRY",
-        content: "하이",
-        date: "2022-10-17 01:00:00.000000",
+        "createdDate": "2022-10-31T07:29:57.732Z",
+        "diaryContent": "하이3",
+        "diaryId": 3,
+        "feeling": "ANGRY",
+        "profileImg": "",
+        "userName": "doha3",
+        "likes" : 5,
     },
 ];
 
 
 const
     FeedList = ({ dataList }) => {
-    return (
-        <div>
+        return (
             <div>
-                {dataList.map((it) => {
-                    return (
+                <div>
+                    {dataList.map((it) => {
+                        return (
 
-                      <div className="data-container"
-                           key = {it.id}>
+                            <div className="data-container"
+                                 key = {it.diaryId}>
 
-                          <div className="data-image">
-                              {
-                                  (convertImage(it.feeling))
-                              }
-                          </div>
+                                <div className="data-image">
+                                    {
+                                        (convertImage(it.feeling))
+                                    }
+                                </div>
 
+                                <div className="data-content">
+                                    <span> { it.userName }</span>
+                                    <br/>
+                                    <span>{ it.diaryContent }</span>
+                                </div>
 
-                          <div className="data-content">
-                              <span>{ it.content }</span>
-                          </div>
-                          <div className="data-date">
-                              <span>{ dateFormat(it.date, "yyyy-mm-dd HH:mm") }</span>
-                          </div>
-                      </div>
-                    );
-                })}
+                                <div className="data-date">
+                                    <span>{ dateFormat(it.createdDate, "yyyy-mm-dd HH:mm") }</span>
+                                </div>
+
+                                <div className="data-likes">
+                                    {
+                                        (convertIcon(it.feeling))
+                                    }
+                                    <span>{ it.likes }</span>
+                                </div>
+                            </div>
+                        );
+                    })}
+                </div>
             </div>
-        </div>
-    );
-};
+        );
+    };
 
 function Feed(props) {
     return (
