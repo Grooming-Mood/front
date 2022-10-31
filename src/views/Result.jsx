@@ -21,8 +21,22 @@ function Result(props) {
                 <Link to="/" className="result-angry-header-link">GroomingMood</Link>
                 <p>당신의 감정을<br/>어루만지는 AI 일기</p>
             </div>
-            <div className="result-angry-content">
-                <div className="result-angry-container">
+            <div className="home-content">
+                <div className="result-container">
+                    <div className="result-container-left">
+                        <div className="result-container-left-row">
+                            <p>AI 루밍이가 분석한 오늘의 일기입니다!</p>
+                        </div>
+                        <div className="result-container-left-row">
+                            AI 루밍이가 분석한 오늘의 일기입니다!
+                        </div>
+                        <div className="result-container-left-row">
+                            AI 루밍이가 분석한 오늘의 일기입니다!
+                        </div>
+                    </div>
+                    <div className="result-container-right">
+                        
+                    </div>
                 </div>
                 <SideMenu></SideMenu>
             </div>
