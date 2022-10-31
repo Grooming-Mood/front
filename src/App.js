@@ -12,6 +12,7 @@ import HappyHome from "./views/HappyHome";
 import SadHome from "./views/SadHome";
 import AngryHome from "./views/AngryHome";
 import NormalHome from "./views/NormalHome";
+import Chatbot from "./views/Chatbot";
 
 function App() {
     return (
@@ -31,6 +32,8 @@ function App() {
                   <Route path="/setting" component={ Setting } exact /> {/*회원 정보 수정*/}
                   <Route path="/setting_convert" component={ Setting_Convert } exact /> {/*회원 정보 프사, 닉네임 수정*/}
                   <Route path="/result" component={ Result } exact /> {/*회원 정보 프사, 닉네임 수정*/}
+
+                  <Route path="/chatbot" component={ Chatbot }/>
               </div>
             </div>
         </BrowserRouter>
