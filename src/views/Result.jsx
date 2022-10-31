@@ -29,7 +29,7 @@ function Result(props) {
                                 AI 루밍이가 분석한<br/> 오늘의 일기입니다!<br/>
                             </div>
                             <div className="result-container-left-row-first-right">
-                                <img src={AngryIcon} alt="Angry" style={{"width":"100px","hight":"100px"}}/>
+                                <img src={AngryIcon} alt="Angry" style={{"width":"150px","hight":"150px"}}/>
                                 <br/>
                             </div>
                         </div>

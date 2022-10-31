@@ -1143,7 +1143,7 @@ button{
     flex: 1;
     float: top;
     flex-direction: row;
-    margin: 0% 0% 10% 0%;
+    margin: 0% 0% 20% 0%;
 }
 
 .result-container-left-row-first-left{
@@ -1157,7 +1157,6 @@ button{
 
 .result-container-left-row-first-right{
     /* font-family: 'KyoboHand'; */
-    font-size: 20px;
     flex: 1;
     float: right;
     flex-direction: column;
