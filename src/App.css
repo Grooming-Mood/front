@@ -1125,9 +1125,17 @@ button{
     flex: 1;
     float: left;
     flex-direction: column;
-
     border-right: 2px dashed #D7D7D7;
 }
+
+.result-container-left-row{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    flex: 1;
+    float: left;
+    flex-direction: row;
+}
+
 .result-container-right{
     /* font-family: 'KyoboHand'; */
     font-size: 20px;
@@ -1135,4 +1143,13 @@ button{
     flex: 1;
     float: left;
     flex-direction: column;
+}
+
+.result-container-right-row{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    text-align: left;
+    flex: 1;
+    float: left;
+    flex-direction: row;
 }
