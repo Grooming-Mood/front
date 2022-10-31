@@ -1,9 +1,10 @@
 import { Link, withRouter } from "react-router-dom";
 import SideMenu from "./SideMenu";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import dateFormat from "dateformat";
 import convertImage from "../utils/function";
-
+import { useInView } from "react-intersection-observer";
+import axios from "axios";
 
 const dummyList = [
     {
@@ -25,7 +26,6 @@ const dummyList = [
         date: "2022-10-17 01:00:00.000000",
     },
 ];
-
 
 const
     FeedList = ({ dataList }) => {
@@ -60,8 +60,20 @@ const
     };
 
 function AngryHome(props) {
+    const [ items, setItems ] = useState([])
+    const [ page, setPage ] = useState(1)
+    const [ loading, setLoading ] = useState(false)
+
+    const [ ref, inView ] = useInView()
+
+    useEffect(() => {
+        if(inView && !loading) {
+            setPage(prevState => prevState + 1)
+        }
+    }, [inView, loading])
+
     return (
-        <div className="angry-home">
+        <div ref={ref} className="angry-home">
 
             <div className="angry-home-header">
                 <Link to="/" className="angry-header-link">GroomingMood</Link>
