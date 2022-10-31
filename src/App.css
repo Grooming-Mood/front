@@ -1218,6 +1218,23 @@ button{
     margin: 2% 0% 5% 2%;
 }
 
+.result-container-left-row-third-face{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    flex: 1;
+    float: center;
+    flex-direction: row;
+    margin: 2% 0% 5% 2%;
+}
+.result-container-left-row-third-voice{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    flex: 1;
+    float: center;
+    flex-direction: row;
+    margin: 2% 0% 5% 2%;
+}
+
 .result-container-right{
     /* font-family: 'KyoboHand'; */
     font-size: 20px;
