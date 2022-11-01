@@ -20,16 +20,6 @@ const VideoPreview = ({ stream }) => {
     return <video ref={videoRef} width={500} height={500} autoPlay controls />;
   };
 
-//분석용 테스트 영상 컴포넌트
-const VideoRecorded = () => {
-    return( 
-    <video muted autoPlay loop>
-        <source src="Facetest.mp4" type="video/mp4"></source>
-    </video>
-    );
-};
-
-
 
 
 
@@ -66,28 +56,35 @@ function Record(props) {
 
     };
 
-    //Flask api 요청
-    const uploadFile = (event) => {
-        const formData = new FormData();
+    //Flask api 요청 (******현재 오류남....)
+    const loadFlaskapi = (event) => {
+        let formData = new FormData();
 
         formData.append("file",videoFilePath); // 분석할 동영상
         for (let key of formData.keys()){
             console.log(key, ":", formData.get(key));
         }
 
-        const res = axios({
+        const options= {
             method:"post",
             url: "http://127.0.0.1:5000/predict_face",
             data: formData,
             headers: {"Content-Type" : "multipart/form-data"}
-        });
-
-        console.log("전송된 데이터는:", res.data);
+        }
         
+        axios(options)
+            .then(response => console.log(response));
     };
-    const postFile = (e) => {
+    
 
-    }
+
+
+
+
+
+
+
+
 
 
     ///////////////////////////////////화면
@@ -149,11 +146,37 @@ function Record(props) {
                             <p>녹화 영상 url = {mediaBlobUrl}</p>
                         </div>
                     </div>
+
+
+                    <form action="http://127.0.0.1:5000/predict_face" method='POST' encType='multipart/form-data'>
+                        <input type="file" name="file" onChange={handleVideoUpload}></input>
+                        <button type="submit">
+                            <span>👩‍💻</span>
+                            <span>오늘의 일기 분석하기 url자체가 이동</span>
+                        </button>
+                    </form>
+                    <br></br>
+
+
+
+                    <div>
+                        <form onSubmit={loadFlaskapi}>
+                            <input type="file" name="file" onChange={handleVideoUpload}></input>
+                            <button type="submit">
+                                <span>여기를 눌러 분석하세요. flask테스트 오류</span>
+                            </button>
+                        </form>
+                    </div>
+
+
+
+
+
                     <div>
                         <Link to="/result">
                             <button className="button">
                                 <span>👩‍💻</span>
-                                <sapn>오늘의 일기 분석하기</sapn>
+                                <span>오늘의 일기 분석하기</span>
                             </button>
                         </Link>
                     </div>
