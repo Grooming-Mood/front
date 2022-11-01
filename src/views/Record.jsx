@@ -3,8 +3,7 @@ import { withRouter, Link } from "react-router-dom";
 import SideMenu from "./SideMenu";
 import {useReactMediaRecorder} from "react-media-recorder";
 import axios from 'axios';
-
-
+import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 //미리보기 영상 컴포넌트
 const VideoPreview = ({ stream }) => {
     const videoRef = useRef(null);
@@ -21,7 +20,30 @@ const VideoPreview = ({ stream }) => {
   };
 
 
+//음성인식 컴포넌트
+const Dictaphone = () =>{
+    const {
+        transcript,
+        listening,
+        resetTranscript,
+        browserSupportsSpeechRecognition
+      } = useSpeechRecognition();
 
+    if (!browserSupportsSpeechRecognition) {
+        return <span>Browser doesn't support speech recognition.</span>;
+    }
+
+    return(
+        <div>
+            <p>마이크 상태: {listening ? 'on' : 'off'}</p>
+            <button onClick={SpeechRecognition.startListening({continuous: true, language: 'ko'})}>Start</button>
+            <button onClick={SpeechRecognition.stopListening}>Stop</button>
+            <button onClick={resetTranscript}>Reset</button>
+            <p>{transcript}</p> 
+        </div>
+    );
+    
+};
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -129,6 +151,9 @@ function Record(props) {
                                     </li>
                                 </ul>
                             </span>
+                        </div>
+                        <div>
+                            <Dictaphone></Dictaphone>
                         </div>
 
 
