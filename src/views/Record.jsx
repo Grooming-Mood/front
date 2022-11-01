@@ -2,6 +2,7 @@ import React, { useEffect,useState, useRef } from 'react';
 import { withRouter, Link } from "react-router-dom";
 import SideMenu from "./SideMenu";
 import {useReactMediaRecorder} from "react-media-recorder";
+import axios from 'axios';
 
 
 //미리보기 영상 컴포넌트
@@ -18,16 +19,32 @@ const VideoPreview = ({ stream }) => {
     }
     return <video ref={videoRef} width={500} height={500} autoPlay controls />;
   };
-  
 
+//분석용 테스트 영상 컴포넌트
+const VideoRecorded = () => {
+    return( 
+    <video muted autoPlay loop>
+        <source src="Facetest.mp4" type="video/mp4"></source>
+    </video>
+    );
+};
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 //화면
 function Record(props) {
 
+    const [videoFilePath, setVideoFilePath] = useState(null); //업로드 받은 파일
     const { status, startRecording, stopRecording, mediaBlobUrl, previewStream } = useReactMediaRecorder({video:true, audio:true});
-
     const [isRecording, setIsRecording] = useState(false);
+
+
+
     const handleStartRecording = () => {
         setIsRecording(true);
         startRecording();
@@ -39,13 +56,41 @@ function Record(props) {
         stopRecording();
         
     };
-    console.log("BlobUrl은:", mediaBlobUrl);
 
-
+    
     //영상 분석 요청 버튼 클릭 이벤트
+    //업로드 받은 파일 경로 저장
+    const handleVideoUpload = (event) => {
+        setVideoFilePath(URL.createObjectURL(event.target.files[0]));
+        console.log("handleVideoUpload 파일 저장 : ", videoFilePath);
+
+    };
+
+    //Flask api 요청
+    const uploadFile = (event) => {
+        const formData = new FormData();
+
+        formData.append("file",videoFilePath); // 분석할 동영상
+        for (let key of formData.keys()){
+            console.log(key, ":", formData.get(key));
+        }
+
+        const res = axios({
+            method:"post",
+            url: "http://127.0.0.1:5000/predict_face",
+            data: formData,
+            headers: {"Content-Type" : "multipart/form-data"}
+        });
+
+        console.log("전송된 데이터는:", res.data);
+        
+    };
+    const postFile = (e) => {
+
+    }
 
 
-
+    ///////////////////////////////////화면
     return (
         <div className="home">
 
