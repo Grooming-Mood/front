@@ -149,16 +149,14 @@ function Record(props) {
                             <p>녹화 영상 url = {mediaBlobUrl}</p>
                         </div>
                     </div>
-
-                    <form action="http://127.0.0.1:5000/predict_face" method='POST' encType='multipart/form-data'>
-                        <input type="file" name="file" onChange={handleVideoUpload}></input>
-                        <button type="submit">
-                            <span>👩‍💻</span>
-                            <span>오늘의 일기 분석하기</span>
-                        </button>
-                    </form>
-                    <br></br>
-
+                    <div>
+                        <Link to="/result">
+                            <button className="button">
+                                <span>👩‍💻</span>
+                                <sapn>오늘의 일기 분석하기</sapn>
+                            </button>
+                        </Link>
+                    </div>
                 </div>
 
                 <SideMenu></SideMenu>
