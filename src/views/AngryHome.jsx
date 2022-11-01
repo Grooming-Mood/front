@@ -1,6 +1,8 @@
 import { Link, withRouter } from "react-router-dom";
 import SideMenu from "./SideMenu";
-import React from "react";
+import React, {useEffect, useState} from "react";
+import { useInView } from "react-intersection-observer";
+import axios from "axios";
 import { FeedList } from "../Feed/FeedList";
 
 const dummyList = [
@@ -33,19 +35,31 @@ const dummyList = [
     },
 ];
 
-function Feed(props) {
-    return (
-        <div className="home">
+function AngryHome(props) {
+    const [ items, setItems ] = useState([])
+    const [ page, setPage ] = useState(1)
+    const [ loading, setLoading ] = useState(false)
 
-            <div className="home-header">
-                <Link to="/" className="header-link">GroomingMood</Link>
+    const [ ref, inView ] = useInView()
+
+    useEffect(() => {
+        if(inView && !loading) {
+            setPage(prevState => prevState + 1)
+        }
+    }, [inView, loading])
+
+    return (
+        <div ref={ref} className="angry-home">
+
+            <div className="angry-home-header">
+                <Link to="/" className="angry-header-link">GroomingMood</Link>
                 <p>당신의 감정을<br/>어루만지는 AI 일기</p>
             </div>
 
-            <div className="feed-content">
-                <div className="feed-container">
-                    <div className="diary-container">
-                        <h2 className="diary-title">
+            <div className="angry-content">
+                <div className="angry-container">
+                    <div className="angry-diary-container">
+                        <h2 className="angry-diary-title">
                             나의 감정일기
                         </h2>
                     </div>
@@ -61,4 +75,4 @@ function Feed(props) {
 
 }
 
-export default withRouter(Feed);
+export default withRouter(AngryHome);

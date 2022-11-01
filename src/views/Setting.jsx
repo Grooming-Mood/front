@@ -1,5 +1,6 @@
 import React, { useLayoutEffect } from "react";
 import { withRouter, Link } from "react-router-dom";
+import axios from 'axios';
 import SideMenu from "./SideMenu";
 import User from "../assets/image/user/user.png";
 import UserUpdate from "../assets/image/user/user_update.png";
