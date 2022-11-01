@@ -4,11 +4,17 @@ import SAD from "../assets/image/splash/normal-icon.png";
 import NORMAL from "../assets/image/splash/sad-icon.png";
 import styled from 'styled-components';
 
+import HAPPYICON from "../assets/image/icon/yellow-icon.jpeg";
+import ANGRYICON from "../assets/image/icon/black-icon.jpeg";
+import SADICON from "../assets/image/icon/blue-icon.jpeg";
+import NORMALICON from "../assets/image/icon/purple-icon.jpeg";
+
+
 const IMG = styled.img`
   width: 25%;
 `;
 
-export default function convertImage(feeling) {
+function convertImage(feeling) {
 
     switch (feeling) {
         case 'HAPPY':
@@ -28,3 +34,27 @@ export default function convertImage(feeling) {
     }
 }
 
+const ICON = styled.img`
+  width: 10%;
+`;
+function convertIcon(feeling) {
+
+    switch (feeling) {
+        case 'HAPPY':
+            return <ICON src={ HAPPYICON } alt="happy-icon"/>;
+
+        case 'ANGRY':
+            return <ICON src={ ANGRYICON } alt="angry-icon"/>;
+
+        case 'NORMAL':
+            return <ICON src={ NORMALICON } alt="normal-icon"/>;
+
+        case 'SAD':
+            return <ICON src={ SADICON } alt="sad-icon"/>;
+
+        default:
+            return;
+    }
+}
+
+export { convertImage, convertIcon };

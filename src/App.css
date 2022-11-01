@@ -316,11 +316,20 @@ button{
 
 }
 
+.data-content-user-name {
+    font-weight: bolder;
+    line-height: 30px;
+}
+
 .data-date {
     flex: 1;
     float: right;
     flex-direction: column;
-    margin-right: 8%;
+    margin-right: 1%;
+}
+
+.data-likes {
+    padding: 0%;
 }
 
 /** Calendar 화면 **/
@@ -1268,3 +1277,62 @@ button{
     flex-direction: row;
     margin: 0% 0% 10% 0%;
 }
+
+
+/* CHATBOT 화면 */
+.chatbot-home {
+
+    background-color: #F4C8C5;
+    width: 100%;
+    height: 1080px;
+
+}
+
+.chatbot-home-header {
+    padding: 1.6% 0 2% 0;
+    background-color: #F4C8C5;
+}
+
+.chatbot-home-header .chatbot-header-link {
+    /* font-family: 'Poppins'; */
+    font-family: 'KyoboHand';
+    font-style: italic;
+    font-size: 30px;
+    color: #fff;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.chatbot-home-header p {
+    /* font-family: 'Noto Sans KR'; */
+    font-family: 'KyoboHand';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 22px;
+    text-align: right;
+    color: #fff;
+    margin: 0;
+    padding: 0% 1.2% 0% 0%;
+}
+.chatbot-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.chatbot-container {
+    box-sizing: border-box;
+    border: 1px dashed #888787;
+    background-color: #F9F9F9;
+
+    width: 80%;
+    height: 700px;
+    border-radius: 20px;
+    padding: 8% 0% 10% 0;
+    margin: 0% 0% 8% 0%;
+}
+
