@@ -1337,16 +1337,16 @@ button{
 .result-container-right{
     /* font-family: 'KyoboHand'; */
     font-size: 20px;
-    text-align: left;
     flex: 1;
     float: left;
     flex-direction: column;
+
+    margin: 10% 10% 10% 5%;
 }
 
 .result-container-right-row{
     /* font-family: 'KyoboHand'; */
     font-size: 20px;
-    text-align: center;
     flex: 1;
     float: center;
     flex-direction: row;
@@ -1356,33 +1356,31 @@ button{
 .result-container-right-row-first{
     /* font-family: 'KyoboHand'; */
     font-size: 30px;
-    flex: 1;
+    /* flex: 1; */
     float: left;
     font-weight: bold;
     flex-direction: row;
+    direction: row;
     margin: 5% 5% 5% 5%;
     padding: 2% 2% 2% 2%;
 }
 
 .result-container-right-row-second{
     /* font-family: 'KyoboHand'; */
-    font-size: 20px;
-    flex: 1;
+    /* flex: 1; */
     float: center;
     flex-direction: row;
     margin: 5% 5% 5% 5%;
     padding: 2% 2% 2% 2%;
-
-    display: flex;
 }
 
 .result-container-right-row-second-date{
     /* font-family: 'KyoboHand'; */
-    font-size: 20px;
+    font-size: 15px;
     flex: 1;
     float: right;
     flex-direction: row;
-    margin: 0% 0% 22% 0%;
+    margin: 5% 5% 5% 5%;
 }
 
 .result-container-right-row-second-content{
@@ -1391,7 +1389,14 @@ button{
     flex: 1;
     float: center;
     flex-direction: row;
-    margin: 0% 0% 22% 0%;
+    box-sizing: border-box;
+    background-color: #F1B8B8;
+    display: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: 5% 5% 5% 5%;
 }
 
 .result-container-right-row-second-update-button{
