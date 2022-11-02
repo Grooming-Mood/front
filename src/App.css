@@ -1353,6 +1353,78 @@ button{
     margin: 0% 0% 10% 0%;
 }
 
+.result-container-right-row-first{
+    /* font-family: 'KyoboHand'; */
+    font-size: 30px;
+    flex: 1;
+    float: left;
+    font-weight: bold;
+    flex-direction: row;
+    margin: 5% 5% 5% 5%;
+}
+
+.result-container-right-row-second{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    flex: 1;
+    float: top;
+    flex-direction: row;
+    margin: 0% 0% 22% 0%;
+}
+
+.result-container-right-row-second-date{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    flex: 1;
+    float: right;
+    flex-direction: row;
+    margin: 0% 0% 22% 0%;
+}
+
+.result-container-right-row-second-content{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    flex: 1;
+    float: center;
+    flex-direction: row;
+    margin: 0% 0% 22% 0%;
+}
+
+.result-container-right-row-second-update-button{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    flex: 1;
+    float: right;
+    flex-direction: row;
+    margin: 0% 0% 22% 0%;
+}
+
+.result-container-right-row-thrid{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    flex: 1;
+    float: top;
+    flex-direction: row;
+    margin: 0% 0% 22% 0%;
+}
+
+.result-container-right-row-thrid-select{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    flex: 1;
+    float: center;
+    flex-direction: row;
+    margin: 0% 0% 22% 0%;
+}
+
+.result-container-right-row-thrid-select-button{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    flex: 1;
+    float: center;
+    flex-direction: row;
+    margin: 0% 0% 22% 0%;
+}
 
 /* CHATBOT 화면 */
 .chatbot-home {

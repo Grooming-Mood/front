@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from "react";
+ import React, { useLayoutEffect } from "react";
 import { withRouter, Link } from "react-router-dom";
 import SideMenu from "./SideMenu";
 import SadIcon from "../assets/image/splash/sad-icon.png";
@@ -48,7 +48,9 @@ function Result(props) {
                         </div>
                     </div>
                     <div className="result-container-right">
-                        
+                        <div className="result-container-right-row-first">
+                            AI 루밍이가 작성한<br/> 오늘의 일기 입니다.
+                        </div>
                     </div>
                 </div>
                 <SideMenu></SideMenu>
