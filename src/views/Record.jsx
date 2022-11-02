@@ -119,98 +119,103 @@ function Record(props) {
             </div>
 
             <div className="home-content">
-                <div className="record-left">
+                <div className="record-container">
+                    <div className="record-left">
 
-                        <div className="record-title">
-                            오늘의 일기를 기록해주세요!
-                        </div>
-                        <hr></hr><hr></hr><hr></hr>
-                        <div className="record-sub">
-                            <span>
-                                Grooming Mood가 당신의 감정과 일기를 자동으로 작성해줍니다.
-                            </span>
-                        </div>
-                        <hr></hr><hr></hr><hr></hr>
-                        <div className="record-sub">
-                            <span>
-                                영상 기록 시 주의사항<hr></hr>
-                            </span>
-                            <span>
-                                <ul>
-                                    <li>
-                                        PC 내 카메라와 마이크 접근을 허용해주세요.
-                                    </li>
-                                    <li>
-                                        카메라는 정면을 응시해주세요.
-                                    </li>
-                                    <li>
-                                        어두운 곳에서의 촬영은 피해주세요.
-                                    </li>
-                                    <li>
-                                        1분 미만으로 촬영해주세요.
-                                    </li>
-                                </ul>
-                            </span>
-                        </div>
-                        <div>
-                            <Dictaphone></Dictaphone>
-                        </div>
+                            <div className="record-title">
+                                오늘의 일기를 기록해주세요!
+                            </div>
+                            <hr></hr>
+                            <div className="record-sub">
+                                <span>
+                                    Grooming Mood가 당신의 감정과 일기를 자동으로 작성해줍니다.
+                                </span>
+                            </div>
+                            <hr></hr>
+                            <div className="record-sub">
+                                <span>
+                                    영상 기록 시 주의사항<hr></hr>
+                                </span>
+                                <span>
+                                    <ul>
+                                        <li>
+                                            PC 내 카메라와 마이크 접근을 허용해주세요.
+                                        </li>
+                                        <li>
+                                            카메라는 정면을 응시해주세요.
+                                        </li>
+                                        <li>
+                                            어두운 곳에서의 촬영은 피해주세요.
+                                        </li>
+                                        <li>
+                                            1분 미만으로 촬영해주세요.
+                                        </li>
+                                    </ul>
+                                </span>
+                            </div>
+                            <div className="record-left-stt-box">
+                                <Dictaphone></Dictaphone>
+                            </div>
 
 
 
-                </div>
-                
-                <div className="record-right">
-                    <div >
-                        <div>
-                            <button className="button" onClick={() => handleStartRecording()}>일기 기록 시작</button>
-                            <button className="button" onClick={() => handleStopRecording()}>일기 기록 종료</button>
-                            <p>현재 영상 녹화 상태: {status}</p>
-                            {isRecording && <VideoPreview stream={previewStream} width={500} height={500} />}
-                            {!isRecording && (<video id="recorded" src={mediaBlobUrl} width={500} height={500} controls autoPlay loop />)}
-                            <p>녹화 영상 url = {mediaBlobUrl}</p>
-                        </div>
                     </div>
+                    
+                    <div className="record-right">
+                        <div >
+                            <div>
+                                <div className="button-status">
+                                    <button className="button" onClick={() => handleStartRecording()}>일기 기록 시작</button>
+                                    <button className="button" onClick={() => handleStopRecording()}>일기 기록 종료</button>
+                                </div>
+                                <div className="record-status">현재 영상 녹화 상태: {status}</div>
+                                {isRecording && <VideoPreview stream={previewStream} width={500} height={500} />}
+                                {!isRecording && (<video id="recorded" src={mediaBlobUrl} width={500} height={500} controls autoPlay loop />)}
+                                <p>녹화 영상 url = {mediaBlobUrl}</p>
+                            </div>
+                        </div>
 
 
-                    <form action="http://127.0.0.1:5000/predict_face" method='POST' encType='multipart/form-data'>
-                        <input type="file" name="file" onChange={handleVideoUpload}></input>
-                        <button type="submit">
-                            <span>👩‍💻</span>
-                            <span>오늘의 일기 분석하기 url자체가 이동</span>
-                        </button>
-                    </form>
-                    <br></br>
-
-
-
-                    <div>
-                        <form onSubmit={loadFlaskapi}>
+                        <form action="http://127.0.0.1:5000/predict_face" method='POST' encType='multipart/form-data'>
                             <input type="file" name="file" onChange={handleVideoUpload}></input>
                             <button type="submit">
-                                <span>여기를 눌러 분석하세요. flask테스트 오류</span>
+                                <span>👩‍💻</span>
+                                <span>오늘의 일기 분석하기 url자체가 이동</span>
                             </button>
                         </form>
-                    </div>
+                        <br></br>
+
+
+
+                        <div>
+                            <form onSubmit={loadFlaskapi}>
+                                <input type="file" name="file" onChange={handleVideoUpload}></input>
+                                <button type="submit">
+                                    <span>여기를 눌러 분석하세요. flask테스트 오류</span>
+                                </button>
+                            </form>
+                        </div>
 
 
 
 
 
-                    <div>
-                        <Link to="/result">
-                            <button className="button">
-                                <span>👩‍💻</span>
-                                <span>오늘의 일기 분석하기</span>
-                            </button>
-                        </Link>
+                        <div>
+                            <Link to="/result">
+                                <div className="button-status">
+                                <button className="button">
+                                    <span>👩‍💻</span>
+                                    <span>오늘의 일기 분석하기</span>
+                                </button>
+                                </div>
+                            </Link>
+                        </div>
                     </div>
                 </div>
 
                 <SideMenu></SideMenu>
 
             </div>  
-
 
         </div>
         
