@@ -1380,6 +1380,15 @@ button{
     margin: 0% 0% 22% 0%;
 }
 
+.result-container-right-row-second-content{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    flex: 1;
+    float: center;
+    flex-direction: row;
+    margin: 0% 0% 22% 0%;
+}
+
 .result-container-right-row-thrid{
     /* font-family: 'KyoboHand'; */
     font-size: 20px;
