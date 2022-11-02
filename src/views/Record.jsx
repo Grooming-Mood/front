@@ -202,10 +202,12 @@ function Record(props) {
 
                         <div>
                             <Link to="/result">
+                                <div className="button-status">
                                 <button className="button">
                                     <span>👩‍💻</span>
                                     <span>오늘의 일기 분석하기</span>
                                 </button>
+                                </div>
                             </Link>
                         </div>
                     </div>
