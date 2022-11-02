@@ -160,9 +160,20 @@ a:visited {
     /* font-family: 'Poppins'; */
     font-family: 'KyoboHand';
     font-style: normal;
-    font-size: 20px;
+    font-size: 22px;
     color: #060606;
     text-align: center;
+
+    margin: 2% 2% 2% 2%;
+}
+
+.record-sub-warn {
+    /* font-family: 'Poppins'; */
+    font-family: 'KyoboHand';
+    /* font-style: normal; */
+    font-size: 20px;
+    color: #060606;
+    text-align: left;
 
     margin: 2% 2% 2% 2%;
 }

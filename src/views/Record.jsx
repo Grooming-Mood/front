@@ -123,7 +123,7 @@ function Record(props) {
                     <div className="record-left">
 
                             <div className="record-title">
-                                오늘의 일기를 기록해주세요!
+                                일기를 기록해주세요!
                             </div>
                             <hr></hr>
                             <div className="record-sub">
@@ -132,7 +132,7 @@ function Record(props) {
                                 </span>
                             </div>
                             <hr></hr>
-                            <div className="record-sub">
+                            <div className="record-sub-warn">
                                 <span>
                                     영상 기록 시 주의사항<hr></hr>
                                 </span>
@@ -148,7 +148,7 @@ function Record(props) {
                                             어두운 곳 지양
                                         </li>
                                         <li>
-                                            1분 미만으로 촬영
+                                            1분 미만의 촬영
                                         </li>
                                     </ul>
                                 </span>
