@@ -123,32 +123,32 @@ function Record(props) {
                     <div className="record-left">
 
                             <div className="record-title">
-                                오늘의 일기를 기록해주세요!
+                                일기를 기록해주세요!
                             </div>
                             <hr></hr>
                             <div className="record-sub">
                                 <span>
-                                    Grooming Mood가 당신의 감정과 일기를 자동으로 작성해줍니다.
+                                    루밍이가 당신의 감정과 일기를 자동으로 완성해줍니다.
                                 </span>
                             </div>
                             <hr></hr>
-                            <div className="record-sub">
+                            <div className="record-sub-warn-content">
                                 <span>
-                                    영상 기록 시 주의사항<hr></hr>
+                                🚨 영상 기록 시 주의사항<hr></hr>
                                 </span>
                                 <span>
                                     <ul>
                                         <li>
-                                            PC 내 카메라와 마이크 접근을 허용해주세요.
+                                            PC 카메라/마이크 접근 허용
                                         </li>
                                         <li>
-                                            카메라는 정면을 응시해주세요.
+                                            카메라의 정면 응시
                                         </li>
                                         <li>
-                                            어두운 곳에서의 촬영은 피해주세요.
+                                            어두운 곳 지양
                                         </li>
                                         <li>
-                                            1분 미만으로 촬영해주세요.
+                                            1분 미만의 촬영
                                         </li>
                                     </ul>
                                 </span>
