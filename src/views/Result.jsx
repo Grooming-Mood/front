@@ -35,14 +35,16 @@ function Result(props) {
                             </div>
                         </div>
                         <div className="result-container-left-row-second">
-                            <p>오늘 세종님은 <br/>67% 확률로 화난 날입니다.<br/></p>
+                            <p>오늘 세종님은 67% 확률로 화난 날입니다.<br/></p>
                             
                         </div>
                         <div className="result-container-left-row-third">
                             <div className="result-container-left-row-third-first">AI 루밍이의 분석결과<br/></div>
                             <span className="result-container-left-row-third-second-feel">ANGRY</span>
-                            <span className="result-container-left-row-third-second-bar"><img src={Progressbar} alt="Progressbar" style={{"width":"100px","hight":"100px"}}/></span>
+                            <span className="result-container-left-row-third-second-bar"><img src={Progressbar} alt="Progressbar" style={{"width":"120px","hight":"120px"}}/></span>
                             <span className="result-container-left-row-third-second-percent">67%</span>
+                            <div className="result-container-left-row-third-face">세종님의 화난 표정이 기록되었어요.</div>
+                            <div className="result-container-left-row-third-voice">세종님의 평온한 목소리가 기록되었어요.</div>
                         </div>
                     </div>
                     <div className="result-container-right">

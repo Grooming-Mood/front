@@ -2,8 +2,8 @@ import React, { useEffect,useState, useRef } from 'react';
 import { withRouter, Link } from "react-router-dom";
 import SideMenu from "./SideMenu";
 import {useReactMediaRecorder} from "react-media-recorder";
-
-
+import axios from 'axios';
+import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 //미리보기 영상 컴포넌트
 const VideoPreview = ({ stream }) => {
     const videoRef = useRef(null);
@@ -18,16 +18,45 @@ const VideoPreview = ({ stream }) => {
     }
     return <video ref={videoRef} width={500} height={500} autoPlay controls />;
   };
-  
 
+
+//음성인식 컴포넌트
+const Dictaphone = () =>{
+    const {
+        transcript,
+        listening,
+        resetTranscript,
+        browserSupportsSpeechRecognition
+      } = useSpeechRecognition();
+
+    if (!browserSupportsSpeechRecognition) {
+        return <span>Browser doesn't support speech recognition.</span>;
+    }
+
+    return(
+        <div>
+            <p>마이크 상태: {listening ? 'on' : 'off'}</p>
+            <button onClick={SpeechRecognition.startListening({continuous: true, language: 'ko'})}>Start</button>
+            <button onClick={SpeechRecognition.stopListening}>Stop</button>
+            <button onClick={resetTranscript}>Reset</button>
+            <p>{transcript}</p> 
+        </div>
+    );
+    
+};
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 //화면
 function Record(props) {
 
+    const [videoFilePath, setVideoFilePath] = useState(null); //업로드 받은 파일
     const { status, startRecording, stopRecording, mediaBlobUrl, previewStream } = useReactMediaRecorder({video:true, audio:true});
-
     const [isRecording, setIsRecording] = useState(false);
+
+
+
     const handleStartRecording = () => {
         setIsRecording(true);
         startRecording();
@@ -39,13 +68,48 @@ function Record(props) {
         stopRecording();
         
     };
-    console.log("BlobUrl은:", mediaBlobUrl);
 
-
+    
     //영상 분석 요청 버튼 클릭 이벤트
+    //업로드 받은 파일 경로 저장
+    const handleVideoUpload = (event) => {
+        setVideoFilePath(URL.createObjectURL(event.target.files[0]));
+        console.log("handleVideoUpload 파일 저장 : ", videoFilePath);
+
+    };
+
+    //Flask api 요청 (******현재 오류남....)
+    const loadFlaskapi = (event) => {
+        let formData = new FormData();
+
+        formData.append("file",videoFilePath); // 분석할 동영상
+        for (let key of formData.keys()){
+            console.log(key, ":", formData.get(key));
+        }
+
+        const options= {
+            method:"post",
+            url: "http://127.0.0.1:5000/predict_face",
+            data: formData,
+            headers: {"Content-Type" : "multipart/form-data"}
+        }
+        
+        axios(options)
+            .then(response => console.log(response));
+    };
+    
 
 
 
+
+
+
+
+
+
+
+
+    ///////////////////////////////////화면
     return (
         <div className="home">
 
@@ -88,6 +152,9 @@ function Record(props) {
                                 </ul>
                             </span>
                         </div>
+                        <div>
+                            <Dictaphone></Dictaphone>
+                        </div>
 
 
 
@@ -104,11 +171,37 @@ function Record(props) {
                             <p>녹화 영상 url = {mediaBlobUrl}</p>
                         </div>
                     </div>
+
+
+                    <form action="http://127.0.0.1:5000/predict_face" method='POST' encType='multipart/form-data'>
+                        <input type="file" name="file" onChange={handleVideoUpload}></input>
+                        <button type="submit">
+                            <span>👩‍💻</span>
+                            <span>오늘의 일기 분석하기 url자체가 이동</span>
+                        </button>
+                    </form>
+                    <br></br>
+
+
+
+                    <div>
+                        <form onSubmit={loadFlaskapi}>
+                            <input type="file" name="file" onChange={handleVideoUpload}></input>
+                            <button type="submit">
+                                <span>여기를 눌러 분석하세요. flask테스트 오류</span>
+                            </button>
+                        </form>
+                    </div>
+
+
+
+
+
                     <div>
                         <Link to="/result">
                             <button className="button">
                                 <span>👩‍💻</span>
-                                <sapn>오늘의 일기 분석하기</sapn>
+                                <span>오늘의 일기 분석하기</span>
                             </button>
                         </Link>
                     </div>
