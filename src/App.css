@@ -1337,16 +1337,16 @@ button{
 .result-container-right{
     /* font-family: 'KyoboHand'; */
     font-size: 20px;
-    text-align: left;
     flex: 1;
     float: left;
     flex-direction: column;
+
+    margin: 5% 5% 5% 0%;
 }
 
 .result-container-right-row{
     /* font-family: 'KyoboHand'; */
     font-size: 20px;
-    text-align: center;
     flex: 1;
     float: center;
     flex-direction: row;
@@ -1359,35 +1359,37 @@ button{
     flex: 1;
     float: left;
     font-weight: bold;
+    /* direction: row; */
     flex-direction: row;
     margin: 5% 5% 5% 5%;
 }
 
 .result-container-right-row-second{
     /* font-family: 'KyoboHand'; */
-    font-size: 20px;
     flex: 1;
-    float: top;
+    float: center;
     flex-direction: row;
-    margin: 0% 0% 22% 0%;
+    margin: 5% 10% 5% 10%;
 }
 
 .result-container-right-row-second-date{
     /* font-family: 'KyoboHand'; */
-    font-size: 20px;
+    font-size: 15px;
     flex: 1;
     float: right;
     flex-direction: row;
-    margin: 0% 0% 22% 0%;
+    margin: 5% 5% 5% 5%;
 }
 
-.result-container-right-row-second-content{
-    /* font-family: 'KyoboHand'; */
+.result-container-right-row-second-content-angry{
+    font-family: 'HSGyoulnoonkot';
     font-size: 20px;
+    float: left;
     flex: 1;
-    float: center;
-    flex-direction: row;
-    margin: 0% 0% 22% 0%;
+    direction: row;
+    background-color: #F1B8B8;
+    width: 100%;
+    margin: 5% 5% 5% 5%;
 }
 
 .result-container-right-row-second-update-button{
