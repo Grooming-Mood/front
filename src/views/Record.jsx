@@ -132,11 +132,11 @@ function Record(props) {
                                 </span>
                             </div>
                             <hr></hr>
-                            <div className="record-sub-warn-title">
+                            <div className="record-sub-warn-content">
                                 <span>
                                     영상 기록 시 주의사항<hr></hr>
                                 </span>
-                                <span className="record-sub-warn-content">
+                                <span>
                                     <ul>
                                         <li>
                                             PC 카메라/마이크 접근 허용

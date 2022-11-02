@@ -169,9 +169,9 @@ a:visited {
 
 .record-sub-warn-content {
     /* font-family: 'Poppins'; */
-    font-family: 'KyoboHand';
+    /* font-family: 'KyoboHand'; */
     /* font-style: normal; */
-    font-size: 20px;
+    font-size: 18px;
     color: #060606;
     text-align: left;
 
@@ -181,7 +181,7 @@ a:visited {
     /* font-family: 'Poppins'; */
     font-family: 'KyoboHand';
     font-style: normal;
-    font-size: 20px;
+    font-size: 18px;
     color: #060606;
     text-align: center;
 
