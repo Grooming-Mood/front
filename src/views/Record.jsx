@@ -134,7 +134,7 @@ function Record(props) {
                             <hr></hr>
                             <div className="record-sub-warn-content">
                                 <span>
-                                    영상 기록 시 주의사항<hr></hr>
+                                🚨 영상 기록 시 주의사항<hr></hr>
                                 </span>
                                 <span>
                                     <ul>
