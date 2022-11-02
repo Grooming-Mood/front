@@ -128,7 +128,7 @@ function Record(props) {
                             <hr></hr>
                             <div className="record-sub">
                                 <span>
-                                    Grooming Mood가 당신의 감정과 일기를 자동으로 작성해줍니다.
+                                    루밍이가 당신의 감정과 일기를 자동으로 완성해줍니다.
                                 </span>
                             </div>
                             <hr></hr>
@@ -139,16 +139,16 @@ function Record(props) {
                                 <span>
                                     <ul>
                                         <li>
-                                            PC 내 카메라와 마이크 접근을 허용해주세요.
+                                            PC 카메라/마이크 접근 허용
                                         </li>
                                         <li>
-                                            카메라는 정면을 응시해주세요.
+                                            카메라의 정면 응시
                                         </li>
                                         <li>
-                                            어두운 곳에서의 촬영은 피해주세요.
+                                            어두운 곳 지양
                                         </li>
                                         <li>
-                                            1분 미만으로 촬영해주세요.
+                                            1분 미만으로 촬영
                                         </li>
                                     </ul>
                                 </span>
