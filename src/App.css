@@ -1353,6 +1353,16 @@ button{
     margin: 0% 0% 10% 0%;
 }
 
+.result-container-right-row-first{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    flex: 1;
+    float: top;
+    flex-direction: row;
+    margin: 0% 0% 22% 0%;
+}
+
+
 
 /* CHATBOT 화면 */
 .chatbot-home {
