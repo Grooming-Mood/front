@@ -153,7 +153,7 @@ function Record(props) {
                                     </ul>
                                 </span>
                             </div>
-                            <div>
+                            <div className="record-left-stt-box">
                                 <Dictaphone></Dictaphone>
                             </div>
 
