@@ -145,9 +145,9 @@ a:visited {
 
 .record-title {
     /* font-family: 'Poppins'; */
-    font-family: 'KyoboHand';
+    /* font-family: 'KyoboHand'; */
     font-style: normal;
-    font-size: 30px;
+    font-size: 25px;
     color: #060606;
     text-align: center;
     font-weight: bold;
