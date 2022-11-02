@@ -267,6 +267,8 @@ button{
     border: 1px solid #888787;
     flex-direction: row;
     margin: 2% 2% 2% 2%;
+    width: 100%;
+    height: 100%;
 }
 
 /**회원 정보 수정 Setting 페이지**/
