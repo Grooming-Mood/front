@@ -127,15 +127,33 @@ a:visited {
 
 
 /** Record 화면 **/
+.record-container {
+    box-sizing: border-box;
+    border: 1px dashed #888787;
+    background-color: #F9F9F9;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    width: 80%;
+    height: 900px;
+    border-radius: 20px;
+    /* padding: 8% 0% 10% 0; */
+    margin: 0% 0% 3% 0%;
+}
+
 .record-title {
     /* font-family: 'Poppins'; */
     font-family: 'KyoboHand';
     font-style: normal;
     font-size: 30px;
     color: #060606;
-    text-align: left;
+    text-align: center;
     font-weight: bold;
-    margin-bottom: 2%;
+
+    margin: 2% 2% 2% 2%;
+
 }
 
 .record-sub {
@@ -144,62 +162,92 @@ a:visited {
     font-style: normal;
     font-size: 20px;
     color: #060606;
-    text-align: left;
-    margin-bottom: 2%;
+    text-align: center;
+
+    margin: 2% 2% 2% 2%;
 }
 
 .record-left{
-    box-sizing: border-box;
+    /* box-sizing: border-box;
     border: 1px dashed #888787;
-    background-color: #F9F9F9;
+    background-color: #F9F9F9; */
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 
     width: 20%;
+    /*
     height: 80%;
-    border-radius: 20px;
-    padding: 8% 0% 10% 0;
-    margin: 0% 0% 8% 0%;
+    border-radius: 20px; */
+    /* padding: 8% 0% 10% 0; */
+    margin: 5% 2% 5% 2%;
+/* 
+    flex: 1; */
+    float: center;
+    flex-direction: column;
+    
+
 }
 
 .record-right{
-    box-sizing: border-box;
+    /* box-sizing: border-box;
     border: 1px dashed #888787;
     background-color: #F9F9F9;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-
-    width: 50%;
+    justify-content: center; */
+    /* flex: 1; */
+    float: left;
+    flex-direction: column;
+    
+    width: 80%;
+    /*
     height: 80%;
-    border-radius: 20px;
-    padding: 8% 0% 10% 0;
-    margin: 0% 0% 8% 0%;
+    border-radius: 20px;*/
+    padding: 2% 0% 2% 0;
+    margin: 5% 5% 5% 5%;
+    border-left: 2px dashed #D7D7D7;
 }
 
+.record-status{
+
+    float: center;
+
+    margin: 2% 5% 2% 5%;
+
+}
+
+.button-status{
+
+    float: center;
+
+    margin: 2% 5% 2% 5%;
+
+
+}
 
 /** Record 화면 속 분석 요청 버튼**/
 button{
     cursor: pointer;
     font: inherit;
     margin: 0;
-    padding: 0;
+    padding: 0;float: center;
 }
 
 .button{
     background-color: #7a87c7;
     color: #fff;
     border: 0;
+    float: center;
     font-size: 1.5rem;
     font-weight: 200;
     padding: 0.5em 1.25em;
     border-radius: 0.5em;
+    margin: 0% 2% 3% 2%;
     z-index: 999;
     position: relative;
-    display: flex;
+    /* display: flex; */
     gap: 0.5em;
     box-shadow:
       0px 1.7px 2.2px rgba(0, 0, 0, 0.02),
