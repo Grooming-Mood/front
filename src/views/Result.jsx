@@ -55,8 +55,8 @@ function Result(props) {
                             <div className="result-container-right-row-second-date">
                                 2022/12/24 12:25
                             </div>
-                            <div className="result-container-right-row-second-content">
-                                
+                            <div className="result-container-right-row-second-content-angry">
+                                안녕
                             </div>
                         </div>
                     </div>
