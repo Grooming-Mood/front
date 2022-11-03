@@ -1381,7 +1381,6 @@ button{
 }
 
 .result-container-right-row-second-content-angry{
-    font-family: 'HSGyoulnoonkot';
     font-size: 20px;
     float: left;
     flex: 1;
@@ -1390,10 +1389,16 @@ button{
     width: 100%;
     margin: 5% 5% 5% 5%;
 }
+.result-container-right-row-second-content-angry-font{
+    font-family: 'HSGyoulnoonkot';
+    font-size: 20px;
+    float: left;
+    flex: 1;
+    direction: row;
+    margin: 5% 5% 5% 5%;
+}
 
 .result-container-right-row-second-content-happy{
-    font-family: 'KyoboHand';
-    font-size: 20px;
     float: left;
     flex: 1;
     direction: row;
@@ -1402,13 +1407,38 @@ button{
     margin: 5% 5% 5% 5%;
 }
 
+.result-container-right-row-second-content-happy-font{
+    font-family: 'KyoboHand';
+    font-size: 20px;
+    float: left;
+    flex: 1;
+    direction: row;
+    margin: 5% 5% 5% 5%;
+}
+
 .result-container-right-row-second-content-normal{
+    float: left;
+    flex: 1;
+    direction: row;
+    background-color: #C6E4E1;
+    width: 100%;
+    margin: 5% 5% 5% 5%;
+}
+
+.result-container-right-row-second-content-normal-font{
     font-family: 'GangwonEdu_OTFBoldA';
     font-size: 20px;
     float: left;
     flex: 1;
     direction: row;
-    background-color: #C6E4E1;
+    margin: 5% 5% 5% 5%;
+}
+
+.result-container-right-row-second-content-sad{
+    float: left;
+    flex: 1;
+    direction: row;
+    background-color: #D7D7D7;
     width: 100%;
     margin: 5% 5% 5% 5%;
 }
@@ -1419,19 +1449,15 @@ button{
     float: left;
     flex: 1;
     direction: row;
-    background-color: #D7D7D7;
-    width: 100%;
     margin: 5% 5% 5% 5%;
 }
 
-
 .result-container-right-row-second-update-button{
-    /* font-family: 'KyoboHand'; */
-    font-size: 20px;
+    font-size: 18px;
     flex: 1;
-    float: right;
+    float: center;
     flex-direction: row;
-    margin: 0% 0% 22% 0%;
+    margin: 5% 5% 5% 5%;
 }
 
 .result-container-right-row-thrid{
