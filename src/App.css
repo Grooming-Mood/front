@@ -1209,7 +1209,7 @@ button{
     float: left;
     flex-direction: column;
     border-right: 2px dashed #D7D7D7;
-    margin: 10% 10% 10% 5%;
+    margin: 10% 5% 10% 5%;
 }
 
 .result-container-left-row{
@@ -1358,17 +1358,21 @@ button{
     flex: 1;
     float: left;
     font-weight: bold;
+    font-display: left;
+    text-align: left;
     /* direction: row; */
+    width: 100%;
     flex-direction: row;
-    margin: 5% 5% 5% 5%;
+    margin: 5% 5% 0% 5%;
 }
 
 .result-container-right-row-second{
     /* font-family: 'KyoboHand'; */
-    flex: 1;
-    float: center;
+    /* flex: 1; */
+    /* float: center; */
     flex-direction: row;
-    margin: 5% 10% 5% 10%;
+    position: relative;
+    margin: 0% 0% 5% 0%;
 }
 
 .result-container-right-row-second-date{
@@ -1376,8 +1380,10 @@ button{
     font-size: 15px;
     flex: 1;
     float: right;
+    text-align: right;
+    width: 100%;
     flex-direction: row;
-    margin: 5% 5% 5% 5%;
+    margin: 0% 5% 5% 5%;
 }
 
 .result-container-right-row-second-content-angry{
@@ -1387,7 +1393,8 @@ button{
     direction: row;
     background-color: #F1B8B8;
     width: 100%;
-    margin: 5% 5% 5% 5%;
+    height: 300px;
+    margin: 0% 0% 5% 0%;
 }
 .result-container-right-row-second-content-angry-font{
     font-family: 'HSGyoulnoonkot';
@@ -1457,34 +1464,55 @@ button{
     flex: 1;
     float: center;
     flex-direction: row;
-    margin: 5% 5% 5% 5%;
+    margin: 5% 5% 5% 0%;
+}
+
+.result-button{
+    background-color: #797979;
+    color: #fff;
+    border: 0;
+    float: center;
+    font-size: 1.5rem;
+    font-weight: 200;
+    padding: 0.5em 1.25em;
+    border-radius: 0.5em;
+    margin: 0% 2% 3% 2%;
+    z-index: 999;
+    position: relative;
+    gap: 0.5em;
+    box-shadow:
+      0px 1.7px 2.2px rgba(0, 0, 0, 0.02),
+      0px 4px 5.3px rgba(0, 0, 0, 0.028),
+      0px 7.5px 10px rgba(0, 0, 0, 0.035),
+      0px 13.4px 17.9px rgba(0, 0, 0, 0.042),
+      0px 25.1px 33.4px rgba(0, 0, 0, 0.05),
+      0px 60px 80px rgba(0, 0, 0, 0.07);
 }
 
 .result-container-right-row-thrid{
-    /* font-family: 'KyoboHand'; */
-    font-size: 20px;
-    flex: 1;
-    float: top;
+    font-size: 17px;
+
+    float: center;
     flex-direction: row;
-    margin: 0% 0% 22% 0%;
+    margin: 0% 0% 0% 0%;
 }
 
 .result-container-right-row-thrid-select{
     /* font-family: 'KyoboHand'; */
-    font-size: 20px;
-    flex: 1;
+    font-size: 17px;
     float: center;
     flex-direction: row;
-    margin: 0% 0% 22% 0%;
+    padding: 2%;
+    width: 100%;
+    margin: 0% 0% 0% 0%;
 }
 
 .result-container-right-row-thrid-select-button{
-    /* font-family: 'KyoboHand'; */
     font-size: 20px;
-    flex: 1;
     float: center;
-    flex-direction: row;
-    margin: 0% 0% 22% 0%;
+    direction: column;
+    width: 100%;
+    margin: 0% 0% 0% 0%;
 }
 
 /* CHATBOT 화면 */

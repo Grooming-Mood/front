@@ -48,17 +48,23 @@ function Result(props) {
                         </div>
                     </div>
                     <div className="result-container-right">
-                        <span className="result-container-right-row-first">
+                        <div className="result-container-right-row-first">
                             AI 루밍이가 작성한<br/> 오늘의 일기 입니다.<br/>
-                        </span>
+                        </div>
                         <div className="result-container-right-row-second">
                             <div className="result-container-right-row-second-date">
-                                2022/12/24 12:25
+                                2022/12/24
                             </div>
                             <div className="result-container-right-row-second-content-angry">
                                 <div className="result-container-right-row-second-content-angry-font">
                                     안녕
                                 </div>
+                            </div>
+                        </div>
+                        <div className="result-container-right-row-thrid">
+                            <div className="result-container-right-row-thrid-select-button">
+                                <button className="result-button">개인 피드에 저장하기</button>
+                                <button className="result-button">공유 피드에 저장하기</button>
                             </div>
                         </div>
                     </div>
