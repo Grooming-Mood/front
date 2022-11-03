@@ -1435,8 +1435,6 @@ button{
 }
 
 .result-container-right-row-second-content-sad{
-    font-family: 'UhBeeann';
-    font-size: 20px;
     float: left;
     flex: 1;
     direction: row;
@@ -1445,6 +1443,14 @@ button{
     margin: 5% 5% 5% 5%;
 }
 
+.result-container-right-row-second-content-sad{
+    font-family: 'UhBeeann';
+    font-size: 20px;
+    float: left;
+    flex: 1;
+    direction: row;
+    margin: 5% 5% 5% 5%;
+}
 
 .result-container-right-row-second-update-button{
     /* font-family: 'KyoboHand'; */
