@@ -1473,20 +1473,20 @@ button{
 .result-container-right-row-thrid-select{
     /* font-family: 'KyoboHand'; */
     font-size: 17px;
-
     float: center;
     flex-direction: row;
     padding: 2%;
+    width: 100%;
     margin: 0% 0% 0% 0%;
 }
 
 .result-container-right-row-thrid-select-button{
-    /* font-family: 'KyoboHand'; */
     font-size: 20px;
-    flex: 1;
+
     float: center;
-    flex-direction: row;
-    margin: 0% 0% 22% 0%;
+    flex-direction: column;
+    width: 100%;
+    margin: 0% 0% 0% 0%;
 }
 
 /* CHATBOT 화면 */
