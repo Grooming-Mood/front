@@ -1387,7 +1387,8 @@ button{
     direction: row;
     background-color: #F1B8B8;
     width: 100%;
-    margin: 5% 0% 5% 0%;
+    height: 300px;
+    margin: 0% 0% 5% 0%;
 }
 .result-container-right-row-second-content-angry-font{
     font-family: 'HSGyoulnoonkot';
