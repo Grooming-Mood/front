@@ -63,8 +63,8 @@ function Result(props) {
                         </div>
                         <div className="result-container-right-row-thrid">
                             <div className="result-container-right-row-thrid-select-button">
-                                <button className="button">개인 피드에 저장하기</button>
-                                <button className="button">공유 피드에 저장하기</button>
+                                <button className="result-button">개인 피드에 저장하기</button>
+                                <button className="result-button">공유 피드에 저장하기</button>
                             </div>
                         </div>
                     </div>
