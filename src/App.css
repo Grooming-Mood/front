@@ -1204,7 +1204,6 @@ button{
 }
 
 .result-container-left{
-    /* font-family: 'KyoboHand'; */
     font-size: 20px;
     flex: 1;
     float: left;
@@ -1388,6 +1387,17 @@ button{
     flex: 1;
     direction: row;
     background-color: #F1B8B8;
+    width: 100%;
+    margin: 5% 5% 5% 5%;
+}
+
+.result-container-right-row-second-content-happy{
+    font-family: 'KyoboHand';
+    font-size: 20px;
+    float: left;
+    flex: 1;
+    direction: row;
+    background-color: #FAF4DF;
     width: 100%;
     margin: 5% 5% 5% 5%;
 }
