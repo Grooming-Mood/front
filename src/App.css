@@ -1358,18 +1358,21 @@ button{
     flex: 1;
     float: left;
     font-weight: bold;
+    font-display: left;
+    text-align: left;
     /* direction: row; */
-    /* width: 100%; */
+    width: 100%;
     flex-direction: row;
-    margin: 5% 5% 5% 5%;
+    margin: 5% 5% 0% 5%;
 }
 
 .result-container-right-row-second{
     /* font-family: 'KyoboHand'; */
-    flex: 1;
-    float: center;
+    /* flex: 1; */
+    /* float: center; */
     flex-direction: row;
-    margin: 5% 10% 5% 0%;
+    position: relative;
+    margin: 0% 0% 5% 0%;
 }
 
 .result-container-right-row-second-date{
@@ -1377,8 +1380,10 @@ button{
     font-size: 15px;
     flex: 1;
     float: right;
+    text-align: right;
+    width: 100%;
     flex-direction: row;
-    margin: 5% 5% 5% 5%;
+    margin: 0% 5% 5% 5%;
 }
 
 .result-container-right-row-second-content-angry{
@@ -1504,9 +1509,8 @@ button{
 
 .result-container-right-row-thrid-select-button{
     font-size: 20px;
-
     float: center;
-    flex-direction: column;
+    direction: column;
     width: 100%;
     margin: 0% 0% 0% 0%;
 }
