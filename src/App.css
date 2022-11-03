@@ -1204,7 +1204,6 @@ button{
 }
 
 .result-container-left{
-    /* font-family: 'KyoboHand'; */
     font-size: 20px;
     flex: 1;
     float: left;
@@ -1391,6 +1390,40 @@ button{
     width: 100%;
     margin: 5% 5% 5% 5%;
 }
+
+.result-container-right-row-second-content-happy{
+    font-family: 'KyoboHand';
+    font-size: 20px;
+    float: left;
+    flex: 1;
+    direction: row;
+    background-color: #FAF4DF;
+    width: 100%;
+    margin: 5% 5% 5% 5%;
+}
+
+.result-container-right-row-second-content-normal{
+    font-family: 'GangwonEdu_OTFBoldA';
+    font-size: 20px;
+    float: left;
+    flex: 1;
+    direction: row;
+    background-color: #C6E4E1;
+    width: 100%;
+    margin: 5% 5% 5% 5%;
+}
+
+.result-container-right-row-second-content-sad{
+    font-family: 'UhBeeann';
+    font-size: 20px;
+    float: left;
+    flex: 1;
+    direction: row;
+    background-color: #D7D7D7;
+    width: 100%;
+    margin: 5% 5% 5% 5%;
+}
+
 
 .result-container-right-row-second-update-button{
     /* font-family: 'KyoboHand'; */
