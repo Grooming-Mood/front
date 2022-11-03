@@ -62,6 +62,9 @@ function Result(props) {
                             </div>
                         </div>
                         <div className="result-container-right-row-thrid">
+                            <div className="result-container-right-row-thrid-select">
+                                저장 방식을 선택해주세요!
+                            </div>
                             <div className="result-container-right-row-thrid-select-button">
                                 <button className="result-button">개인 피드에 저장하기</button>
                                 <button className="result-button">공유 피드에 저장하기</button>
