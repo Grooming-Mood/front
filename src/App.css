@@ -1417,13 +1417,20 @@ button{
 }
 
 .result-container-right-row-second-content-normal{
-    font-family: 'GangwonEdu_OTFBoldA';
-    font-size: 20px;
     float: left;
     flex: 1;
     direction: row;
     background-color: #C6E4E1;
     width: 100%;
+    margin: 5% 5% 5% 5%;
+}
+
+.result-container-right-row-second-content-normal-font{
+    font-family: 'GangwonEdu_OTFBoldA';
+    font-size: 20px;
+    float: left;
+    flex: 1;
+    direction: row;
     margin: 5% 5% 5% 5%;
 }
 
