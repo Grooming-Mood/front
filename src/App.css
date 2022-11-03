@@ -1355,10 +1355,11 @@ button{
 .result-container-right-row-first{
     /* font-family: 'KyoboHand'; */
     font-size: 30px;
-    /* flex: 1; */
+    flex: 1;
     float: left;
     font-weight: bold;
     /* direction: row; */
+    /* width: 100%; */
     flex-direction: row;
     margin: 5% 5% 5% 5%;
 }

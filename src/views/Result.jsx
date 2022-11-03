@@ -48,11 +48,12 @@ function Result(props) {
                         </div>
                     </div>
                     <div className="result-container-right">
-                        <span className="result-container-right-row-first">
+                        <div className="result-container-right-row-first">
                             AI 루밍이가 작성한<br/> 오늘의 일기 입니다.<br/>
-                        </span>
+                        </div>
                         <div className="result-container-right-row-second">
                             <div className="result-container-right-row-second-date">
+                                2022/12/24
                             </div>
                             <div className="result-container-right-row-second-content-angry">
                                 <div className="result-container-right-row-second-content-angry-font">
@@ -65,7 +66,7 @@ function Result(props) {
                                 
                             </div>
                             <div className="result-container-right-row-thrid-select-button">
-                                
+
                             </div>
                         </div>
                     </div>
