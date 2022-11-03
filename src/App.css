@@ -1209,7 +1209,7 @@ button{
     float: left;
     flex-direction: column;
     border-right: 2px dashed #D7D7D7;
-    margin: 10% 10% 10% 5%;
+    margin: 10% 5% 10% 5%;
 }
 
 .result-container-left-row{
@@ -1368,7 +1368,7 @@ button{
     flex: 1;
     float: center;
     flex-direction: row;
-    margin: 5% 10% 5% 10%;
+    margin: 5% 10% 5% 0%;
 }
 
 .result-container-right-row-second-date{
@@ -1387,7 +1387,7 @@ button{
     direction: row;
     background-color: #F1B8B8;
     width: 100%;
-    margin: 5% 5% 5% 5%;
+    margin: 5% 0% 5% 0%;
 }
 .result-container-right-row-second-content-angry-font{
     font-family: 'HSGyoulnoonkot';
