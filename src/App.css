@@ -1453,12 +1453,11 @@ button{
 }
 
 .result-container-right-row-second-update-button{
-    /* font-family: 'KyoboHand'; */
-    font-size: 20px;
+    font-size: 18px;
     flex: 1;
-    float: right;
+    float: center;
     flex-direction: row;
-    margin: 0% 0% 22% 0%;
+    margin: 5% 5% 5% 5%;
 }
 
 .result-container-right-row-thrid{
