@@ -1355,7 +1355,7 @@ button{
 .result-container-right-row-first{
     /* font-family: 'KyoboHand'; */
     font-size: 30px;
-    flex: 1;
+    /* flex: 1; */
     float: left;
     font-weight: bold;
     /* direction: row; */
@@ -1462,21 +1462,21 @@ button{
 }
 
 .result-container-right-row-thrid{
-    /* font-family: 'KyoboHand'; */
-    font-size: 20px;
-    flex: 1;
-    float: top;
+    font-size: 17px;
+
+    float: center;
     flex-direction: row;
-    margin: 0% 0% 22% 0%;
+    margin: 0% 0% 0% 0%;
 }
 
 .result-container-right-row-thrid-select{
     /* font-family: 'KyoboHand'; */
-    font-size: 20px;
-    flex: 1;
+    font-size: 17px;
+
     float: center;
     flex-direction: row;
-    margin: 0% 0% 22% 0%;
+    padding: 2%;
+    margin: 0% 0% 0% 0%;
 }
 
 .result-container-right-row-thrid-select-button{

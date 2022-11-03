@@ -60,6 +60,14 @@ function Result(props) {
                                 </div>
                             </div>
                         </div>
+                        <div className="result-container-right-row-thrid">
+                            <div className="result-container-right-row-thrid-select">
+                                
+                            </div>
+                            <div className="result-container-right-row-thrid-select-button">
+                                
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <SideMenu></SideMenu>
