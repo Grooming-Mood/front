@@ -65,6 +65,7 @@ function AngryHome(props) {
                 <SideMenu></SideMenu>
             </div>
             <Pagination
+                style="background-color: #E6808E;"
                 activePage={page}
                 itemsCountPerPage={10}
                 totalItemsCount={450}
