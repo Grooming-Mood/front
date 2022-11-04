@@ -6,6 +6,7 @@ import React, {
 } from "react";
 import { FeedList } from "../Feed/FeedList";
 import Pagination from "react-js-pagination";
+import "../styles/pagination.css";
 
 const dummyList = [
     {
