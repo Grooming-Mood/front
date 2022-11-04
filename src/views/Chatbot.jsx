@@ -54,17 +54,22 @@ function Chatbot(props) {
             </div>
 
             <div className="chatbot-content">
-                <div className="chatbot-container">
+                {/*<div className="chatbot-container">*/}
+                {/*    */}
 
 
-                    <ChatBot className="chatbot-main"
-                        config={config}
-                        messageParser={MessageParser}
-                        actionProvider={ActionProvider}
-                    />
 
-                </div>
-                <SideMenu></SideMenu>
+
+
+                {/*</div>*/}
+
+                <ChatBot className="chatbot-container"
+                         config={config}
+                         messageParser={MessageParser}
+                         actionProvider={ActionProvider}
+                />
+                <SideMenu />
+
             </div>
         </div>
 
