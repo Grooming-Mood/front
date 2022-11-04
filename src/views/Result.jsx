@@ -175,7 +175,7 @@ function Result(props) {
     //                         <span className="result-container-left-row-third-second-feel">HAPPY</span>
     //                         <span className="result-container-left-row-third-second-bar"><img src={Progressbar} alt="Progressbar" style={{"width":"120px","hight":"120px"}}/></span>
     //                         <span className="result-container-left-row-third-second-percent">67%</span>
-    //                         <div className="result-container-left-row-third-face">세종님의 그저그런 표정이 기록되었어요.</div>
+    //                         <div className="result-container-left-row-third-face">세종님의 행복한 표정이 기록되었어요.</div>
     //                         <div className="result-container-left-row-third-voice">세종님의 평온한 목소리가 기록되었어요.</div>
     //                     </div>
     //                 </div>
