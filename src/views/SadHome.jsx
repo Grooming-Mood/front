@@ -1,7 +1,12 @@
 import { Link, withRouter } from "react-router-dom";
 import SideMenu from "./SideMenu";
-import React from "react";
+import React, {
+    useEffect,
+    useState,
+} from "react";
 import { FeedList } from "../Feed/FeedList";
+import Pagination from "react-js-pagination";
+
 
 const dummyList = [
     {
@@ -34,6 +39,11 @@ const dummyList = [
 ];
 
 function SadHome(props) {
+    const [page, setPage] = useState(1);
+    const handlePageChange = (page) => {
+        setPage(page);
+    };
+
     return (
         <div className="sad-home">
 
@@ -55,6 +65,15 @@ function SadHome(props) {
                 </div>
                 <SideMenu></SideMenu>
             </div>
+            <Pagination
+                activePage={page}
+                itemsCountPerPage={10}
+                totalItemsCount={450}
+                pageRangeDisplayed={5}
+                prevPageText={"‹"}
+                nextPageText={"›"}
+                onChange={handlePageChange}
+            />
         </div>
 
     );

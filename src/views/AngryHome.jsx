@@ -1,9 +1,11 @@
 import { Link, withRouter } from "react-router-dom";
 import SideMenu from "./SideMenu";
-import React, {useEffect, useState} from "react";
-import { useInView } from "react-intersection-observer";
-import axios from "axios";
+import React, {
+    useEffect,
+    useState,
+} from "react";
 import { FeedList } from "../Feed/FeedList";
+import Pagination from "react-js-pagination";
 
 const dummyList = [
     {
@@ -36,20 +38,13 @@ const dummyList = [
 ];
 
 function AngryHome(props) {
-    const [ items, setItems ] = useState([])
-    const [ page, setPage ] = useState(1)
-    const [ loading, setLoading ] = useState(false)
-
-    const [ ref, inView ] = useInView()
-
-    useEffect(() => {
-        if(inView && !loading) {
-            setPage(prevState => prevState + 1)
-        }
-    }, [inView, loading])
+    const [page, setPage] = useState(1);
+    const handlePageChange = (page) => {
+        setPage(page);
+    };
 
     return (
-        <div ref={ref} className="angry-home">
+        <div className="angry-home">
 
             <div className="angry-home-header">
                 <Link to="/" className="angry-header-link">GroomingMood</Link>
@@ -69,6 +64,15 @@ function AngryHome(props) {
                 </div>
                 <SideMenu></SideMenu>
             </div>
+            <Pagination
+                activePage={page}
+                itemsCountPerPage={10}
+                totalItemsCount={450}
+                pageRangeDisplayed={5}
+                prevPageText={"‹"}
+                nextPageText={"›"}
+                onChange={handlePageChange}
+            />
         </div>
 
     );
