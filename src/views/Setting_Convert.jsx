@@ -20,7 +20,26 @@ function Setting_Convert(){
     };
 
     //사용자 프로필사진 변경 (변경된 프사는 <newimage>에 저장됨)
-    let [profile, setProfile] = useState(User);
+    let [newimage, setNewimage] = useState(User);
+    const fileInput = useRef(null)
+
+    const onChange = (e) => {
+
+        if (e.target.files[0]){
+            setNewimage(e.target.files[0])}
+        else{ 
+            setNewimage(User)
+            return}
+
+        const reader = new FileReader();
+        reader.onload = () => {
+            if(reader.readyState ===2 ){
+                setNewimage(reader.result)
+            }
+        }
+        reader.readAsDataURL(e.target.files[0])
+
+    }
 
 
 
@@ -48,16 +67,22 @@ function Setting_Convert(){
 
 
 
-                    <img src={profile} style={{"width":"200px","hight":"200px"}}></img>
+                    <img 
+                        src={newimage} 
+                        style={{"width":"200px","hight":"200px"}}
+                        onClick = { ()=>{fileInput.current.click()}}
+                    ></img>
                     <br></br><br></br>
 
 
 
                     <div style={{fontSize:"15px"}}>
                         프로필 사진
-                        <input type="file" accept="image/*" id="profileImage" ></input>
+                        <input type="file" onChange={onChange} ref={fileInput} accept="image/*" name="profile_img" ></input>
                     </div>
                     <br></br>
+                    
+                    
                     
 
 
@@ -69,6 +94,12 @@ function Setting_Convert(){
 
 
                     <div style={{fontFamily:"KyoboHand", fontSize:"30px"}}>{newname}님의 정보가 수정되었습니다.</div>
+
+
+                    <div>
+                        <button className="button"><span>저장</span></button>
+                    </div>
+
 
                 </div>
                     <SideMenu></SideMenu>

@@ -13,6 +13,7 @@ import SadHome from "./views/SadHome";
 import AngryHome from "./views/AngryHome";
 import NormalHome from "./views/NormalHome";
 import Chatbot from "./views/Chatbot";
+import Login from "./views/Login";
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
             <div className="App">
               <div className="content">
                   <Route path="/" component={ Home } exact />
+                  <Route path="/my-page" component={Login} exact /> {/*로그인*/}
 
                   <Route path="/feed" component={ Feed } exact />
                   <Route path="/happy-feed" component={ HappyHome }/>
