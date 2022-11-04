@@ -7,6 +7,7 @@ import MessageParser from '../bot/MessageParser';
 import ActionProvider from '../bot/ActionProvider';
 import "react-chatbot-kit/build/main.css";
 import "../styles/chatbot.css";
+import "remixicon/fonts/remixicon.css";
 
 const steps = [
     {
