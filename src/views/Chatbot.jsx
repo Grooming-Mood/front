@@ -2,38 +2,56 @@ import { Link, withRouter } from "react-router-dom";
 import SideMenu from "./SideMenu";
 import React, { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import axios from "axios";
-import { FeedList } from "../Feed/FeedList";
+import ChatBot from 'react-chatbot-kit';
+import config from '../bot/config.js';
+import MessageParser from '../bot/MessageParser';
+import ActionProvider from '../bot/ActionProvider';
 
-const dummyList = [
+
+const steps = [
     {
-        "createdDate": "2022-10-31T07:29:57.732Z",
-        "diaryContent": "하이1",
-        "diaryId": 1,
-        "feeling": "ANGRY",
-        "profileImg": "",
-        "userName": "doha1",
-        "likes" : 5,
+        id : 1,
+        message: `안녕 나는 챗봇이야`,
+        trigger: '1',
     },
     {
-        "createdDate": "2022-10-31T07:29:57.732Z",
-        "diaryContent": "하이2",
-        "diaryId": 2,
-        "feeling": "ANGRY",
-        "profileImg": "",
-        "userName": "doha2",
-        "likes" : 5,
+        id : 2,
+        message: `안녕 나 오늘 그럭저럭함`,
+        trigger: '1',
     },
     {
-        "createdDate": "2022-10-31T07:29:57.732Z",
-        "diaryContent": "하이3",
-        "diaryId": 3,
-        "feeling": "ANGRY",
-        "profileImg": "",
-        "userName": "doha3",
-        "likes" : 5,
+        id : 3,
+        message: `그렇군요 다음의 서비스를 이용해볼까요?`,
+        trigger: '2',
+    },
+    {
+        id : 4,
+        options: [
+            { value: 1, label: '음악추천', trigger: '3' },
+        ],
+    },
+    {
+        id : 5,
+        component: (
+          <div>
+              <a>돌아가기</a>
+              <a>연결하기</a>
+          </div>
+        ),
     },
 ];
+
+const theme = {
+    background: '#f5f8fb',
+    fontFamily: 'Helvetica Nenu',
+    headerBgColor: '#EF6C00',
+    headerFontColor: '#fff',
+    headerFontSize: '15px',
+    botBubbleColor: '#F29F05',
+    botFontColor: '#fff',
+    userBubbleColor: "#fff",
+    userFontColor: "#4a4a4a",
+}
 
 function Chatbot(props) {
     const [ items, setItems ] = useState([])
@@ -59,7 +77,12 @@ function Chatbot(props) {
             <div className="chatbot-content">
                 <div className="chatbot-container">
 
-                    {/*<FeedList dataList={dummyList}  />*/}
+
+                    <ChatBot
+                        config={config}
+                        messageParser={MessageParser}
+                        actionProvider={ActionProvider}
+                    />
 
                 </div>
                 <SideMenu></SideMenu>
