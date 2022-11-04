@@ -1,5 +1,5 @@
 import React, { useEffect,useState, useRef } from 'react';
-import { withRouter, Link } from "react-router-dom";
+import { withRouter, Link, useLocation } from "react-router-dom";
 import SideMenu from "./SideMenu";
 import {useReactMediaRecorder} from "react-media-recorder";
 import axios from 'axios';
@@ -23,38 +23,23 @@ const VideoPreview = ({ stream }) => {
   };
 
 
-//음성인식 컴포넌트
-const Dictaphone = () =>{
-    const {
-        transcript,
-        listening,
-        resetTranscript,
-        browserSupportsSpeechRecognition
-      } = useSpeechRecognition();
 
-    if (!browserSupportsSpeechRecognition) {
-        return <span>Browser doesn't support speech recognition.</span>;
-    }
-
-    return(
-        <div>
-            <p>mic: {listening ? 'on' : 'off'}</p>
-            <p>{transcript}</p>
-            <button onClick={resetTranscript}>Record Reset</button>
-        </div>
-    );
-    
-};
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 //화면
 function Record(props) {
-
+    const [dictation, setDictation] = useState("음성인식 된 내용");//음성인식 STT 내용
     const [videoFilePath, setVideoFilePath] = useState(null); //업로드 받은 파일
     const { status, startRecording, stopRecording, mediaBlobUrl, previewStream } = useReactMediaRecorder({video:true, audio:true});
     const [isRecording, setIsRecording] = useState(false);
+    const {
+        transcript,
+        listening,
+        resetTranscript,
+        browserSupportsSpeechRecognition
+    } = useSpeechRecognition();
 
 
 
@@ -65,10 +50,31 @@ function Record(props) {
     };
     const handleStopRecording = () => {
         setIsRecording(false);
-        
         stopRecording();
+        setDictation(transcript); //음성인식된 대본 저장
         
     };
+
+
+
+    //음성인식 컴포넌트
+    const Dictaphone = () =>{
+
+        if (!browserSupportsSpeechRecognition) {
+            return <span>Browser doesn't support speech recognition.</span>;
+        }
+
+        return(
+            <div>
+                <p>mic: {listening ? 'on' : 'off'}</p>
+                <p>{transcript}</p>
+                <button onClick={resetTranscript}>Record Reset</button>
+            </div>
+        );
+        
+    };
+
+
 
     
     //영상 분석 요청 버튼 클릭 이벤트
@@ -203,11 +209,13 @@ function Record(props) {
                         </div>
 
 
-
-
-
                         <div>
-                            <Link to="/result">
+                            <Link to={{
+                                pathname: "/result",
+                                state: { 
+                                    data: {dictation}
+                                }
+                            }}>
                                 <div className="button-status">
                                 <button className="button">
                                     <span>👩‍💻</span>
