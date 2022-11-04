@@ -2,11 +2,11 @@ import { Link, withRouter } from "react-router-dom";
 import SideMenu from "./SideMenu";
 import React, { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import ChatBot from 'react-chatbot-kit';
+import ChatBot from "react-chatbot-kit";
 import config from '../bot/config.js';
 import MessageParser from '../bot/MessageParser';
 import ActionProvider from '../bot/ActionProvider';
-
+import "react-chatbot-kit/build/main.css";
 
 const steps = [
     {
@@ -41,33 +41,11 @@ const steps = [
     },
 ];
 
-const theme = {
-    background: '#f5f8fb',
-    fontFamily: 'Helvetica Nenu',
-    headerBgColor: '#EF6C00',
-    headerFontColor: '#fff',
-    headerFontSize: '15px',
-    botBubbleColor: '#F29F05',
-    botFontColor: '#fff',
-    userBubbleColor: "#fff",
-    userFontColor: "#4a4a4a",
-}
 
 function Chatbot(props) {
-    const [ items, setItems ] = useState([])
-    const [ page, setPage ] = useState(1)
-    const [ loading, setLoading ] = useState(false)
-
-    const [ ref, inView ] = useInView()
-
-    useEffect(() => {
-        if(inView && !loading) {
-            setPage(prevState => prevState + 1)
-        }
-    }, [inView, loading])
 
     return (
-        <div ref={ref} className="chatbot-home">
+        <div className="chatbot-home">
 
             <div className="chatbot-home-header">
                 <Link to="/" className="chatbot-header-link">GroomingMood</Link>
@@ -78,7 +56,7 @@ function Chatbot(props) {
                 <div className="chatbot-container">
 
 
-                    <ChatBot
+                    <ChatBot className="chatbot-main"
                         config={config}
                         messageParser={MessageParser}
                         actionProvider={ActionProvider}

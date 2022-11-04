@@ -1,20 +1,12 @@
-import React from 'react';
+class MessageParser {
+    constructor(actionProvider, state) {
+        this.actionProvider = actionProvider;
+        this.state = state;
+    }
 
-const MessageParser = ({ children, actions }) => {
-    const parse = (message) => {
+    parse(message) {
         console.log(message);
-    };
-
-    return (
-        <div>
-            {React.Children.map(children, (child) => {
-                return React.cloneElement(child, {
-                    parse: parse,
-                    actions: {},
-                });
-            })}
-        </div>
-    );
-};
+    }
+}
 
 export default MessageParser;
