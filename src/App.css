@@ -1424,12 +1424,14 @@ button{
 }
 
 .result-container-right-row-second-content-normal{
+    font-size: 20px;
     float: left;
     flex: 1;
     direction: row;
     background-color: #C6E4E1;
     width: 100%;
-    margin: 5% 5% 5% 5%;
+    height: 300px;
+    margin: 0% 0% 5% 0%;
 }
 
 .result-container-right-row-second-content-normal-font{
@@ -1442,17 +1444,20 @@ button{
 }
 
 .result-container-right-row-second-content-sad{
+    font-size: 20px;
     float: left;
     flex: 1;
     direction: row;
     background-color: #D7D7D7;
     width: 100%;
-    margin: 5% 5% 5% 5%;
+    height: 300px;
+    margin: 0% 0% 5% 0%;
 }
 
-.result-container-right-row-second-content-sad{
+.result-container-right-row-second-content-sad-font{
     font-family: 'UhBeeann';
-    font-size: 20px;
+    font-size: 29px;
+
     float: left;
     flex: 1;
     direction: row;
