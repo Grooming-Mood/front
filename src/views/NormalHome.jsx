@@ -6,7 +6,7 @@ import React, {
 } from "react";
 import { FeedList } from "../Feed/FeedList";
 import Pagination from "react-js-pagination";
-
+import "../styles/normal-pagination.css";
 
 const dummyList = [
     {
@@ -65,15 +65,17 @@ function NormalHome(props) {
                 </div>
                 <SideMenu></SideMenu>
             </div>
-            <Pagination
-                activePage={page}
-                itemsCountPerPage={10}
-                totalItemsCount={450}
-                pageRangeDisplayed={5}
-                prevPageText={"‹"}
-                nextPageText={"›"}
-                onChange={handlePageChange}
-            />
+            <div className="normal-pagination">
+                <Pagination
+                    activePage={page}
+                    itemsCountPerPage={10}
+                    totalItemsCount={450}
+                    pageRangeDisplayed={5}
+                    prevPageText={"‹"}
+                    nextPageText={"›"}
+                    onChange={handlePageChange}
+                />
+            </div>
         </div>
 
     );

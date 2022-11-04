@@ -6,6 +6,7 @@ import React, {
 } from "react";
 import { FeedList } from "../Feed/FeedList";
 import Pagination from "react-js-pagination";
+import "../styles/angry-pagination.css";
 
 const dummyList = [
     {
@@ -64,16 +65,17 @@ function AngryHome(props) {
                 </div>
                 <SideMenu></SideMenu>
             </div>
-            <Pagination
-                style="background-color: #E6808E;"
-                activePage={page}
-                itemsCountPerPage={10}
-                totalItemsCount={450}
-                pageRangeDisplayed={5}
-                prevPageText={"‹"}
-                nextPageText={"›"}
-                onChange={handlePageChange}
-            />
+            <div className="angry-pagination">
+                <Pagination className="angry-pagination"
+                    activePage={page}
+                    itemsCountPerPage={10}
+                    totalItemsCount={450}
+                    pageRangeDisplayed={5}
+                    prevPageText={"‹"}
+                    nextPageText={"›"}
+                    onChange={handlePageChange}
+                />
+            </div>
         </div>
 
     );
