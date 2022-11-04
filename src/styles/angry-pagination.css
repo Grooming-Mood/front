@@ -1,14 +1,14 @@
-.pagination {
+.angry-pagination .pagination {
     display: flex;
     justify-content: center;
-    background-color: #22BA8E;
     padding-bottom: 5%;
+    background-color: #E6808E;
 }
 
-ul {
+.angry-pagination ul {
     margin: 0;
     list-style: none;
-    background-color: #22BA8E;
+    background-color: #E6808E;
 }
 
 ul.pagination li {

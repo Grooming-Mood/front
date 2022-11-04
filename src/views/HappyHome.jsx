@@ -6,7 +6,7 @@ import React, {
 } from "react";
 import { FeedList } from "../Feed/FeedList";
 import Pagination from "react-js-pagination";
-import "../styles/pagination.css";
+import "../styles/happy-pagination.css";
 
 const dummyList = [
     {
@@ -65,16 +65,17 @@ function HappyHome(props) {
                 </div>
                 <SideMenu></SideMenu>
             </div>
-
-            <Pagination
-                activePage={page}
-                itemsCountPerPage={10}
-                totalItemsCount={450}
-                pageRangeDisplayed={5}
-                prevPageText={"‹"}
-                nextPageText={"›"}
-                onChange={handlePageChange}
-            />
+            <div className="happy-pagination">
+                <Pagination
+                    activePage={page}
+                    itemsCountPerPage={10}
+                    totalItemsCount={450}
+                    pageRangeDisplayed={5}
+                    prevPageText={"‹"}
+                    nextPageText={"›"}
+                    onChange={handlePageChange}
+                />
+            </div>
         </div>
 
     );
