@@ -4,6 +4,9 @@ import SideMenu from "./SideMenu";
 import {useReactMediaRecorder} from "react-media-recorder";
 import axios from 'axios';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
+
+
+
 //미리보기 영상 컴포넌트
 const VideoPreview = ({ stream }) => {
     const videoRef = useRef(null);
@@ -35,11 +38,9 @@ const Dictaphone = () =>{
 
     return(
         <div>
-            <p>마이크 상태: {listening ? 'on' : 'off'}</p>
-            <button onClick={SpeechRecognition.startListening({continuous: true, language: 'ko'})}>Start</button>
-            <button onClick={SpeechRecognition.stopListening}>Stop</button>
-            <button onClick={resetTranscript}>Reset</button>
-            <p>{transcript}</p> 
+            <p>mic: {listening ? 'on' : 'off'}</p>
+            <p>{transcript}</p>
+            <button onClick={resetTranscript}>Record Reset</button>
         </div>
     );
     
@@ -165,10 +166,15 @@ function Record(props) {
                         <div >
                             <div>
                                 <div className="button-status">
-                                    <button className="button" onClick={() => handleStartRecording()}>일기 기록 시작</button>
-                                    <button className="button" onClick={() => handleStopRecording()}>일기 기록 종료</button>
+                                    <button className="button" onClick={ () => {
+                                        handleStartRecording()
+                                        SpeechRecognition.startListening({continuous: true, language: 'ko'})
+                                    }}>일기 기록 시작</button>
+                                    <button className="button" onClick={ () => {
+                                        handleStopRecording()
+                                        SpeechRecognition.stopListening()
+                                    }}>일기 기록 종료</button>
                                 </div>
-                                <div className="record-status">현재 영상 녹화 상태: {status}</div>
                                 {isRecording && <VideoPreview stream={previewStream} width={500} height={500} />}
                                 {!isRecording && (<video id="recorded" src={mediaBlobUrl} width={500} height={500} controls autoPlay loop />)}
                                 <p>녹화 영상 url = {mediaBlobUrl}</p>
