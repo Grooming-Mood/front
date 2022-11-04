@@ -1,12 +1,12 @@
 import { Link, withRouter } from "react-router-dom";
 import SideMenu from "./SideMenu";
 import React, { useEffect, useState } from "react";
-import { useInView } from "react-intersection-observer";
 import ChatBot from "react-chatbot-kit";
 import config from '../bot/config.js';
 import MessageParser from '../bot/MessageParser';
 import ActionProvider from '../bot/ActionProvider';
 import "react-chatbot-kit/build/main.css";
+import "../styles/chatbot.css";
 
 const steps = [
     {
