@@ -341,6 +341,7 @@ button{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    background-color: #22BA8E;
 }
 
 .feed-container {
@@ -349,7 +350,7 @@ button{
     background-color: #F9F9F9;
 
     width: 80%;
-    height: 700px;
+    height: 900px;
     border-radius: 20px;
     padding: 8% 0% 10% 0;
     margin: 0% 0% 8% 0%;
@@ -832,7 +833,6 @@ button{
     display: flex;
     flex-direction: row;
     justify-content: center;
-
 }
 
 .result-happy-container {
@@ -957,15 +957,15 @@ button{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    background-color: #E6808E;
 }
 
 .angry-container {
     box-sizing: border-box;
     border: 1px dashed #888787;
     background-color: #F9F9F9;
-
     width: 80%;
-    height: 700px;
+    height: 900px;
     border-radius: 20px;
     padding: 8% 0% 10% 0;
     margin: 0% 0% 8% 0%;
@@ -1025,15 +1025,15 @@ button{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    background-color: #91B1E3;
 }
 
 .sad-container {
     box-sizing: border-box;
     border: 1px dashed #888787;
     background-color: #F9F9F9;
-
+    height: 900px;
     width: 80%;
-    height: 700px;
     border-radius: 20px;
     padding: 8% 0% 10% 0;
     margin: 0% 0% 8% 0%;
@@ -1093,15 +1093,15 @@ button{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    background-color: #CCE3E2;
 }
 
 .normal-container {
     box-sizing: border-box;
     border: 1px dashed #888787;
     background-color: #F9F9F9;
-
+    height: 900px;
     width: 80%;
-    height: 700px;
     border-radius: 20px;
     padding: 8% 0% 10% 0;
     margin: 0% 0% 8% 0%;
@@ -1161,6 +1161,7 @@ button{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    background-color: #FAE992;
 }
 
 .happy-container {
@@ -1169,7 +1170,7 @@ button{
     background-color: #F9F9F9;
 
     width: 80%;
-    height: 700px;
+    height: 900px;
     border-radius: 20px;
     padding: 8% 0% 10% 0;
     margin: 0% 0% 8% 0%;
