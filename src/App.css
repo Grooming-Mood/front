@@ -1318,7 +1318,7 @@ button{
 
 .result-container-left-row-third-face{
     /* font-family: 'KyoboHand'; */
-    font-size: 18px;
+    font-size: 20px;
     flex: 1;
     float: center;
     flex-direction: row;
@@ -1327,11 +1327,11 @@ button{
 
 .result-container-left-row-third-voice{
     /* font-family: 'KyoboHand'; */
-    font-size: 18px;
+    font-size: 20px;
     flex: 1;
     float: center;
     flex-direction: row;
-    margin: 5% 0% 5% 2%;
+    margin: 3% 0% 5% 2%;
 }
 
 .result-container-right{
