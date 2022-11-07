@@ -27,15 +27,6 @@ const dummyList = [
         "userName": "doha2",
         "likes" : 5,
     },
-    {
-        "createdDate": "2022-10-31T07:29:57.732Z",
-        "diaryContent": "하이3",
-        "diaryId": 3,
-        "feeling": "ANGRY",
-        "profileImg": "",
-        "userName": "doha3",
-        "likes" : 5,
-    },
 ];
 
 function Feed(props) {
