@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import {
     convertIcon,
     convertImage
@@ -6,7 +6,24 @@ import {
 import dateFormat from "dateformat";
 
 
+
 export const FeedList = ({ dataList }) => {
+    const [like, setLike] = useState(false)
+
+    useEffect(async() => {
+        const fetchData = async () => {
+            // const res = await axios.get(...)
+            // if (res.data.likes > 0) setLike(true)
+            setLike(true);
+        }
+        await fetchData()
+    }, []);
+
+    const toggleLike = async (e) => {
+        // const res = await axios.post(...) // [POST] 사용자가 좋아요를 누름
+        setLike(!like)
+    }
+
     return (
         <div>
             <div>
@@ -34,7 +51,7 @@ export const FeedList = ({ dataList }) => {
 
                             <div className="data-likes">
                                 {
-                                    (convertIcon(it.feeling))
+                                    (convertIcon(it.feeling, toggleLike))
                                 }
                                 <span>( { it.likes } )</span>
                             </div>
