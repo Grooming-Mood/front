@@ -7,13 +7,13 @@ import Setting_Convert from "./views/Setting_Convert";
 import Result from "./views/Result";
 import './App.css';
 import Feed from "./views/Feed";
-import Calendar from "./views/Calendar";
 import HappyHome from "./views/HappyHome";
 import SadHome from "./views/SadHome";
 import AngryHome from "./views/AngryHome";
 import NormalHome from "./views/NormalHome";
 import Chatbot from "./views/Chatbot";
 import Login from "./views/Login";
+import Chart from "./views/Chart";
 
 function App() {
     return (
@@ -29,7 +29,7 @@ function App() {
                   <Route path="/angry-feed" component={ AngryHome }/>
                   <Route path="/nomal-feed" component={ NormalHome }/>
 
-                  <Route path="/calendar" component={ Calendar } exact />
+                  <Route path="/chart" component={ Chart } exact />
                   <Route path="/record" component={ Record } exact /> {/*레코드 화면*/}
                   <Route path="/setting" component={ Setting } exact /> {/*회원 정보 수정*/}
                   <Route path="/setting_convert" component={ Setting_Convert } exact /> {/*회원 정보 프사, 닉네임 수정*/}
