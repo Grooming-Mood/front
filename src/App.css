@@ -24,6 +24,13 @@ a:visited {
     color: #000;
 }
 
+button {
+    background-color: #F9F9F9;
+    display: inline-block;
+    border: none;
+    width: 25%;
+}
+
 /** Main Home **/
 .home {
     /*display: flex;*/
