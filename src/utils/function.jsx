@@ -37,20 +37,20 @@ function convertImage(feeling) {
 const ICON = styled.img`
   width: 10%;
 `;
-function convertIcon(feeling) {
+function convertIcon(feeling, onClick) {
 
     switch (feeling) {
         case 'HAPPY':
-            return <ICON src={ HAPPYICON } alt="happy-icon"/>;
+            return <ICON src={ HAPPYICON } alt="happy-icon" onClick={ onClick }/>;
 
         case 'ANGRY':
-            return <ICON src={ ANGRYICON } alt="angry-icon"/>;
+            return <ICON src={ ANGRYICON } alt="angry-icon" onClick={ onClick }/>;
 
         case 'NORMAL':
-            return <ICON src={ NORMALICON } alt="normal-icon"/>;
+            return <ICON src={ NORMALICON } alt="normal-icon" onClick={ onClick }/>;
 
         case 'SAD':
-            return <ICON src={ SADICON } alt="sad-icon"/>;
+            return <ICON src={ SADICON } alt="sad-icon" onClick={ onClick }/>;
 
         default:
             return;
