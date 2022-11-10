@@ -30,6 +30,8 @@ const VideoPreview = ({ stream }) => {
 
 //화면
 function Record(props) {
+
+    const [Emotion, setEmotion] = useState(1); //유저의 감정 
     const [dictation, setDictation] = useState("음성인식 된 내용");//음성인식 STT 내용
     const [videoFilePath, setVideoFilePath] = useState(null); //업로드 받은 파일
     const { status, startRecording, stopRecording, mediaBlobUrl, previewStream } = useReactMediaRecorder({video:true, audio:true});
@@ -68,7 +70,8 @@ function Record(props) {
             <div>
                 <p>mic: {listening ? 'on' : 'off'}</p>
                 <p>{transcript}</p>
-                <button onClick={resetTranscript}>Record Reset</button>
+                <button onClick={resetTranscript}>reset</button>
+
             </div>
         );
         
@@ -177,9 +180,9 @@ function Record(props) {
                                         SpeechRecognition.stopListening()
                                     }}>일기 기록 종료</button>
                                 </div>
-                                {isRecording && <VideoPreview stream={previewStream} width={500} height={500} />}
-                                {!isRecording && (<video id="recorded" src={mediaBlobUrl} width={500} height={500} controls autoPlay loop />)}
-                                <p>녹화 영상 url = {mediaBlobUrl}</p>
+                                {isRecording && <VideoPreview stream={previewStream} width={800} height={500} />}
+                                {!isRecording && (<video id="recorded" src={mediaBlobUrl} width={800} height={500} controls autoPlay loop />)}
+                                <p> {mediaBlobUrl}</p>
                             </div>
                         </div>
 
@@ -209,7 +212,8 @@ function Record(props) {
                             <Link to={{
                                 pathname: "/result",
                                 state: { 
-                                    data: {dictation}
+                                    data: {dictation},
+                                    emotion: {Emotion}
                                 }
                             }}>
                                 <div className="button-status">
