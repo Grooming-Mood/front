@@ -36,12 +36,10 @@ function Feed(props) {
     const handlePageChange = (page) => {
         setPage(page);
     };
-    // http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/
 
     useState(() => {
-        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feed-diary/all`)
+        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feed-diary/happy`)
             .then((res) => {
-                console.log(res.data);
                 set_feed(res.data.diaryList);
             })
     }, [])
