@@ -26,8 +26,8 @@ function SideMenu() {
                   </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                  <Nav.Link to="/calendar">
-                      Cal
+                  <Nav.Link to="/chart">
+                      Chart
                   </Nav.Link>
               </Nav.Item>
               <Nav.Item>

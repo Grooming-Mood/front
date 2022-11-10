@@ -24,6 +24,13 @@ a:visited {
     color: #000;
 }
 
+button {
+    background-color: #F9F9F9;
+    display: inline-block;
+    border: none;
+    width: 25%;
+}
+
 /** Main Home **/
 .home {
     /*display: flex;*/
@@ -432,8 +439,9 @@ button{
 }
 
 .calendar {
-    width: 90%;
-    height: 110%;
+    width: 70%;
+    height: 70%;
+
 }
 .calendar .header {
     width: 100%;

@@ -7,6 +7,7 @@ import React, {
 import { FeedList } from "../Feed/FeedList";
 import Pagination from "react-js-pagination";
 import "../styles/happy-pagination.css";
+import axios from "axios";
 
 const dummyList = [
     {
@@ -27,22 +28,21 @@ const dummyList = [
         "userName": "doha2",
         "likes" : 5,
     },
-    {
-        "createdDate": "2022-10-31T07:29:57.732Z",
-        "diaryContent": "하이3",
-        "diaryId": 3,
-        "feeling": "HAPPY",
-        "profileImg": "",
-        "userName": "doha3",
-        "likes" : 5,
-    },
 ];
 
 function HappyHome(props) {
     const [page, setPage] = useState(1);
+    const [feed, set_feed] = useState([]);
     const handlePageChange = (page) => {
         setPage(page);
     };
+
+    useState(() => {
+        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feed-diary/all`)
+            .then((res) => {
+                set_feed(res.data.diaryList);
+            })
+    }, []);
 
     return (
         <div className="happy-home">
@@ -60,7 +60,7 @@ function HappyHome(props) {
                         </h2>
                     </div>
 
-                    <FeedList dataList={dummyList}  />
+                    <FeedList dataList={feed}  />
 
                 </div>
                 <SideMenu></SideMenu>

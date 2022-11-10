@@ -9,40 +9,6 @@ import "react-chatbot-kit/build/main.css";
 import "../styles/chatbot.css";
 import "remixicon/fonts/remixicon.css";
 
-const steps = [
-    {
-        id : 1,
-        message: `안녕 나는 챗봇이야`,
-        trigger: '1',
-    },
-    {
-        id : 2,
-        message: `안녕 나 오늘 그럭저럭함`,
-        trigger: '1',
-    },
-    {
-        id : 3,
-        message: `그렇군요 다음의 서비스를 이용해볼까요?`,
-        trigger: '2',
-    },
-    {
-        id : 4,
-        options: [
-            { value: 1, label: '음악추천', trigger: '3' },
-        ],
-    },
-    {
-        id : 5,
-        component: (
-          <div>
-              <a>돌아가기</a>
-              <a>연결하기</a>
-          </div>
-        ),
-    },
-];
-
-
 function Chatbot(props) {
 
     return (
