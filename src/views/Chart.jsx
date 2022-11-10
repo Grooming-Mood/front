@@ -1,27 +1,25 @@
-import React, { useState, Component } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, withRouter } from "react-router-dom";
 import SideMenu from "./SideMenu";
-import { addMonths, subMonths } from "date-fns";
-import { RenderDays } from "../Calendar/RenderDays";
-import { RenderCells } from "../Calendar/RenderCells";
-import { CalendarHeader } from "../Calendar/CalendarHeader";
 import ApexCharts from "react-apexcharts";
 
 
+const dummyList = [{
+    "lastweek" : [19, 26, 20, 9]
+}, {
+    "todayweek": [30, 26, 34, 10]
+}];
+
+
 function Chart(props){
-    const [currentMonth, setCurrentMonth] = useState(new Date());
-    const [selectedDate, setSelectedDate] = useState(new Date());
 
-    const prevMonth = () => {
-        setCurrentMonth(subMonths(currentMonth, 1));
-    };
-    const nextMonth = () => {
-        setCurrentMonth(addMonths(currentMonth, 1));
-    };
-
-    const onDateClick = (day) => {
-        setSelectedDate(day);
-    };
+    // useEffect(() => {
+    //     axios.get(`${origin.express}/project/issue/list/${project_id}`)
+    //         .then((res) => {
+    //             console.log(res);
+    //             set_issues(res.data.list);
+    //         })
+    // }, [])
 
     return (
 
@@ -41,10 +39,10 @@ function Chart(props){
                                 type="bar"
                                 series={ [
                                     { name: "저번주 감정 통계",
-                                        data: [19, 26, 20, 9],
+                                        data: dummyList[0].lastweek,
                                     },
                                     { name: "이번주 감정 통계",
-                                        data: [30, 26, 34, 10],
+                                        data: dummyList[1].todayweek,
                                     },
                                 ]}
                                 options={{
