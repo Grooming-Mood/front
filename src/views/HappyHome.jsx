@@ -42,7 +42,7 @@ function HappyHome(props) {
             .then((res) => {
                 set_feed(res.data.diaryList);
             })
-    }, [])
+    }, []);
 
     return (
         <div className="happy-home">
