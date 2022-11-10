@@ -24,41 +24,45 @@ export const FeedList = ({ dataList }) => {
         setLike(!like)
     }
 
-    return (
-        <div>
+
+
+    if(dataList.length > 0) {
+        return (
             <div>
-                {dataList.map((it) => {
-                    return (
+                <div>
+                    {dataList.map((it) => {
+                        return (
 
-                        <div className="data-container"
-                             key = {it.diaryId}>
+                            <div className="data-container"
+                                 key = {it.diaryId}>
 
-                            <div className="data-image">
-                                {
-                                    (convertImage(it.feeling))
-                                }
+                                <div className="data-image">
+                                    {
+                                        (convertImage(it.feeling))
+                                    }
+                                </div>
+
+                                <div className="data-content">
+                                    <span className="data-content-user-name"> { it.userName }</span>
+                                    <br/>
+                                    <span>{ it.diaryContent }</span>
+                                </div>
+
+                                <div className="data-date">
+                                    <span>{ dateFormat(it.createdDate, "yyyy-mm-dd HH:mm") }</span>
+                                </div>
+
+                                <div className="data-likes">
+                                    {
+                                        (convertIcon(it.feeling, toggleLike))
+                                    }
+                                    <span>( { it.likes } )</span>
+                                </div>
                             </div>
-
-                            <div className="data-content">
-                                <span className="data-content-user-name"> { it.userName }</span>
-                                <br/>
-                                <span>{ it.diaryContent }</span>
-                            </div>
-
-                            <div className="data-date">
-                                <span>{ dateFormat(it.createdDate, "yyyy-mm-dd HH:mm") }</span>
-                            </div>
-
-                            <div className="data-likes">
-                                {
-                                    (convertIcon(it.feeling, toggleLike))
-                                }
-                                <span>( { it.likes } )</span>
-                            </div>
-                        </div>
-                    );
-                })}
+                        );
+                    })}
+                </div>
             </div>
-        </div>
-    );
+        );
+    }
 };
