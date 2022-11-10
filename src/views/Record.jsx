@@ -87,22 +87,18 @@ function Record(props) {
 
     //Flask api 요청 (******현재 오류남....)
     const loadFlaskapi = (event) => {
+        event.preventDefault();
         let formData = new FormData();
-
         formData.append("file",videoFilePath); // 분석할 동영상
-        for (let key of formData.keys()){
-            console.log(key, ":", formData.get(key));
-        }
 
-        const options= {
-            method:"post",
-            url: "http://127.0.0.1:5000/predict_face",
-            data: formData,
-            headers: {"Content-Type" : "multipart/form-data"}
-        }
+        for (let key of formData.keys()){
+            console.log(key, "전송될 데이터", formData.get(key));
+        } //formdata 확인
         
-        axios(options)
-            .then(response => console.log(response));
+        const res = axios.get("http://127.0.0.1:5000/test");
+        console.log("끝");
+        console.log(res);
+        
     };
     
 
@@ -188,7 +184,7 @@ function Record(props) {
                         </div>
 
 
-                        <form action="http://127.0.0.1:5000/predict_face" method='POST' encType='multipart/form-data'>
+                        <form action="http://127.0.0.1:5000/recog_emotion" method='POST' encType='multipart/form-data'>
                             <input type="file" name="file" onChange={handleVideoUpload}></input>
                             <button type="submit">
                                 <span>👩‍💻</span>
