@@ -13,272 +13,288 @@ import Progressbar from "../assets/image/result/progressbar.png";
 
 class Result extends React.Component {
 
-    
-    /**
-     *  결과가 화난 감정 일 경우
-     */
-    // return (
 
-    //     <div className="result-angry">
-
-    //         <div className="result-angry-header"> {/*헤더*/}
-    //             <Link to="/" className="result-angry-header-link">GroomingMood</Link>
-    //             <p>당신의 감정을<br/>어루만지는 AI 일기</p>
-    //         </div>
-    //         <div className="home-content">
-    //             <div className="result-container">
-    //                 <div className="result-container-left">
-    //                     <div className="result-container-left-row-first">
-    //                         <div className="result-container-left-row-first-left">
-    //                             AI 루밍이가 분석한<br/> 오늘의 일기입니다!<br/>
-    //                         </div>
-    //                         <div className="result-container-left-row-first-right">
-    //                             <img src={AngryIcon} alt="Angry" style={{"width":"150px","hight":"150px"}}/>
-    //                             <br/>
-    //                         </div>
-    //                     </div>
-    //                     <div className="result-container-left-row-second">
-    //                         <p>오늘 세종님은 67% 확률로 화난 날입니다.<br/></p>
-                            
-    //                     </div>
-    //                     <div className="result-container-left-row-third">
-    //                         <div className="result-container-left-row-third-first">AI 루밍이의 분석결과<br/></div>
-    //                         <span className="result-container-left-row-third-second-feel">ANGRY</span>
-    //                         <span className="result-container-left-row-third-second-bar"><img src={Progressbar} alt="Progressbar" style={{"width":"120px","hight":"120px"}}/></span>
-    //                         <span className="result-container-left-row-third-second-percent">67%</span>
-    //                         <div className="result-container-left-row-third-face">세종님의 화난 표정이 기록되었어요.</div>
-    //                         <div className="result-container-left-row-third-voice">세종님의 평온한 목소리가 기록되었어요.</div>
-    //                     </div>
-    //                 </div>
-    //                 <div className="result-container-right">
-    //                     <div className="result-container-right-row-first">
-    //                         AI 루밍이가 작성한<br/> 오늘의 일기 입니다.<br/>
-    //                     </div>
-    //                     <div className="result-container-right-row-second">
-    //                         <div className="result-container-right-row-second-date">
-    //                             2022/12/24
-    //                         </div>
-    //                         <div className="result-container-right-row-second-content-angry">
-    //                             <div className="result-container-right-row-second-content-angry-font">
-    //                                 안녕
-    //                             </div>
-    //                         </div>
-    //                     </div>
-    //                     <div className="result-container-right-row-thrid">
-    //                         <div className="result-container-right-row-thrid-select">
-    //                             저장 방식을 선택해주세요!
-    //                         </div>
-    //                         <div className="result-container-right-row-thrid-select-button">
-    //                             <button className="result-button">개인 피드에 저장하기</button>
-    //                             <button className="result-button">공유 피드에 저장하기</button>
-    //                         </div>
-    //                     </div>
-    //                 </div>
-    //             </div>
-    //             <SideMenu></SideMenu>
-    //         </div>
-    //     </div>
-    // );
-
-    /**
-     *  결과가 평범 감정 일 경우
-     */
-    // return (
-    //     <div className="result-normal">
-    //         <div className="result-normal-header"> {/*헤더*/}
-    //             <Link to="/" className="result-normal-header-link">GroomingMood</Link>
-    //             <p>당신의 감정을<br/>어루만지는 AI 일기</p>
-    //         </div>
-    //         <div className="home-content">
-    //             <div className="result-container">
-    //                 <div className="result-container-left">
-    //                     <div className="result-container-left-row-first">
-    //                         <div className="result-container-left-row-first-left">
-    //                             AI 루밍이가 분석한<br/> 오늘의 일기입니다!<br/>
-    //                         </div>
-    //                         <div className="result-container-left-row-first-right">
-    //                             <img src={NormalIcon} alt="Normal" style={{"width":"150px","hight":"150px"}}/>
-    //                             <br/>
-    //                         </div>
-    //                     </div>
-    //                     <div className="result-container-left-row-second">
-    //                         <p>오늘 세종님은 67% 확률로 그저그런 날입니다.<br/></p>
-                            
-    //                     </div>
-    //                     <div className="result-container-left-row-third">
-    //                         <div className="result-container-left-row-third-first">AI 루밍이의 분석결과<br/></div>
-    //                         <span className="result-container-left-row-third-second-feel">NORMAL</span>
-    //                         <span className="result-container-left-row-third-second-bar"><img src={Progressbar} alt="Progressbar" style={{"width":"120px","hight":"120px"}}/></span>
-    //                         <span className="result-container-left-row-third-second-percent">67%</span>
-    //                         <div className="result-container-left-row-third-face">세종님의 그저그런 표정이 기록되었어요.</div>
-    //                         <div className="result-container-left-row-third-voice">세종님의 평온한 목소리가 기록되었어요.</div>
-    //                     </div>
-    //                 </div>
-    //                 <div className="result-container-right">
-    //                     <div className="result-container-right-row-first">
-    //                         AI 루밍이가 작성한<br/> 오늘의 일기 입니다.<br/>
-    //                     </div>
-    //                     <div className="result-container-right-row-second">
-    //                         <div className="result-container-right-row-second-date">
-    //                             2022/12/24
-    //                         </div>
-    //                         <div className="result-container-right-row-second-content-normal">
-    //                             <div className="result-container-right-row-second-content-normal-font">
-    //                                 안녕
-    //                             </div>
-    //                         </div>
-    //                     </div>
-    //                     <div className="result-container-right-row-thrid">
-    //                         <div className="result-container-right-row-thrid-select">
-    //                             저장 방식을 선택해주세요!
-    //                         </div>
-    //                         <div className="result-container-right-row-thrid-select-button">
-    //                             <button className="result-button">개인 피드에 저장하기</button>
-    //                             <button className="result-button">공유 피드에 저장하기</button>
-    //                         </div>
-    //                     </div>
-    //                 </div>
-    //             </div>
-    //             <SideMenu></SideMenu>
-    //         </div>
-    //     </div>
-    // );
-
-    /**
-     *  결과가 행복 감정 일 경우
-     */
-    // return (
-
-    //     <div className="result-happy">
-
-    //         <div className="result-happy-header"> {/*헤더*/}
-    //             <Link to="/" className="result-happy-header-link">GroomingMood</Link>
-    //             <p>당신의 감정을<br/>어루만지는 AI 일기</p>
-    //         </div>
-    //         <div className="home-content">
-    //             <div className="result-container">
-    //                 <div className="result-container-left">
-    //                     <div className="result-container-left-row-first">
-    //                         <div className="result-container-left-row-first-left">
-    //                             AI 루밍이가 분석한<br/> 오늘의 일기입니다!<br/>
-    //                         </div>
-    //                         <div className="result-container-left-row-first-right">
-    //                             <img src={HappyIcon} alt="Happy" style={{"width":"150px","hight":"150px"}}/>
-    //                             <br/>
-    //                         </div>
-    //                     </div>
-    //                     <div className="result-container-left-row-second">
-    //                         <p>오늘 세종님은 67% 확률로 행복한 날입니다.<br/></p>
-                            
-    //                     </div>
-    //                     <div className="result-container-left-row-third">
-    //                         <div className="result-container-left-row-third-first">AI 루밍이의 분석결과<br/></div>
-    //                         <span className="result-container-left-row-third-second-feel">HAPPY</span>
-    //                         <span className="result-container-left-row-third-second-bar"><img src={Progressbar} alt="Progressbar" style={{"width":"120px","hight":"120px"}}/></span>
-    //                         <span className="result-container-left-row-third-second-percent">67%</span>
-    //                         <div className="result-container-left-row-third-face">세종님의 행복한 표정이 기록되었어요.</div>
-    //                         <div className="result-container-left-row-third-voice">세종님의 평온한 목소리가 기록되었어요.</div>
-    //                     </div>
-    //                 </div>
-    //                 <div className="result-container-right">
-    //                     <div className="result-container-right-row-first">
-    //                         AI 루밍이가 작성한<br/> 오늘의 일기 입니다.<br/>
-    //                     </div>
-    //                     <div className="result-container-right-row-second">
-    //                         <div className="result-container-right-row-second-date">
-    //                             2022/12/24
-    //                         </div>
-    //                         <div className="result-container-right-row-second-content-happy">
-    //                             <div className="result-container-right-row-second-content-happy-font">
-    //                                 안녕
-    //                             </div>
-    //                         </div>
-    //                     </div>
-    //                     <div className="result-container-right-row-thrid">
-    //                         <div className="result-container-right-row-thrid-select">
-    //                             저장 방식을 선택해주세요!
-    //                         </div>
-    //                         <div className="result-container-right-row-thrid-select-button">
-    //                             <button className="result-button">개인 피드에 저장하기</button>
-    //                             <button className="result-button">공유 피드에 저장하기</button>
-    //                         </div>
-    //                     </div>
-    //                 </div>
-    //             </div>
-    //             <SideMenu></SideMenu>
-    //         </div>
-    //     </div>
-    // );
-
-    /**
-     *  결과가 슬픔 감정 일 경우
-     */
     render(){
-        console.log("location은:",this.props.location);
-        const dictation = this.props.location.state.data.dictation;
+        
+        const dictation = this.props.location.state.data.dictation; //사용자의 음성인식된 일기 내용
+        const emotion = this.props.location.state.emotion.Emotion; //사용자의 감정인식된 감정
+        
 
-        return (
+        //감정 0 - happy
+        if(emotion==0){ 
+            return (
 
-            <div className="result-sad">
-
-                <div className="result-sad-header"> {/*헤더*/}
-                    <Link to="/" className="result-sad-header-link">GroomingMood</Link>
-                    <p>당신의 감정을<br/>어루만지는 AI 일기</p>
-                </div>
-                <div className="home-content">
-                    <div className="result-container">
-                        <div className="result-container-left">
-                            <div className="result-container-left-row-first">
-                                <div className="result-container-left-row-first-left">
-                                    AI 루밍이가 분석한<br/> 오늘의 일기입니다!<br/>
+                <div className="result-happy">
+        
+                    <div className="result-happy-header"> {/*헤더*/}
+                        <Link to="/" className="result-happy-header-link">GroomingMood</Link>
+                        <p>당신의 감정을<br/>어루만지는 AI 일기</p>
+                    </div>
+                    <div className="home-content">
+                        <div className="result-container">
+                            <div className="result-container-left">
+                                <div className="result-container-left-row-first">
+                                    <div className="result-container-left-row-first-left">
+                                        AI 루밍이가 분석한<br/> 오늘의 일기입니다!<br/>
+                                    </div>
+                                    <div className="result-container-left-row-first-right">
+                                        <img src={HappyIcon} alt="Happy" style={{"width":"150px","hight":"150px"}}/>
+                                        <br/>
+                                    </div>
                                 </div>
-                                <div className="result-container-left-row-first-right">
-                                    <img src={SadIcon} alt="Sad" style={{"width":"150px","hight":"150px"}}/>
-                                    <br/>
+                                <div className="result-container-left-row-second">
+                                    <p>오늘 세종님은 67% 확률로 행복한 날입니다.<br/></p>
+                                    
+                                </div>
+                                <div className="result-container-left-row-third">
+                                    <div className="result-container-left-row-third-first">AI 루밍이의 분석결과<br/></div>
+                                    <span className="result-container-left-row-third-second-feel">HAPPY</span>
+                                    <span className="result-container-left-row-third-second-bar"><img src={Progressbar} alt="Progressbar" style={{"width":"120px","hight":"120px"}}/></span>
+                                    <span className="result-container-left-row-third-second-percent">67%</span>
+                                    <div className="result-container-left-row-third-face">세종님의 행복한 표정이 기록되었어요.</div>
+                                    <div className="result-container-left-row-third-voice">세종님의 평온한 목소리가 기록되었어요.</div>
                                 </div>
                             </div>
-                            <div className="result-container-left-row-second">
-                                <p>오늘 세종님은 67% 확률로 슬픈 날입니다.<br/></p>
-                                
-                            </div>
-                            <div className="result-container-left-row-third">
-                                <div className="result-container-left-row-third-first">AI 루밍이의 분석결과<br/></div>
-                                <span className="result-container-left-row-third-second-feel">SAD</span>
-                                <span className="result-container-left-row-third-second-bar"><img src={Progressbar} alt="Progressbar" style={{"width":"120px","hight":"120px"}}/></span>
-                                <span className="result-container-left-row-third-second-percent">67%</span>
-                                <div className="result-container-left-row-third-face">세종님의 슬픈 표정이 기록되었어요.</div>
-                                <div className="result-container-left-row-third-voice">세종님의 슬픈 목소리가 기록되었어요.</div>
-                            </div>
-                        </div>
-                        <div className="result-container-right">
-                            <div className="result-container-right-row-first">
-                                AI 루밍이가 작성한<br/> 오늘의 일기 입니다.<br/>
-                            </div>
-                            <div className="result-container-right-row-second">
-                                <div className="result-container-right-row-second-date">
-                                    2022/12/24
+                            <div className="result-container-right">
+                                <div className="result-container-right-row-first">
+                                    AI 루밍이가 작성한<br/> 오늘의 일기 입니다.<br/>
                                 </div>
-                                <div className="result-container-right-row-second-content-sad">
-                                    <div className="result-container-right-row-second-content-sad-font">
-                                        {dictation}
+                                <div className="result-container-right-row-second">
+                                    <div className="result-container-right-row-second-date">
+                                        2022/12/24
+                                    </div>
+                                    <div className="result-container-right-row-second-content-happy">
+                                        <div className="result-container-right-row-second-content-happy-font">
+                                            {dictation}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="result-container-right-row-thrid">
+                                    <div className="result-container-right-row-thrid-select">
+                                        저장 방식을 선택해주세요!
+                                    </div>
+                                    <div className="result-container-right-row-thrid-select-button">
+                                        <button className="result-button">개인 피드에 저장하기</button>
+                                        <button className="result-button">공유 피드에 저장하기</button>
                                     </div>
                                 </div>
                             </div>
-                            <div className="result-container-right-row-thrid">
-                                <div className="result-container-right-row-thrid-select">
-                                    저장 방식을 선택해주세요!
+                        </div>
+                        <SideMenu></SideMenu>
+                    </div>
+                </div>
+            );
+
+        }
+
+
+
+
+
+
+        // 감정 1 - neutral
+        else if(emotion==1){ //neutral
+            return (
+                <div className="result-normal">
+                    <div className="result-normal-header"> {/*헤더*/}
+                        <Link to="/" className="result-normal-header-link">GroomingMood</Link>
+                        <p>당신의 감정을<br/>어루만지는 AI 일기</p>
+                    </div>
+                    <div className="home-content">
+                        <div className="result-container">
+                            <div className="result-container-left">
+                                <div className="result-container-left-row-first">
+                                    <div className="result-container-left-row-first-left">
+                                        AI 루밍이가 분석한<br/> 오늘의 일기입니다!<br/>
+                                    </div>
+                                    <div className="result-container-left-row-first-right">
+                                        <img src={NormalIcon} alt="Normal" style={{"width":"150px","hight":"150px"}}/>
+                                        <br/>
+                                    </div>
                                 </div>
-                                <div className="result-container-right-row-thrid-select-button">
-                                    <button className="result-button">개인 피드에 저장하기</button>
-                                    <button className="result-button">공유 피드에 저장하기</button>
+                                <div className="result-container-left-row-second">
+                                    <p>오늘 세종님은 67% 확률로 그저그런 날입니다.<br/></p>
+                                    
+                                </div>
+                                <div className="result-container-left-row-third">
+                                    <div className="result-container-left-row-third-first">AI 루밍이의 분석결과<br/></div>
+                                    <span className="result-container-left-row-third-second-feel">NORMAL</span>
+                                    <span className="result-container-left-row-third-second-bar"><img src={Progressbar} alt="Progressbar" style={{"width":"120px","hight":"120px"}}/></span>
+                                    <span className="result-container-left-row-third-second-percent">67%</span>
+                                    <div className="result-container-left-row-third-face">세종님의 그저그런 표정이 기록되었어요.</div>
+                                    <div className="result-container-left-row-third-voice">세종님의 평온한 목소리가 기록되었어요.</div>
+                                </div>
+                            </div>
+                            <div className="result-container-right">
+                                <div className="result-container-right-row-first">
+                                    AI 루밍이가 작성한<br/> 오늘의 일기 입니다.<br/>
+                                </div>
+                                <div className="result-container-right-row-second">
+                                    <div className="result-container-right-row-second-date">
+                                        2022/12/24
+                                    </div>
+                                    <div className="result-container-right-row-second-content-normal">
+                                        <div className="result-container-right-row-second-content-normal-font">
+                                            {dictation}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="result-container-right-row-thrid">
+                                    <div className="result-container-right-row-thrid-select">
+                                        저장 방식을 선택해주세요!
+                                    </div>
+                                    <div className="result-container-right-row-thrid-select-button">
+                                        <button className="result-button">개인 피드에 저장하기</button>
+                                        <button className="result-button">공유 피드에 저장하기</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <SideMenu></SideMenu>
                     </div>
-                    <SideMenu></SideMenu>
                 </div>
-            </div>
-        );
+            );
+
+        }
+
+
+
+
+        //감정 2 -sad 
+        else if(emotion==2){ //sad
+            return (
+
+                <div className="result-sad">
+    
+                    <div className="result-sad-header"> {/*헤더*/}
+                        <Link to="/" className="result-sad-header-link">GroomingMood</Link>
+                        <p>당신의 감정을<br/>어루만지는 AI 일기</p>
+                    </div>
+                    <div className="home-content">
+                        <div className="result-container">
+                            <div className="result-container-left">
+                                <div className="result-container-left-row-first">
+                                    <div className="result-container-left-row-first-left">
+                                        AI 루밍이가 분석한<br/> 오늘의 일기입니다!<br/>
+                                    </div>
+                                    <div className="result-container-left-row-first-right">
+                                        <img src={SadIcon} alt="Sad" style={{"width":"150px","hight":"150px"}}/>
+                                        <br/>
+                                    </div>
+                                </div>
+                                <div className="result-container-left-row-second">
+                                    <p>오늘 세종님은 67% 확률로 슬픈 날입니다.<br/></p>
+                                    
+                                </div>
+                                <div className="result-container-left-row-third">
+                                    <div className="result-container-left-row-third-first">AI 루밍이의 분석결과<br/></div>
+                                    <span className="result-container-left-row-third-second-feel">SAD</span>
+                                    <span className="result-container-left-row-third-second-bar"><img src={Progressbar} alt="Progressbar" style={{"width":"120px","hight":"120px"}}/></span>
+                                    <span className="result-container-left-row-third-second-percent">67%</span>
+                                    <div className="result-container-left-row-third-face">세종님의 슬픈 표정이 기록되었어요.</div>
+                                    <div className="result-container-left-row-third-voice">세종님의 슬픈 목소리가 기록되었어요.</div>
+                                </div>
+                            </div>
+                            <div className="result-container-right">
+                                <div className="result-container-right-row-first">
+                                    AI 루밍이가 작성한<br/> 오늘의 일기 입니다.<br/>
+                                </div>
+                                <div className="result-container-right-row-second">
+                                    <div className="result-container-right-row-second-date">
+                                        2022/12/24
+                                    </div>
+                                    <div className="result-container-right-row-second-content-sad">
+                                        <div className="result-container-right-row-second-content-sad-font">
+                                            {dictation}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="result-container-right-row-thrid">
+                                    <div className="result-container-right-row-thrid-select">
+                                        저장 방식을 선택해주세요!
+                                    </div>
+                                    <div className="result-container-right-row-thrid-select-button">
+                                        <button className="result-button">개인 피드에 저장하기</button>
+                                        <button className="result-button">공유 피드에 저장하기</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <SideMenu></SideMenu>
+                    </div>
+                </div>
+            );
+        }
+
+
+
+        //감정 3 - angry
+        else if(emotion==3){ //angry
+            return (
+
+                <div className="result-angry">
+        
+                    <div className="result-angry-header"> {/*헤더*/}
+                        <Link to="/" className="result-angry-header-link">GroomingMood</Link>
+                        <p>당신의 감정을<br/>어루만지는 AI 일기</p>
+                    </div>
+                    <div className="home-content">
+                        <div className="result-container">
+                            <div className="result-container-left">
+                                <div className="result-container-left-row-first">
+                                    <div className="result-container-left-row-first-left">
+                                        AI 루밍이가 분석한<br/> 오늘의 일기입니다!<br/>
+                                    </div>
+                                    <div className="result-container-left-row-first-right">
+                                        <img src={AngryIcon} alt="Angry" style={{"width":"150px","hight":"150px"}}/>
+                                        <br/>
+                                    </div>
+                                </div>
+                                <div className="result-container-left-row-second">
+                                    <p>오늘 세종님은 67% 확률로 화난 날입니다.<br/></p>
+                                    
+                                </div>
+                                <div className="result-container-left-row-third">
+                                    <div className="result-container-left-row-third-first">AI 루밍이의 분석결과<br/></div>
+                                    <span className="result-container-left-row-third-second-feel">ANGRY</span>
+                                    <span className="result-container-left-row-third-second-bar"><img src={Progressbar} alt="Progressbar" style={{"width":"120px","hight":"120px"}}/></span>
+                                    <span className="result-container-left-row-third-second-percent">67%</span>
+                                    <div className="result-container-left-row-third-face">세종님의 화난 표정이 기록되었어요.</div>
+                                    <div className="result-container-left-row-third-voice">세종님의 평온한 목소리가 기록되었어요.</div>
+                                </div>
+                            </div>
+                            <div className="result-container-right">
+                                <div className="result-container-right-row-first">
+                                    AI 루밍이가 작성한<br/> 오늘의 일기 입니다.<br/>
+                                </div>
+                                <div className="result-container-right-row-second">
+                                    <div className="result-container-right-row-second-date">
+                                        2022/12/24
+                                    </div>
+                                    <div className="result-container-right-row-second-content-angry">
+                                        <div className="result-container-right-row-second-content-angry-font">
+                                            {dictation}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="result-container-right-row-thrid">
+                                    <div className="result-container-right-row-thrid-select">
+                                        저장 방식을 선택해주세요!
+                                    </div>
+                                    <div className="result-container-right-row-thrid-select-button">
+                                        <button className="result-button">개인 피드에 저장하기</button>
+                                        <button className="result-button">공유 피드에 저장하기</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <SideMenu></SideMenu>
+                    </div>
+                </div>
+            );
+
+        }
+        
     }
 }
 
