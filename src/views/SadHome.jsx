@@ -56,7 +56,7 @@ function SadHome(props) {
                 <div className="sad-container">
                     <div className="sad-diary-container">
                         <h2 className="sad-diary-title">
-                            나의 감정일기
+                            SAD 감정 일기
                         </h2>
                     </div>
 

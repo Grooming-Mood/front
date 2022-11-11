@@ -56,7 +56,7 @@ function AngryHome(props) {
                 <div className="angry-container">
                     <div className="angry-diary-container">
                         <h2 className="angry-diary-title">
-                            나의 감정일기
+                            ANGRY 감정 일기
                         </h2>
                     </div>
 

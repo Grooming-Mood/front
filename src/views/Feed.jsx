@@ -8,41 +8,25 @@ import { FeedList } from "../Feed/FeedList";
 import Pagination from "react-js-pagination";
 import "../styles/pagination.css";
 import axios from "axios";
-
-const dummyList = [
-    {
-        "createdDate": "2022-10-31T07:29:57.732Z",
-        "diaryContent": "하이1",
-        "diaryId": 1,
-        "feeling": "ANGRY",
-        "profileImg": "",
-        "userName": "doha1",
-        "likes" : 5,
-    },
-    {
-        "createdDate": "2022-10-31T07:29:57.732Z",
-        "diaryContent": "하이2",
-        "diaryId": 2,
-        "feeling": "ANGRY",
-        "profileImg": "",
-        "userName": "doha2",
-        "likes" : 5,
-    },
-];
+import Button from "./Button";
 
 function Feed(props) {
-    const [page, setPage] = useState(1);
+    const [page, set_page] = useState(1);
     const [feed, set_feed] = useState([]);
+    const [myfeed, set_myfeed] = useState([]);
+    const [userId, set_userId] = useState(0);
+    const [button, set_button] = useState(false);
+
     const handlePageChange = (page) => {
-        setPage(page);
+        set_page(page);
     };
 
     useState(() => {
         axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feed-diary/happy`)
             .then((res) => {
                 set_feed(res.data.diaryList);
-            })
-    }, [])
+            });
+    }, []);
 
     return (
         <div className="home">
@@ -52,11 +36,12 @@ function Feed(props) {
                 <p>당신의 감정을<br/>어루만지는 AI 일기</p>
             </div>
 
+
             <div className="feed-content">
                 <div className="feed-container">
                     <div className="diary-container">
                         <h2 className="diary-title">
-                            나의 감정일기
+                            전체 감정 일기
                         </h2>
                     </div>
 
