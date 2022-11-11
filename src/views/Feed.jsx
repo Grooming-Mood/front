@@ -22,8 +22,9 @@ function Feed(props) {
     };
 
     useState(() => {
-        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feed-diary/happy`)
+        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feed-diary/all-paging?cursor=1&size=3`)
             .then((res) => {
+                console.log(res.data);
                 set_feed(res.data.diaryList);
             });
     }, []);
