@@ -30,6 +30,8 @@ const VideoPreview = ({ stream }) => {
 
 //화면
 function Record(props) {
+
+    const [Emotion, setEmotion] = useState(1); //유저의 감정 
     const [dictation, setDictation] = useState("음성인식 된 내용");//음성인식 STT 내용
     const [videoFilePath, setVideoFilePath] = useState(null); //업로드 받은 파일
     const { status, startRecording, stopRecording, mediaBlobUrl, previewStream } = useReactMediaRecorder({video:true, audio:true});
@@ -68,7 +70,8 @@ function Record(props) {
             <div>
                 <p>mic: {listening ? 'on' : 'off'}</p>
                 <p>{transcript}</p>
-                <button onClick={resetTranscript}>Record Reset</button>
+                <button onClick={resetTranscript}>reset</button>
+
             </div>
         );
         
@@ -87,22 +90,18 @@ function Record(props) {
 
     //Flask api 요청 (******현재 오류남....)
     const loadFlaskapi = (event) => {
+        event.preventDefault();
         let formData = new FormData();
-
         formData.append("file",videoFilePath); // 분석할 동영상
-        for (let key of formData.keys()){
-            console.log(key, ":", formData.get(key));
-        }
 
-        const options= {
-            method:"post",
-            url: "http://127.0.0.1:5000/predict_face",
-            data: formData,
-            headers: {"Content-Type" : "multipart/form-data"}
-        }
+        for (let key of formData.keys()){
+            console.log(key, "전송될 데이터", formData.get(key));
+        } //formdata 확인
         
-        axios(options)
-            .then(response => console.log(response));
+        const res = axios.get("http://127.0.0.1:5000/test");
+        console.log("끝");
+        console.log(res);
+        
     };
     
 
@@ -181,14 +180,14 @@ function Record(props) {
                                         SpeechRecognition.stopListening()
                                     }}>일기 기록 종료</button>
                                 </div>
-                                {isRecording && <VideoPreview stream={previewStream} width={500} height={500} />}
-                                {!isRecording && (<video id="recorded" src={mediaBlobUrl} width={500} height={500} controls autoPlay loop />)}
-                                <p>녹화 영상 url = {mediaBlobUrl}</p>
+                                {isRecording && <VideoPreview stream={previewStream} width={800} height={500} />}
+                                {!isRecording && (<video id="recorded" src={mediaBlobUrl} width={800} height={500} controls autoPlay loop />)}
+                                <p> {mediaBlobUrl}</p>
                             </div>
                         </div>
 
 
-                        <form action="http://127.0.0.1:5000/predict_face" method='POST' encType='multipart/form-data'>
+                        <form action="http://127.0.0.1:5000/recog_emotion" method='POST' encType='multipart/form-data'>
                             <input type="file" name="file" onChange={handleVideoUpload}></input>
                             <button type="submit">
                                 <span>👩‍💻</span>
@@ -213,7 +212,8 @@ function Record(props) {
                             <Link to={{
                                 pathname: "/result",
                                 state: { 
-                                    data: {dictation}
+                                    data: {dictation},
+                                    emotion: {Emotion}
                                 }
                             }}>
                                 <div className="button-status">
