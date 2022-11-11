@@ -56,7 +56,7 @@ function NormalHome(props) {
                 <div className="normal-container">
                     <div className="normal-diary-container">
                         <h2 className="normal-diary-title">
-                            나의 감정일기
+                            NORMAL 감정 일기
                         </h2>
                     </div>
 

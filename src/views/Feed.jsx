@@ -56,7 +56,7 @@ function Feed(props) {
                 <div className="feed-container">
                     <div className="diary-container">
                         <h2 className="diary-title">
-                            나의 감정일기
+                            전체 감정 일기
                         </h2>
                     </div>
 
