@@ -224,7 +224,6 @@ class Result extends React.Component {
                     </div>
                 </div>
             );
- 
         }
 
 
