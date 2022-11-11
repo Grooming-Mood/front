@@ -24,8 +24,6 @@ export const FeedList = ({ dataList }) => {
         setLike(!like)
     }
 
-
-
     if(dataList.length > 0) {
         return (
             <div>
