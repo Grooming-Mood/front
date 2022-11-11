@@ -56,7 +56,7 @@ function HappyHome(props) {
                 <div className="happy-container">
                     <div className="happy-diary-container">
                         <h2 className="happy-diary-title">
-                            나의 감정일기
+                            HAPPY 감정 일기
                         </h2>
                     </div>
 
