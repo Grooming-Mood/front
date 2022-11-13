@@ -1,15 +1,17 @@
- import React, { useLayoutEffect } from "react";
+import React, { useLayoutEffect } from "react";
 import { withRouter, Link , useLocation} from "react-router-dom";
 import SideMenu from "./SideMenu";
 import SadIcon from "../assets/image/splash/sad-icon.png";
 import NormalIcon from "../assets/image/splash/normal-icon.png";
 import HappyIcon from "../assets/image/splash/happy-icon.png";
 import AngryIcon from "../assets/image/splash/angry-icon.png";
-import ChatbotIcon from "../assets/image/splash/chatbot-icon.png";
-import SettingIcon from "../assets/image/splash/setting-icon.png";
 import Progressbar from "../assets/image/result/progressbar.png";
+import axios from "axios";
 
-
+async function postDiary({userId}) {
+    const response = await axios.post(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/​my-diary​/${userId}`)
+    return response.data;
+}
 
 class Result extends React.Component {
 
@@ -17,8 +19,8 @@ class Result extends React.Component {
     render(){
         
         const dictation = this.props.location.state.data.dictation; //사용자의 음성인식된 일기 내용
+
         const emotion = this.props.location.state.emotion.Emotion; //사용자의 감정인식된 감정
-        
 
         //감정 0 - happy
         if(emotion==0){ 

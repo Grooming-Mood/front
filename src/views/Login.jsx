@@ -6,25 +6,13 @@ import User from "../assets/image/user/user.png";
 import UserUpdate from "../assets/image/user/user_update.png";
 import Logout from "../assets/image/user/logout.png";
 
-
-
-
-
-
-
-
-
-
 function Login(props) {
 
     //아이디, 패스워드
     const [inputId, setInputId] = useState("");
     const [inputPw, setInputPw] = useState("");
-
     const handleInputId = (e) => { setInputId(e.target.value);};
     const handleInputPw = (e) => { setInputPw(e.target.value);};
-    
-
 
     //로그인 Axios 통신
     const onClickLogin = () => {
@@ -58,7 +46,6 @@ function Login(props) {
             .catch();
     };
     
-
 
 
 
