@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from "react";
+import React from "react";
 import { withRouter, Link } from "react-router-dom";
 import axios from 'axios';
 import SideMenu from "./SideMenu";

@@ -1,5 +1,5 @@
-import React, { useLayoutEffect } from "react";
-import { withRouter, Link , useLocation} from "react-router-dom";
+import React,{ useState } from "react";
+import { withRouter, Link } from "react-router-dom";
 import SideMenu from "./SideMenu";
 import SadIcon from "../assets/image/splash/sad-icon.png";
 import NormalIcon from "../assets/image/splash/normal-icon.png";
@@ -28,6 +28,11 @@ class Result extends React.Component {
     
     render(){
         const userId = 3;
+        var dt = new Date();
+        var year = dt.getFullYear();
+        var month = dt.getMonth()+1;
+        var date = dt.getDate();
+        var nowTime = year+'/'+month+'/'+date
         const dictation = this.props.location.state.data.dictation; //사용자의 음성인식된 일기 내용
 
         const emotion = this.props.location.state.emotion.Emotion; //사용자의 감정인식된 감정
@@ -104,7 +109,7 @@ class Result extends React.Component {
                                 </div>
                                 <div className="result-container-right-row-second">
                                     <div className="result-container-right-row-second-date">
-                                        2022/12/24
+                                        {nowTime}
                                     </div>
                                     <div className="result-container-right-row-second-content-happy">
                                         <div className="result-container-right-row-second-content-happy-font">
@@ -168,7 +173,7 @@ class Result extends React.Component {
                                 </div>
                                 <div className="result-container-right-row-second">
                                     <div className="result-container-right-row-second-date">
-                                        2022/12/24
+                                        {nowTime}
                                     </div>
                                     <div className="result-container-right-row-second-content-normal">
                                         <div className="result-container-right-row-second-content-normal-font">
@@ -232,7 +237,7 @@ class Result extends React.Component {
                                 </div>
                                 <div className="result-container-right-row-second">
                                     <div className="result-container-right-row-second-date">
-                                        2022/12/24
+                                        {nowTime}
                                     </div>
                                     <div className="result-container-right-row-second-content-sad">
                                         <div className="result-container-right-row-second-content-sad-font">
@@ -296,7 +301,7 @@ class Result extends React.Component {
                                 </div>
                                 <div className="result-container-right-row-second">
                                     <div className="result-container-right-row-second-date">
-                                        2022/12/24
+                                        {nowTime}
                                     </div>
                                     <div className="result-container-right-row-second-content-angry">
                                         <div className="result-container-right-row-second-content-angry-font">
