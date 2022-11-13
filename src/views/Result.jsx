@@ -8,19 +8,60 @@ import AngryIcon from "../assets/image/splash/angry-icon.png";
 import Progressbar from "../assets/image/result/progressbar.png";
 import axios from "axios";
 
-async function postDiary({userId}) {
-    const response = await axios.post(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/​my-diary​/${userId}`)
-    return response.data;
-}
+// async function postPulicDiary({userId}) {
+//     try {
+//       //응답 성공 
+//     const response = await axios.post(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/​my-diary​/${userId}`,{
+//         //보내고자 하는 데이터 
+//         diaryContent: "오늘의 공개",
+//         feeling: "ANGRY",
+//         isPublic: "True"
+//     });
+//     console.log(response);
+//     } catch (error) {
+//     //응답 실패
+//     console.error(error);
+//     }
+// }
 
 class Result extends React.Component {
-
-
+    
     render(){
-        
+        const userId = 3;
         const dictation = this.props.location.state.data.dictation; //사용자의 음성인식된 일기 내용
 
         const emotion = this.props.location.state.emotion.Emotion; //사용자의 감정인식된 감정
+
+        const onSubmit = async (e) => {
+            e.preventDefault();
+            e.persist();
+        
+            let files = e.target.profile_files.files;
+            let formData = new FormData();
+            for (let i = 0; i < files.length; i++) {
+                formData.append("files", files[i]);
+            }
+        
+            let dataSet = {
+                diaryContent: "일기 내용",
+                feeling: "ANGRY",
+                isPublic:true,
+            };
+        
+            formData.append("data", JSON.stringify(dataSet));
+        
+            const postSurvey = await axios({
+                method: "POST",
+                url: `http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/​my-diary​/${userId}`,
+                mode: "cors",
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                },
+                data: formData,
+            });
+        
+            console.log(postSurvey);
+        };
 
         //감정 0 - happy
         if(emotion==0){ 
@@ -86,13 +127,7 @@ class Result extends React.Component {
                     </div>
                 </div>
             );
-
         }
-
-
-
-
-
 
         // 감정 1 - neutral
         else if(emotion==1){ //neutral
@@ -156,18 +191,12 @@ class Result extends React.Component {
                     </div>
                 </div>
             );
-
         }
-
-
-
 
         //감정 2 -sad 
         else if(emotion==2){ //sad
             return (
-
                 <div className="result-sad">
-    
                     <div className="result-sad-header"> {/*헤더*/}
                         <Link to="/" className="result-sad-header-link">GroomingMood</Link>
                         <p>당신의 감정을<br/>어루만지는 AI 일기</p>
@@ -228,14 +257,10 @@ class Result extends React.Component {
             );
         }
 
-
-
         //감정 3 - angry
         else if(emotion==3){ //angry
             return (
-
                 <div className="result-angry">
-        
                     <div className="result-angry-header"> {/*헤더*/}
                         <Link to="/" className="result-angry-header-link">GroomingMood</Link>
                         <p>당신의 감정을<br/>어루만지는 AI 일기</p>
@@ -294,7 +319,6 @@ class Result extends React.Component {
                     </div>
                 </div>
             );
-
         }
         
     }
