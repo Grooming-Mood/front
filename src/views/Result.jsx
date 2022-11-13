@@ -8,7 +8,7 @@ import AngryIcon from "../assets/image/splash/angry-icon.png";
 import Progressbar from "../assets/image/result/progressbar.png";
 import axios from "axios";
 
-async function getUsers({userId}) {
+async function postDiary({userId}) {
     const response = await axios.post(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/​my-diary​/${userId}`)
     return response.data;
 }
