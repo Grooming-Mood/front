@@ -6,7 +6,10 @@ import User from "../assets/image/user/user.png";
 import UserUpdate from "../assets/image/user/user_update.png";
 import Logout from "../assets/image/user/logout.png";
 
-
+async function getUser({userId}) {
+    const response = await axios.fet(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/​user/${userId}/info`)
+    return response.data;
+}
 
 function Setting(props) {
 
