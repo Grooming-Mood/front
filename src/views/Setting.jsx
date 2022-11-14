@@ -11,6 +11,7 @@ function Setting(props) {
     const userId = sessionStorage.getItem("userId");
     console.log("userID",userId);
     const [userName, set_name] = useState();
+    
     useState(() => {
         axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/user/${userId}/info`)
             .then((res) => {
