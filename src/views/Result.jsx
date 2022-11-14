@@ -34,9 +34,10 @@ class Result extends React.Component {
         var date = dt.getDate();
         var nowTime = year+'/'+month+'/'+date
         const dictation = this.props.location.state.data.dictation; //사용자의 음성인식된 일기 내용
+        const emotion = this.props.location.state.emotion.RE; //사용자의 감정인식된 감정
 
-        const emotion = this.props.location.state.emotion.Emotion; //사용자의 감정인식된 감정
-
+        console.log("여기", dictation, emotion);
+        
         const onSubmit = async (e) => {
             e.preventDefault();
             e.persist();
