@@ -1,246 +1,297 @@
-import React, { useEffect,useState, useRef } from 'react';
-import { withRouter, Link, useLocation } from "react-router-dom";
+import React,{ useState } from "react";
+import { withRouter, Link } from "react-router-dom";
 import SideMenu from "./SideMenu";
-import {useReactMediaRecorder} from "react-media-recorder";
-import axios from 'axios';
-import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
-import { rest } from 'lodash';
+import SadIcon from "../assets/image/splash/sad-icon.png";
+import NormalIcon from "../assets/image/splash/normal-icon.png";
+import HappyIcon from "../assets/image/splash/happy-icon.png";
+import AngryIcon from "../assets/image/splash/angry-icon.png";
+import Progressbar from "../assets/image/result/progressbar.png";
+import axios from "axios";
 
-
-
-//미리보기 영상 컴포넌트
-const VideoPreview = ({ stream }) => {
-    const videoRef = useRef(null);
-  
-    useEffect(() => {
-      if (videoRef.current && stream) {
-        videoRef.current.srcObject = stream;
-      }
-    }, [stream]);
-    if (!stream) {
-      return null;
-    }
-    return <video ref={videoRef} width={500} height={500} autoPlay controls />;
-  };
-
-
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-//화면
-function Record(props) {
-
-    const Emotion = useRef(0); //유저의 감정 
-    const Prob = useRef(''); // 유저의 감정 확률
-    const [RE, setRE] = useState(1);
-    const [RP, setRP] = useState('');
+function Result (){
     
-    const [dictation, setDictation] = useState("Grooming Mood가 작성한 일기입니다");//음성인식 STT 내용
-    const [videoFilePath, setVideoFilePath] = useState(null); //업로드 받은 파일
-    const { status, startRecording, stopRecording, mediaBlobUrl, previewStream } = useReactMediaRecorder({video:true, audio:true});
-    const [isRecording, setIsRecording] = useState(false);
-    const {
-        transcript,
-        listening,
-        resetTranscript,
-        browserSupportsSpeechRecognition
-    } = useSpeechRecognition();
-
-
-
-    const handleStartRecording = () => {
-        setIsRecording(true);
-        startRecording();
-        console.log("BlobUrl은:", mediaBlobUrl);
-    };
-    const handleStopRecording = () => {
-        setIsRecording(false);
-        stopRecording();
-        setDictation(transcript); //음성인식된 대본 저장
+    // render(){
+        const userId = sessionStorage.getItem("userId");
+        console.log("userID",userId);
+        const [userName, set_name] = useState();
         
-    };
-
-
-
-    //음성인식 컴포넌트
-    const Dictaphone = () =>{
-
-        if (!browserSupportsSpeechRecognition) {
-            return <span>Browser doesn't support speech recognition.</span>;
-        }
-
-        return(
-            <div>
-                <p>mic: {listening ? 'on' : 'off'}</p>
-                <p>{transcript}</p>
-                <button onClick={resetTranscript}>reset</button>
-
-            </div>
-        );
-        
-    };
-
-
-
-    
-    //업로드 받은 파일 경로 저장
-    const handleVideoUpload = (event) => {
-        setVideoFilePath(event.target.files[0]);
-        console.log("handleVideoUpload 파일 저장 : ", event.target.files[0]);
-
-    };
-
-
-
-    //감정분석 Flask api 요청
-    const loadFlaskapi = (event) => {
-        
-        const formData = new FormData();
-        formData.append("file",videoFilePath); // 분석할 동영상
-
-        const res = axios.post("http://127.0.0.1:5000/recog_emotion", formData, {
-            headers:{
-                "Content-Type" : `multipart/form-data;`,
-            }
-        }).then(function(res){
-            if(res.status === 200){
-                console.log("감정 분석 완료");
-                const result = res.data;
-                console.log(result);
-
-                Emotion.current = result['Face Emotion'];
-                Prob.current = (result['Face Prob']*100).toFixed(1);
-
-                console.log(Emotion.current, Prob.current);
-
-                console.log(RE,RP);
-
-            };
+        useState(() => {
+            axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/user/${userId}/info`)
+                .then((res) => {
+                    set_name(res.data.name);
+                })
         });
+        var dt = new Date();
+        var year = dt.getFullYear();
+        var month = dt.getMonth()+1;
+        var date = dt.getDate();
+        var nowTime = year+'/'+month+'/'+date
+        // const dictation = this.props.location.state.data.dictation; //사용자의 음성인식된 일기 내용
+        // const emotion = this.props.location.state.emotion.RE; //사용자의 감정인식된 감정
+        const dictation = "사용자의 음성인식된 일기 내용"
+        const emotion = 1
+
+        console.log("여기", dictation, emotion);
         
-    };
-    
+        //감정 0 - happy
+        if(emotion==0){ 
+            return (
 
-
-
-
-
-
-
-
-
-
-
-    ///////////////////////////////////화면
-    return (
-        <div className="home">
-
-            <div className="home-header"> {/*헤더*/}
-                <Link to="/" className="header-link">GroomingMood</Link>
-                <p>당신의 감정을<br/>어루만지는 AI 일기</p>
-            </div>
-
-            <div className="home-content">
-                <div className="record-container">
-                    <div className="record-left">
-
-                            <div className="record-title">
-                                일기를 기록해주세요!
-                            </div>
-                            <hr></hr>
-                            <div className="record-sub">
-                                <span>
-                                    루밍이가 당신의 감정과 일기를 자동으로 완성해줍니다.
-                                </span>
-                            </div>
-                            <hr></hr>
-                            <div className="record-sub-warn-content">
-                                <span>
-                                🚨 영상 기록 시 주의사항<hr></hr>
-                                </span>
-                                <span>
-                                    <ul>
-                                        <li>
-                                            PC 카메라/마이크 접근 허용
-                                        </li>
-                                        <li>
-                                            카메라의 정면 응시
-                                        </li>
-                                        <li>
-                                            어두운 곳 지양
-                                        </li>
-                                        <li>
-                                            1분 미만의 촬영
-                                        </li>
-                                    </ul>
-                                </span>
-                            </div>
-                            <div className="record-left-stt-box">
-                                <Dictaphone></Dictaphone>
-                            </div>
-
-
-
+                <div className="result-happy">
+        
+                    <div className="result-happy-header"> {/*헤더*/}
+                        <Link to="/" className="result-happy-header-link">GroomingMood</Link>
+                        <p>당신의 감정을<br/>어루만지는 AI 일기</p>
                     </div>
-                    
-                    <div className="record-right">
-                        <div >
-                            <div>
-                                <div className="button-status">
-                                    <button className="button" onClick={ () => {
-                                        handleStartRecording()
-                                        SpeechRecognition.startListening({continuous: true, language: 'ko'})
-                                    }}>일기 기록 시작</button>
-                                    <button className="button" onClick={ () => {
-                                        handleStopRecording()
-                                        SpeechRecognition.stopListening()
-                                    }}>일기 기록 종료</button>
+                    <div className="home-content">
+                        <div className="result-container">
+                            <div className="result-container-left">
+                                <div className="result-container-left-row-first">
+                                    <div className="result-container-left-row-first-left">
+                                        AI 루밍이가 분석한<br/> 오늘의 일기입니다!<br/>
+                                    </div>
+                                    <div className="result-container-left-row-first-right">
+                                        <img src={HappyIcon} alt="Happy" style={{"width":"150px","hight":"150px"}}/>
+                                        <br/>
+                                    </div>
                                 </div>
-                                {isRecording && <VideoPreview stream={previewStream} width={800} height={500} />}
-                                {!isRecording && (<video id="recorded" src={mediaBlobUrl} width={800} height={500} controls autoPlay loop />)}
-                                <p> {mediaBlobUrl}</p>
+                                <div className="result-container-left-row-second">
+                                    <p>오늘 {userName}님은 67% 확률로 행복한 날입니다.<br/></p>
+                                    
+                                </div>
+                                <div className="result-container-left-row-third">
+                                    <div className="result-container-left-row-third-first">AI 루밍이의 분석결과<br/></div>
+                                    <span className="result-container-left-row-third-second-feel">HAPPY</span>
+                                    <span className="result-container-left-row-third-second-bar"><img src={Progressbar} alt="Progressbar" style={{"width":"120px","hight":"120px"}}/></span>
+                                    <span className="result-container-left-row-third-second-percent">67%</span>
+                                    <div className="result-container-left-row-third-face">{userName}님의 행복한 표정이 기록되었어요.</div>
+                                    <div className="result-container-left-row-third-voice">{userName}님의 평온한 목소리가 기록되었어요.</div>
+                                </div>
+                            </div>
+                            <div className="result-container-right">
+                                <div className="result-container-right-row-first">
+                                    AI 루밍이가 작성한<br/> 오늘의 일기 입니다.<br/>
+                                </div>
+                                <div className="result-container-right-row-second">
+                                    <div className="result-container-right-row-second-date">
+                                        {nowTime}
+                                    </div>
+                                    <div className="result-container-right-row-second-content-happy">
+                                        <div className="result-container-right-row-second-content-happy-font">
+                                            {dictation}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="result-container-right-row-thrid">
+                                    <div className="result-container-right-row-thrid-select">
+                                        저장 방식을 선택해주세요!
+                                    </div>
+                                    <div className="result-container-right-row-thrid-select-button">
+                                        <button className="result-button">개인 피드에 저장하기</button>
+                                        <button className="result-button">공유 피드에 저장하기</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-
-                        <div>
-                            <input type="file" name="file" onChange={handleVideoUpload}></input>
-                            <button type="button" onClick={loadFlaskapi}>
-                                    <span>분석하기</span>
-                            </button>
-                        </div>
-
-
-                        
-                        <div>
-                            <Link to={{
-                                pathname: "/result",
-                                state: { 
-                                    data: {dictation},
-                                    emotion: {RE}
-                                }
-                            }}>
-                                <div className="button-status">
-                                <button className="button">
-                                    <span>👩‍💻</span>
-                                    <span>오늘의 일기 분석하기</span>
-                                </button>
-                                </div>
-                            </Link>
-                        </div>
+                        <SideMenu></SideMenu>
                     </div>
                 </div>
+            );
+        }
 
-                <SideMenu></SideMenu>
+        // 감정 1 - neutral
+        else if(emotion==1){ //neutral
+            return (
+                <div className="result-normal">
+                    <div className="result-normal-header"> {/*헤더*/}
+                        <Link to="/" className="result-normal-header-link">GroomingMood</Link>
+                        <p>당신의 감정을<br/>어루만지는 AI 일기</p>
+                    </div>
+                    <div className="home-content">
+                        <div className="result-container">
+                            <div className="result-container-left">
+                                <div className="result-container-left-row-first">
+                                    <div className="result-container-left-row-first-left">
+                                        AI 루밍이가 분석한<br/> 오늘의 일기입니다!<br/>
+                                    </div>
+                                    <div className="result-container-left-row-first-right">
+                                        <img src={NormalIcon} alt="Normal" style={{"width":"150px","hight":"150px"}}/>
+                                        <br/>
+                                    </div>
+                                </div>
+                                <div className="result-container-left-row-second">
+                                    <p>오늘 {userName}은 67% 확률로 그저그런 날입니다.<br/></p>
+                                    
+                                </div>
+                                <div className="result-container-left-row-third">
+                                    <div className="result-container-left-row-third-first">AI 루밍이의 분석결과<br/></div>
+                                    <span className="result-container-left-row-third-second-feel">NORMAL</span>
+                                    <span className="result-container-left-row-third-second-bar"><img src={Progressbar} alt="Progressbar" style={{"width":"120px","hight":"120px"}}/></span>
+                                    <span className="result-container-left-row-third-second-percent">67%</span>
+                                    <div className="result-container-left-row-third-face">{userName}님의 그저그런 표정이 기록되었어요.</div>
+                                    <div className="result-container-left-row-third-voice">{userName}의 평온한 목소리가 기록되었어요.</div>
+                                </div>
+                            </div>
+                            <div className="result-container-right">
+                                <div className="result-container-right-row-first">
+                                    AI 루밍이가 작성한<br/> 오늘의 일기 입니다.<br/>
+                                </div>
+                                <div className="result-container-right-row-second">
+                                    <div className="result-container-right-row-second-date">
+                                        {nowTime}
+                                    </div>
+                                    <div className="result-container-right-row-second-content-normal">
+                                        <div className="result-container-right-row-second-content-normal-font">
+                                            {dictation}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="result-container-right-row-thrid">
+                                    <div className="result-container-right-row-thrid-select">
+                                        저장 방식을 선택해주세요!
+                                    </div>
+                                    <div className="result-container-right-row-thrid-select-button">
+                                        <button className="result-button">개인 피드에 저장하기</button>
+                                        <button className="result-button">공유 피드에 저장하기</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <SideMenu></SideMenu>
+                    </div>
+                </div>
+            );
+        }
 
-            </div>  
+        //감정 2 -sad 
+        else if(emotion==2){ //sad
+            return (
+                <div className="result-sad">
+                    <div className="result-sad-header"> {/*헤더*/}
+                        <Link to="/" className="result-sad-header-link">GroomingMood</Link>
+                        <p>당신의 감정을<br/>어루만지는 AI 일기</p>
+                    </div>
+                    <div className="home-content">
+                        <div className="result-container">
+                            <div className="result-container-left">
+                                <div className="result-container-left-row-first">
+                                    <div className="result-container-left-row-first-left">
+                                        AI 루밍이가 분석한<br/> 오늘의 일기입니다!<br/>
+                                    </div>
+                                    <div className="result-container-left-row-first-right">
+                                        <img src={SadIcon} alt="Sad" style={{"width":"150px","hight":"150px"}}/>
+                                        <br/>
+                                    </div>
+                                </div>
+                                <div className="result-container-left-row-second">
+                                    <p>오늘 {userName}님은 67% 확률로 슬픈 날입니다.<br/></p>
+                                    
+                                </div>
+                                <div className="result-container-left-row-third">
+                                    <div className="result-container-left-row-third-first">AI 루밍이의 분석결과<br/></div>
+                                    <span className="result-container-left-row-third-second-feel">SAD</span>
+                                    <span className="result-container-left-row-third-second-bar"><img src={Progressbar} alt="Progressbar" style={{"width":"120px","hight":"120px"}}/></span>
+                                    <span className="result-container-left-row-third-second-percent">67%</span>
+                                    <div className="result-container-left-row-third-face">{userName}님의 슬픈 표정이 기록되었어요.</div>
+                                    <div className="result-container-left-row-third-voice">{userName}님의 슬픈 목소리가 기록되었어요.</div>
+                                </div>
+                            </div>
+                            <div className="result-container-right">
+                                <div className="result-container-right-row-first">
+                                    AI 루밍이가 작성한<br/> 오늘의 일기 입니다.<br/>
+                                </div>
+                                <div className="result-container-right-row-second">
+                                    <div className="result-container-right-row-second-date">
+                                        {nowTime}
+                                    </div>
+                                    <div className="result-container-right-row-second-content-sad">
+                                        <div className="result-container-right-row-second-content-sad-font">
+                                            {dictation}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="result-container-right-row-thrid">
+                                    <div className="result-container-right-row-thrid-select">
+                                        저장 방식을 선택해주세요!
+                                    </div>
+                                    <div className="result-container-right-row-thrid-select-button">
+                                        <button className="result-button">개인 피드에 저장하기</button>
+                                        <button className="result-button">공유 피드에 저장하기</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <SideMenu></SideMenu>
+                    </div>
+                </div>
+            );
+        }
 
-        </div>
+        //감정 3 - angry
+        else if(emotion==3){ //angry
+            return (
+                <div className="result-angry">
+                    <div className="result-angry-header"> {/*헤더*/}
+                        <Link to="/" className="result-angry-header-link">GroomingMood</Link>
+                        <p>당신의 감정을<br/>어루만지는 AI 일기</p>
+                    </div>
+                    <div className="home-content">
+                        <div className="result-container">
+                            <div className="result-container-left">
+                                <div className="result-container-left-row-first">
+                                    <div className="result-container-left-row-first-left">
+                                        AI 루밍이가 분석한<br/> 오늘의 일기입니다!<br/>
+                                    </div>
+                                    <div className="result-container-left-row-first-right">
+                                        <img src={AngryIcon} alt="Angry" style={{"width":"150px","hight":"150px"}}/>
+                                        <br/>
+                                    </div>
+                                </div>
+                                <div className="result-container-left-row-second">
+                                    <p>오늘 {userName}님은 67% 확률로 화난 날입니다.<br/></p>
+                                    
+                                </div>
+                                <div className="result-container-left-row-third">
+                                    <div className="result-container-left-row-third-first">AI 루밍이의 분석결과<br/></div>
+                                    <span className="result-container-left-row-third-second-feel">ANGRY</span>
+                                    <span className="result-container-left-row-third-second-bar"><img src={Progressbar} alt="Progressbar" style={{"width":"120px","hight":"120px"}}/></span>
+                                    <span className="result-container-left-row-third-second-percent">67%</span>
+                                    <div className="result-container-left-row-third-face">{userName}님의 화난 표정이 기록되었어요.</div>
+                                    <div className="result-container-left-row-third-voice">{userName}님의 평온한 목소리가 기록되었어요.</div>
+                                </div>
+                            </div>
+                            <div className="result-container-right">
+                                <div className="result-container-right-row-first">
+                                    AI 루밍이가 작성한<br/> 오늘의 일기 입니다.<br/>
+                                </div>
+                                <div className="result-container-right-row-second">
+                                    <div className="result-container-right-row-second-date">
+                                        {nowTime}
+                                    </div>
+                                    <div className="result-container-right-row-second-content-angry">
+                                        <div className="result-container-right-row-second-content-angry-font">
+                                            {dictation}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="result-container-right-row-thrid">
+                                    <div className="result-container-right-row-thrid-select">
+                                        저장 방식을 선택해주세요!
+                                    </div>
+                                    <div className="result-container-right-row-thrid-select-button">
+                                        <button className="result-button">개인 피드에 저장하기</button>
+                                        <button className="result-button">공유 피드에 저장하기</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <SideMenu></SideMenu>
+                    </div>
+                </div>
+            );
+        }
         
+    }
+// }
 
-    );
-}
-
-export default withRouter(Record);
+export default withRouter(Result);
