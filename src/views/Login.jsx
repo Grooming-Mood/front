@@ -4,6 +4,7 @@ import axios from 'axios';
 import SideMenu from "./SideMenu";
 import User from "../assets/image/user/user.png";
 
+
 function Login(props) {
 
     //아이디, 패스워드
@@ -13,7 +14,7 @@ function Login(props) {
     const handleInputPw = (e) => { setInputPw(e.target.value);};
 
     //로그인 Axios 통신
-    const onClickLogin = () => {
+    const onClickLogin = async() => {
 
         console.log("login버튼 클릭");
         console.log("아이디:", inputId);
@@ -23,23 +24,25 @@ function Login(props) {
             .post("http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/user/login",{
                 email: inputId,
                 password: inputPw,
-            })
+            },{withCredentials: true})
             .then( (res)=> {
                 console.log(res);
-                console.log("res.data.userid ::", res.data.email);
-                console.log("res.data.msg ::", res.data.password);
+                // console.log("res.data.userid ::", res.data.email);
+                // console.log("res.data.msg ::", res.data.password);
 
-                if(res.data.email === undefined){ alert("입력하신 ID가 존재하지 않습니다.");}
-                else if(res.data.email === null) { alert("입력하신 비밀번호가 일치하지 않습니다.");}
-                else if(res.data.email === inputId) {
-                    alert("로그인 성공");
-                    sessionStorage.setItem("user_id", inputId);
-                    sessionStorage.setItem("name",res.data.name);
-                    sessionStorage.setItem("profileImg",res.data.profileImg);
-                }
+                // if(res.data.email === undefined){ alert("입력하신 ID가 존재하지 않습니다.");}
+                // else if(res.data.email === null) { alert("입력하신 비밀번호가 일치하지 않습니다.");}
+                // else if(res.data.email === inputId) {
+                //     alert("로그인 성공");
+                //     sessionStorage.setItem("user_id", inputId);
+                //     sessionStorage.setItem("name",res.data.name);
+                //     sessionStorage.setItem("profileImg",res.data.profileImg);
+                // }
+                console.log("로그인 성공");
+                sessionStorage.setItem("userId",res.data.id)
 
                 //작업 완료 되면 페이지 이동
-                //document.location.href = "/my-page";
+                document.location.href = "/my-page";
             })
             .catch();
     };
@@ -85,7 +88,7 @@ function Login(props) {
                             value={inputPw}
                             onChange={handleInputPw}
                         />
-                         
+
                         <button onClick={onClickLogin}>로그인하기</button>
 
 
