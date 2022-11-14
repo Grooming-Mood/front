@@ -10,13 +10,6 @@ import axios from "axios";
 
 function Result (){
     
-
-
-        const dictation = sessionStorage.getItem("dictation"); //사용자의 음성인식된 일기 내용
-        const emotion = sessionStorage.getItem("Emotion"); //사용자의 감정 인덱스
-        const prob = sessionStorage.getItem("Prob"); //사용자의 감정 확률
-
-
     // render(){
         const userId = sessionStorage.getItem("userId");
         console.log("userID",userId);
@@ -33,7 +26,12 @@ function Result (){
         var month = dt.getMonth()+1;
         var date = dt.getDate();
         var nowTime = year+'/'+month+'/'+date
+        // const dictation = this.props.location.state.data.dictation; //사용자의 음성인식된 일기 내용
+        // const emotion = this.props.location.state.emotion.RE; //사용자의 감정인식된 감정
+        const dictation = "사용자의 음성인식된 일기 내용"
+        const emotion = 1
 
+        console.log("여기", dictation, emotion);
         
         //감정 0 - happy
         if(emotion==0){ 
@@ -58,14 +56,14 @@ function Result (){
                                     </div>
                                 </div>
                                 <div className="result-container-left-row-second">
-                                    <p>오늘 {userName}님은 {prob}% 확률로 행복한 날입니다.<br/></p>
+                                    <p>오늘 {userName}님은 67% 확률로 행복한 날입니다.<br/></p>
                                     
                                 </div>
                                 <div className="result-container-left-row-third">
                                     <div className="result-container-left-row-third-first">AI 루밍이의 분석결과<br/></div>
                                     <span className="result-container-left-row-third-second-feel">HAPPY</span>
                                     <span className="result-container-left-row-third-second-bar"><img src={Progressbar} alt="Progressbar" style={{"width":"120px","hight":"120px"}}/></span>
-                                    <span className="result-container-left-row-third-second-percent">{prob}%</span>
+                                    <span className="result-container-left-row-third-second-percent">67%</span>
                                     <div className="result-container-left-row-third-face">{userName}님의 행복한 표정이 기록되었어요.</div>
                                     <div className="result-container-left-row-third-voice">{userName}님의 평온한 목소리가 기록되었어요.</div>
                                 </div>
@@ -122,14 +120,14 @@ function Result (){
                                     </div>
                                 </div>
                                 <div className="result-container-left-row-second">
-                                    <p>오늘 {userName}은 {prob}% 확률로 그저그런 날입니다.<br/></p>
+                                    <p>오늘 {userName}은 67% 확률로 그저그런 날입니다.<br/></p>
                                     
                                 </div>
                                 <div className="result-container-left-row-third">
                                     <div className="result-container-left-row-third-first">AI 루밍이의 분석결과<br/></div>
                                     <span className="result-container-left-row-third-second-feel">NORMAL</span>
                                     <span className="result-container-left-row-third-second-bar"><img src={Progressbar} alt="Progressbar" style={{"width":"120px","hight":"120px"}}/></span>
-                                    <span className="result-container-left-row-third-second-percent">{prob}%</span>
+                                    <span className="result-container-left-row-third-second-percent">67%</span>
                                     <div className="result-container-left-row-third-face">{userName}님의 그저그런 표정이 기록되었어요.</div>
                                     <div className="result-container-left-row-third-voice">{userName}의 평온한 목소리가 기록되었어요.</div>
                                 </div>
@@ -186,14 +184,14 @@ function Result (){
                                     </div>
                                 </div>
                                 <div className="result-container-left-row-second">
-                                    <p>오늘 {userName}님은 {prob}% 확률로 슬픈 날입니다.<br/></p>
+                                    <p>오늘 {userName}님은 67% 확률로 슬픈 날입니다.<br/></p>
                                     
                                 </div>
                                 <div className="result-container-left-row-third">
                                     <div className="result-container-left-row-third-first">AI 루밍이의 분석결과<br/></div>
                                     <span className="result-container-left-row-third-second-feel">SAD</span>
                                     <span className="result-container-left-row-third-second-bar"><img src={Progressbar} alt="Progressbar" style={{"width":"120px","hight":"120px"}}/></span>
-                                    <span className="result-container-left-row-third-second-percent">{prob}%</span>
+                                    <span className="result-container-left-row-third-second-percent">67%</span>
                                     <div className="result-container-left-row-third-face">{userName}님의 슬픈 표정이 기록되었어요.</div>
                                     <div className="result-container-left-row-third-voice">{userName}님의 슬픈 목소리가 기록되었어요.</div>
                                 </div>
@@ -250,14 +248,14 @@ function Result (){
                                     </div>
                                 </div>
                                 <div className="result-container-left-row-second">
-                                    <p>오늘 {userName}님은 {prob}% 확률로 화난 날입니다.<br/></p>
+                                    <p>오늘 {userName}님은 67% 확률로 화난 날입니다.<br/></p>
                                     
                                 </div>
                                 <div className="result-container-left-row-third">
                                     <div className="result-container-left-row-third-first">AI 루밍이의 분석결과<br/></div>
                                     <span className="result-container-left-row-third-second-feel">ANGRY</span>
                                     <span className="result-container-left-row-third-second-bar"><img src={Progressbar} alt="Progressbar" style={{"width":"120px","hight":"120px"}}/></span>
-                                    <span className="result-container-left-row-third-second-percent">{prob}%</span>
+                                    <span className="result-container-left-row-third-second-percent">67%</span>
                                     <div className="result-container-left-row-third-face">{userName}님의 화난 표정이 기록되었어요.</div>
                                     <div className="result-container-left-row-third-voice">{userName}님의 평온한 목소리가 기록되었어요.</div>
                                 </div>
