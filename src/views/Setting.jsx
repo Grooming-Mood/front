@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from "react";
+import React from "react";
 import { withRouter, Link } from "react-router-dom";
 import axios from 'axios';
 import SideMenu from "./SideMenu";
@@ -6,7 +6,12 @@ import User from "../assets/image/user/user.png";
 import UserUpdate from "../assets/image/user/user_update.png";
 import Logout from "../assets/image/user/logout.png";
 
-
+async function getUser({userId}) {
+    const response = await axios.fet(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/​user/${userId}/info`)
+    return response.data;
+}
+// const [state] = getUser(userId);  //id가 바뀔때마다 호출   
+// const {data:users} = state;
 
 function Setting(props) {
 
@@ -27,7 +32,7 @@ function Setting(props) {
                         </div>
                         <img src={User} alt={User} style={{"width":"200px","hight":"200px"}}></img>
                         <div>
-                            <p>김세종 님</p>
+                            <p> 님</p>
                         </div>
                     </div>
                     <div className="setting-right">

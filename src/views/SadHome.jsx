@@ -38,7 +38,7 @@ function SadHome(props) {
     };
 
     useState(() => {
-        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feed-diary/sad`)
+        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feed-diary/sad-paging`)
             .then((res) => {
                 set_feed(res.data.diaryList);
             })
@@ -56,7 +56,7 @@ function SadHome(props) {
                 <div className="sad-container">
                     <div className="sad-diary-container">
                         <h2 className="sad-diary-title">
-                            나의 감정일기
+                            SAD 감정 일기
                         </h2>
                     </div>
 

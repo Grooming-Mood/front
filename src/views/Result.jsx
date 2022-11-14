@@ -27,9 +27,6 @@ import axios from "axios";
 class Result extends React.Component {
     
     render(){
-        
-        const emotion = 1
-        const prob = 50
         const userId = 3;
         var dt = new Date();
         var year = dt.getFullYear();
@@ -39,9 +36,8 @@ class Result extends React.Component {
 
 
         const dictation = this.props.location.state.data.dictation; //사용자의 음성인식된 일기 내용
-        //const emotion = this.props.location.state.emotion.Emotion; //사용자의 감정인식된 감정
-        //const prob2 = this.props.location.state.prob.Prob; //사용자 감정 확률
-        //console.log("넘어온 후", emotion2, prob2);
+        const emotion = this.props.location.state.emotion.Emotion; //사용자의 감정인식된 감정
+        const prob = 50; //사용자 감정 확률
 
         const onSubmit = async (e) => {
             e.preventDefault();

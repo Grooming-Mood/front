@@ -38,7 +38,7 @@ function HappyHome(props) {
     };
 
     useState(() => {
-        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feed-diary/all`)
+        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feed-diary/happy-paging`)
             .then((res) => {
                 set_feed(res.data.diaryList);
             })
@@ -56,7 +56,7 @@ function HappyHome(props) {
                 <div className="happy-container">
                     <div className="happy-diary-container">
                         <h2 className="happy-diary-title">
-                            나의 감정일기
+                            HAPPY 감정 일기
                         </h2>
                     </div>
 

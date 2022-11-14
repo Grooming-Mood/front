@@ -38,7 +38,7 @@ function AngryHome(props) {
     };
 
     useState(() => {
-        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feed-diary/angry`)
+        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feed-diary/angry-paging`)
             .then((res) => {
                 set_feed(res.data.diaryList);
             })
@@ -56,7 +56,7 @@ function AngryHome(props) {
                 <div className="angry-container">
                     <div className="angry-diary-container">
                         <h2 className="angry-diary-title">
-                            나의 감정일기
+                            ANGRY 감정 일기
                         </h2>
                     </div>
 

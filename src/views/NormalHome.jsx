@@ -38,7 +38,7 @@ function NormalHome(props) {
     };
 
     useState(() => {
-        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feed-diary/normal`)
+        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feed-diary/normal-paging`)
             .then((res) => {
                 set_feed(res.data.diaryList);
             })
@@ -56,7 +56,7 @@ function NormalHome(props) {
                 <div className="normal-container">
                     <div className="normal-diary-container">
                         <h2 className="normal-diary-title">
-                            나의 감정일기
+                            NORMAL 감정 일기
                         </h2>
                     </div>
 
