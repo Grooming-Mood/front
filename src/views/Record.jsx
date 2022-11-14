@@ -32,12 +32,7 @@ const VideoPreview = ({ stream }) => {
 //화면
 function Record(props) {
 
-    const Emotion = useRef(0); //유저의 감정 
-    const Prob = useRef(''); // 유저의 감정 확률
-    const [RE, setRE] = useState(1);
-    const [RP, setRP] = useState('');
-    
-    const [dictation, setDictation] = useState("Grooming Mood가 작성한 일기입니다");//음성인식 STT 내용
+
     const [videoFilePath, setVideoFilePath] = useState(null); //업로드 받은 파일
     const { status, startRecording, stopRecording, mediaBlobUrl, previewStream } = useReactMediaRecorder({video:true, audio:true});
     const [isRecording, setIsRecording] = useState(false);
@@ -58,7 +53,8 @@ function Record(props) {
     const handleStopRecording = () => {
         setIsRecording(false);
         stopRecording();
-        setDictation(transcript); //음성인식된 대본 저장
+        sessionStorage.setItem("dictation", transcript); //음성인식된 대본 저장
+        console.log(sessionStorage.getItem("dictation"));
         
     };
 
@@ -95,7 +91,7 @@ function Record(props) {
 
 
     //감정분석 Flask api 요청
-    const loadFlaskapi = (event) => {
+    const loadFlaskapi = async() => {
         
         const formData = new FormData();
         formData.append("file",videoFilePath); // 분석할 동영상
@@ -107,15 +103,13 @@ function Record(props) {
         }).then(function(res){
             if(res.status === 200){
                 console.log("감정 분석 완료");
-                const result = res.data;
-                console.log(result);
+                console.log(res.data);
 
-                Emotion.current = result['Face Emotion'];
-                Prob.current = (result['Face Prob']*100).toFixed(1);
+                sessionStorage.setItem("Emotion", res.data['Face Emotion']);
+                sessionStorage.setItem("Prob", (res.data['Face Prob']*100).toFixed(1));
 
-                console.log(Emotion.current, Prob.current);
-
-                console.log(RE,RP);
+                console.log(sessionStorage.getItem('Emotion'));
+                console.log(sessionStorage.getItem('Prob'));
 
             };
         });
@@ -208,28 +202,29 @@ function Record(props) {
                         <div>
                             <input type="file" name="file" onChange={handleVideoUpload}></input>
                             <button type="button" onClick={loadFlaskapi}>
-                                    <span>분석하기</span>
+                                    <span>영상 업로드</span>
                             </button>
                         </div>
 
 
-                        
                         <div>
                             <Link to={{
-                                pathname: "/result",
-                                state: { 
-                                    data: {dictation},
-                                    emotion: {RE}
-                                }
+                                pathname: "/result"
                             }}>
                                 <div className="button-status">
-                                <button className="button">
-                                    <span>👩‍💻</span>
-                                    <span>오늘의 일기 분석하기</span>
-                                </button>
+                                    <button className="button">
+                                        <span>👩‍💻</span>
+                                        <span>오늘의 일기 분석하기</span>
+                                    </button>
                                 </div>
                             </Link>
                         </div>
+
+                        <p></p>
+
+
+                        
+
                     </div>
                 </div>
 

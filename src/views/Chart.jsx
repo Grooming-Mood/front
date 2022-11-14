@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link, withRouter } from "react-router-dom";
 import SideMenu from "./SideMenu";
 import ApexCharts from "react-apexcharts";
-
+import axios from "axios";
+import {setAngryAmount, setHappyAmount, setNormalAmount, setSadAmount} from "../utils/function";
 
 const dummyList = [{
     "lastweek" : [19, 26, 20, 9]
@@ -12,14 +13,55 @@ const dummyList = [{
 
 
 function Chart(props){
+    const [lastWeekData, set_lastWeekData] = useState([]);
+    const [thisWeekData, set_thisWeekData] = useState([]);
+    const [lastTotalCount, set_lastTotalCount] = useState(0);
+    const [thisTotalCount, set_thisTotalCount] = useState(0);
+    const [lastresultweek, set_lastresultweek] = useState([]);
+    const [todayresultweek, set_todayresultweek] = useState([]);
 
-    // useEffect(() => {
-    //     axios.get(`${origin.express}/project/issue/list/${project_id}`)
-    //         .then((res) => {
-    //             console.log(res);
-    //             set_issues(res.data.list);
-    //         })
-    // }, [])
+    const lastweek = [];
+
+    const todayweek = [];
+
+    useEffect(() => {
+        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feeling-history/last-week/userId/1`)
+            .then((res) => {
+
+                const lists = res.data.feelingStatisticInfoList;
+
+                lastweek.push(setHappyAmount(lists));
+                lastweek.push(setNormalAmount(lists));
+                lastweek.push(setSadAmount(lists));
+                lastweek.push(setAngryAmount(lists));
+
+                set_lastresultweek(lastweek);
+            })
+
+        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feeling-history/today-week/userId/1`)
+            .then((res) => {
+                set_thisWeekData(res.data.feelingStatisticInfoList);
+
+                const today_lists = res.data.feelingStatisticInfoList;
+
+                todayweek.push(setHappyAmount(today_lists));
+                todayweek.push(setNormalAmount(today_lists));
+                todayweek.push(setSadAmount(today_lists));
+                todayweek.push(setAngryAmount(today_lists));
+
+                set_todayresultweek(todayweek);
+            })
+
+        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feeling-history/last-week/total-count/userId/1`)
+            .then((res) => {
+                set_lastTotalCount(res.data);
+            })
+
+        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feeling-history/today-week/total-count/userId/1`)
+            .then((res) => {
+                set_thisTotalCount(res.data);
+            })
+    }, [])
 
     return (
 
@@ -39,10 +81,10 @@ function Chart(props){
                                 type="bar"
                                 series={ [
                                     { name: "저번주 감정 통계",
-                                        data: dummyList[0].lastweek,
+                                        data: lastresultweek,
                                     },
                                     { name: "이번주 감정 통계",
-                                        data: dummyList[1].todayweek,
+                                        data: todayresultweek,
                                     },
                                 ]}
                                 options={{
