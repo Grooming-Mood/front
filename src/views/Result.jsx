@@ -33,12 +33,11 @@ class Result extends React.Component {
         var month = dt.getMonth()+1;
         var date = dt.getDate();
         var nowTime = year+'/'+month+'/'+date
-
-
         const dictation = this.props.location.state.data.dictation; //사용자의 음성인식된 일기 내용
-        const emotion = this.props.location.state.emotion.Emotion; //사용자의 감정인식된 감정
-        const prob = 50; //사용자 감정 확률
+        const emotion = this.props.location.state.emotion.RE; //사용자의 감정인식된 감정
 
+        console.log("여기", dictation, emotion);
+        
         const onSubmit = async (e) => {
             e.preventDefault();
             e.persist();
@@ -93,7 +92,7 @@ class Result extends React.Component {
                                     </div>
                                 </div>
                                 <div className="result-container-left-row-second">
-                                    <p>오늘 세종님은 {prob}% 확률로 행복한 날입니다.<br/></p>
+                                    <p>오늘 세종님은 67% 확률로 행복한 날입니다.<br/></p>
                                     
                                 </div>
                                 <div className="result-container-left-row-third">
@@ -157,7 +156,7 @@ class Result extends React.Component {
                                     </div>
                                 </div>
                                 <div className="result-container-left-row-second">
-                                    <p>오늘 세종님은 {prob}% 확률로 그저그런 날입니다.<br/></p>
+                                    <p>오늘 세종님은 67% 확률로 그저그런 날입니다.<br/></p>
                                     
                                 </div>
                                 <div className="result-container-left-row-third">
@@ -221,7 +220,7 @@ class Result extends React.Component {
                                     </div>
                                 </div>
                                 <div className="result-container-left-row-second">
-                                    <p>오늘 세종님은 {prob}% 확률로 슬픈 날입니다.<br/></p>
+                                    <p>오늘 세종님은 67% 확률로 슬픈 날입니다.<br/></p>
                                     
                                 </div>
                                 <div className="result-container-left-row-third">
@@ -285,7 +284,7 @@ class Result extends React.Component {
                                     </div>
                                 </div>
                                 <div className="result-container-left-row-second">
-                                    <p>오늘 세종님은 {prob}% 확률로 화난 날입니다.<br/></p>
+                                    <p>오늘 세종님은 67% 확률로 화난 날입니다.<br/></p>
                                     
                                 </div>
                                 <div className="result-container-left-row-third">

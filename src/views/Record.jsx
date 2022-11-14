@@ -115,8 +115,6 @@ function Record(props) {
 
                 console.log(Emotion.current, Prob.current);
 
-                setRE(Emotion.current);
-                setRP(Prob.current);
                 console.log(RE,RP);
 
             };
@@ -221,8 +219,7 @@ function Record(props) {
                                 pathname: "/result",
                                 state: { 
                                     data: {dictation},
-                                    emotion: {RE},
-                                    prob: {RP}
+                                    emotion: {RE}
                                 }
                             }}>
                                 <div className="button-status">
