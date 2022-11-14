@@ -20,35 +20,26 @@ function Login(props) {
         console.log("아이디:", inputId);
         console.log("비밀번호:",inputPw);
 
-        axios
-            .post("http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/user/login",{
-                email: inputId,
-                password: inputPw,
-            },{withCredentials: true})
-            .then( (res)=> {
-                console.log(res);
-                // console.log("res.data.userid ::", res.data.email);
-                // console.log("res.data.msg ::", res.data.password);
+        let data = JSON.stringify({
+            email: inputId,
+            password: inputPw
+        });
 
-                // if(res.data.email === undefined){ alert("입력하신 ID가 존재하지 않습니다.");}
-                // else if(res.data.email === null) { alert("입력하신 비밀번호가 일치하지 않습니다.");}
-                // else if(res.data.email === inputId) {
-                //     alert("로그인 성공");
-                //     sessionStorage.setItem("user_id", inputId);
-                //     sessionStorage.setItem("name",res.data.name);
-                //     sessionStorage.setItem("profileImg",res.data.profileImg);
-                // }
-                console.log("로그인 성공");
-                sessionStorage.setItem("userId",res.data.id)
+        axios.post("http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/user/login",
+        data,{headers:{"Content-Type" : "application/json"}})
+        .then((res)=> {
+            console.log("res출력");
+            // res.setHeader('Access-Control-Allow-origin', '*');
+            // // console.log("설정 성공");
+            console.log(res);
+            console.log("로그인 성공");
+            sessionStorage.setItem("userId",res.data.id)
 
-                //작업 완료 되면 페이지 이동
-                document.location.href = "/my-page";
-            })
-            .catch();
+            //작업 완료 되면 페이지 이동
+            document.location.href = "/record";
+        });
     };
     
-
-
 
     //화면
     return (

@@ -27,7 +27,8 @@ import axios from "axios";
 class Result extends React.Component {
     
     render(){
-        const userId = 3;
+        const userId = sessionStorage.getItem("userId");
+        console.log("userID",userId);
         var dt = new Date();
         var year = dt.getFullYear();
         var month = dt.getMonth()+1;
