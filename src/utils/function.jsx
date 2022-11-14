@@ -1,7 +1,7 @@
 import HAPPY from "../assets/image/splash/happy-icon.png";
 import ANGRY from "../assets/image/splash/angry-icon.png";
-import SAD from "../assets/image/splash/normal-icon.png";
-import NORMAL from "../assets/image/splash/sad-icon.png";
+import NORMAL from "../assets/image/splash/normal-icon.png";
+import SAD from "../assets/image/splash/sad-icon.png";
 import styled from 'styled-components';
 
 import HAPPYICON from "../assets/image/icon/yellow-icon.jpeg";

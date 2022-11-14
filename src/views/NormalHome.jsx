@@ -38,7 +38,7 @@ function NormalHome(props) {
     };
 
     useState(() => {
-        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feed-diary/normal-paging`)
+        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feed-diary/normal-paging?cursor=1&size=3`)
             .then((res) => {
                 set_feed(res.data.diaryList);
             })
