@@ -65,4 +65,51 @@ function convertIcon(feeling, onClick) {
     }
 }
 
-export { convertImage, convertIcon };
+function setHappyAmount(lists) {
+    let amount = 0;
+    for(let i = 0; i < lists.length; i++) {
+        if(lists[i].feeling == 'HAPPY'){
+            amount = lists[i].amount;
+        }
+    }
+    return !amount ? 0 : amount;
+}
+
+function setNormalAmount(lists) {
+    let amount = 0;
+    for(let i = 0; i < lists.length; i++) {
+        if(lists[i].feeling == 'NORMAL'){
+            amount = lists[i].amount;
+        }
+    }
+    return !amount ? 0 : amount;
+}
+
+function setSadAmount(lists) {
+    let amount = 0;
+    for(let i = 0; i < lists.length; i++) {
+        if(lists[i].feeling == 'SAD'){
+            amount = lists[i].amount;
+        }
+    }
+    return !amount ? 0 : amount;
+}
+
+function setAngryAmount(lists) {
+    let amount = 0;
+    for(let i = 0; i < lists.length; i++) {
+        if(lists[i].feeling == 'ANGRY'){
+            amount = lists[i].amount;
+        }
+    }
+    return !amount ? 0 : amount;
+}
+
+export {
+    convertImage,
+    convertIcon,
+    setHappyAmount,
+    setNormalAmount,
+    setSadAmount,
+    setAngryAmount,
+};
