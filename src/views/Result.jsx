@@ -33,11 +33,12 @@ class Result extends React.Component {
         var month = dt.getMonth()+1;
         var date = dt.getDate();
         var nowTime = year+'/'+month+'/'+date
-        const dictation = this.props.location.state.data.dictation; //사용자의 음성인식된 일기 내용
-        const emotion = this.props.location.state.emotion.RE; //사용자의 감정인식된 감정
 
-        console.log("여기", dictation, emotion);
-        
+        const dictation = sessionStorage.getItem("dictation"); //사용자의 음성인식된 일기 내용
+        const emotion = sessionStorage.getItem("Emotion"); //사용자의 감정 인덱스
+        const prob = sessionStorage.getItem("Prob"); //사용자의 감정 확률
+
+
         const onSubmit = async (e) => {
             e.preventDefault();
             e.persist();
@@ -92,14 +93,14 @@ class Result extends React.Component {
                                     </div>
                                 </div>
                                 <div className="result-container-left-row-second">
-                                    <p>오늘 세종님은 67% 확률로 행복한 날입니다.<br/></p>
+                                    <p>오늘 세종님은 {prob}% 확률로 행복한 날입니다.<br/></p>
                                     
                                 </div>
                                 <div className="result-container-left-row-third">
                                     <div className="result-container-left-row-third-first">AI 루밍이의 분석결과<br/></div>
                                     <span className="result-container-left-row-third-second-feel">HAPPY</span>
                                     <span className="result-container-left-row-third-second-bar"><img src={Progressbar} alt="Progressbar" style={{"width":"120px","hight":"120px"}}/></span>
-                                    <span className="result-container-left-row-third-second-percent">67%</span>
+                                    <span className="result-container-left-row-third-second-percent">{prob}%</span>
                                     <div className="result-container-left-row-third-face">세종님의 행복한 표정이 기록되었어요.</div>
                                     <div className="result-container-left-row-third-voice">세종님의 평온한 목소리가 기록되었어요.</div>
                                 </div>
@@ -156,14 +157,14 @@ class Result extends React.Component {
                                     </div>
                                 </div>
                                 <div className="result-container-left-row-second">
-                                    <p>오늘 세종님은 67% 확률로 그저그런 날입니다.<br/></p>
+                                    <p>오늘 세종님은 {prob}% 확률로 그저그런 날입니다.<br/></p>
                                     
                                 </div>
                                 <div className="result-container-left-row-third">
                                     <div className="result-container-left-row-third-first">AI 루밍이의 분석결과<br/></div>
                                     <span className="result-container-left-row-third-second-feel">NORMAL</span>
                                     <span className="result-container-left-row-third-second-bar"><img src={Progressbar} alt="Progressbar" style={{"width":"120px","hight":"120px"}}/></span>
-                                    <span className="result-container-left-row-third-second-percent">67%</span>
+                                    <span className="result-container-left-row-third-second-percent">{prob}%</span>
                                     <div className="result-container-left-row-third-face">세종님의 그저그런 표정이 기록되었어요.</div>
                                     <div className="result-container-left-row-third-voice">세종님의 평온한 목소리가 기록되었어요.</div>
                                 </div>
@@ -220,14 +221,14 @@ class Result extends React.Component {
                                     </div>
                                 </div>
                                 <div className="result-container-left-row-second">
-                                    <p>오늘 세종님은 67% 확률로 슬픈 날입니다.<br/></p>
+                                    <p>오늘 세종님은 {prob}% 확률로 슬픈 날입니다.<br/></p>
                                     
                                 </div>
                                 <div className="result-container-left-row-third">
                                     <div className="result-container-left-row-third-first">AI 루밍이의 분석결과<br/></div>
                                     <span className="result-container-left-row-third-second-feel">SAD</span>
                                     <span className="result-container-left-row-third-second-bar"><img src={Progressbar} alt="Progressbar" style={{"width":"120px","hight":"120px"}}/></span>
-                                    <span className="result-container-left-row-third-second-percent">67%</span>
+                                    <span className="result-container-left-row-third-second-percent">{prob}%</span>
                                     <div className="result-container-left-row-third-face">세종님의 슬픈 표정이 기록되었어요.</div>
                                     <div className="result-container-left-row-third-voice">세종님의 슬픈 목소리가 기록되었어요.</div>
                                 </div>
@@ -284,14 +285,14 @@ class Result extends React.Component {
                                     </div>
                                 </div>
                                 <div className="result-container-left-row-second">
-                                    <p>오늘 세종님은 67% 확률로 화난 날입니다.<br/></p>
+                                    <p>오늘 세종님은 {prob}% 확률로 화난 날입니다.<br/></p>
                                     
                                 </div>
                                 <div className="result-container-left-row-third">
                                     <div className="result-container-left-row-third-first">AI 루밍이의 분석결과<br/></div>
                                     <span className="result-container-left-row-third-second-feel">ANGRY</span>
                                     <span className="result-container-left-row-third-second-bar"><img src={Progressbar} alt="Progressbar" style={{"width":"120px","hight":"120px"}}/></span>
-                                    <span className="result-container-left-row-third-second-percent">67%</span>
+                                    <span className="result-container-left-row-third-second-percent">{prob}%</span>
                                     <div className="result-container-left-row-third-face">세종님의 화난 표정이 기록되었어요.</div>
                                     <div className="result-container-left-row-third-voice">세종님의 평온한 목소리가 기록되었어요.</div>
                                 </div>
