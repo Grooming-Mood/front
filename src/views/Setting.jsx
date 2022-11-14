@@ -1,4 +1,4 @@
-import React from "react";
+import React,{ useState } from "react";
 import { withRouter, Link } from "react-router-dom";
 import axios from 'axios';
 import SideMenu from "./SideMenu";
@@ -6,14 +6,17 @@ import User from "../assets/image/user/user.png";
 import UserUpdate from "../assets/image/user/user_update.png";
 import Logout from "../assets/image/user/logout.png";
 
-async function getUser({userId}) {
-    const response = await axios.fet(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/​user/${userId}/info`)
-    return response.data;
-}
-// const [state] = getUser(userId);  //id가 바뀔때마다 호출   
-// const {data:users} = state;
 
 function Setting(props) {
+    const userId = sessionStorage.getItem("userId");
+    console.log("userID",userId);
+    const [userName, set_name] = useState();
+    useState(() => {
+        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/user/${userId}/info`)
+            .then((res) => {
+                set_name(res.data.name);
+            })
+    });
 
     return (
 
@@ -32,7 +35,7 @@ function Setting(props) {
                         </div>
                         <img src={User} alt={User} style={{"width":"200px","hight":"200px"}}></img>
                         <div>
-                            <p> 님</p>
+                            <p>{userName} 님</p>
                         </div>
                     </div>
                     <div className="setting-right">
@@ -61,10 +64,7 @@ function Setting(props) {
                 </div>
                 <SideMenu></SideMenu>
             </div>
-
-
         </div>
-
     );
 }
 
