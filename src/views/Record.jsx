@@ -4,6 +4,7 @@ import SideMenu from "./SideMenu";
 import {useReactMediaRecorder} from "react-media-recorder";
 import axios from 'axios';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
+import { rest } from 'lodash';
 
 
 
@@ -31,8 +32,7 @@ const VideoPreview = ({ stream }) => {
 //화면
 function Record(props) {
 
-    const [Emotion, setEmotion] = useState(1); //유저의 감정 
-    const [dictation, setDictation] = useState("음성인식 된 내용");//음성인식 STT 내용
+
     const [videoFilePath, setVideoFilePath] = useState(null); //업로드 받은 파일
     const { status, startRecording, stopRecording, mediaBlobUrl, previewStream } = useReactMediaRecorder({video:true, audio:true});
     const [isRecording, setIsRecording] = useState(false);
@@ -53,7 +53,8 @@ function Record(props) {
     const handleStopRecording = () => {
         setIsRecording(false);
         stopRecording();
-        setDictation(transcript); //음성인식된 대본 저장
+        sessionStorage.setItem("dictation", transcript); //음성인식된 대본 저장
+        console.log(sessionStorage.getItem("dictation"));
         
     };
 
@@ -80,27 +81,38 @@ function Record(props) {
 
 
     
-    //영상 분석 요청 버튼 클릭 이벤트
     //업로드 받은 파일 경로 저장
     const handleVideoUpload = (event) => {
-        setVideoFilePath(URL.createObjectURL(event.target.files[0]));
-        console.log("handleVideoUpload 파일 저장 : ", videoFilePath);
+        setVideoFilePath(event.target.files[0]);
+        console.log("handleVideoUpload 파일 저장 : ", event.target.files[0]);
 
     };
 
-    //Flask api 요청 (******현재 오류남....)
-    const loadFlaskapi = (event) => {
-        event.preventDefault();
-        let formData = new FormData();
+
+
+    //감정분석 Flask api 요청
+    const loadFlaskapi = async() => {
+        
+        const formData = new FormData();
         formData.append("file",videoFilePath); // 분석할 동영상
 
-        for (let key of formData.keys()){
-            console.log(key, "전송될 데이터", formData.get(key));
-        } //formdata 확인
-        
-        const res = axios.get("http://127.0.0.1:5000/test");
-        console.log("끝");
-        console.log(res);
+        const res = axios.post("http://127.0.0.1:5000/recog_emotion", formData, {
+            headers:{
+                "Content-Type" : `multipart/form-data;`,
+            }
+        }).then(function(res){
+            if(res.status === 200){
+                console.log("감정 분석 완료");
+                console.log(res.data);
+
+                sessionStorage.setItem("Emotion", res.data['Face Emotion']);
+                sessionStorage.setItem("Prob", (res.data['Face Prob']*100).toFixed(1));
+
+                console.log(sessionStorage.getItem('Emotion'));
+                console.log(sessionStorage.getItem('Prob'));
+
+            };
+        });
         
     };
     
@@ -187,43 +199,32 @@ function Record(props) {
                         </div>
 
 
-                        <form action="http://127.0.0.1:5000/recog_emotion" method='POST' encType='multipart/form-data'>
-                            <input type="file" name="file" onChange={handleVideoUpload}></input>
-                            <button type="submit">
-                                <span>👩‍💻</span>
-                                <span>오늘의 일기 분석하기 url자체가 이동</span>
-                            </button>
-                        </form>
-                        <br></br>
-
-
-
                         <div>
-                            <form onSubmit={loadFlaskapi}>
-                                <input type="file" name="file" onChange={handleVideoUpload}></input>
-                                <button type="submit">
-                                    <span>여기를 눌러 분석하세요. flask테스트 오류</span>
-                                </button>
-                            </form>
+                            <input type="file" name="file" onChange={handleVideoUpload}></input>
+                            <button type="button" onClick={loadFlaskapi}>
+                                    <span>영상 업로드</span>
+                            </button>
                         </div>
 
 
                         <div>
                             <Link to={{
-                                pathname: "/result",
-                                state: { 
-                                    data: {dictation},
-                                    emotion: {Emotion}
-                                }
+                                pathname: "/result"
                             }}>
                                 <div className="button-status">
-                                <button className="button">
-                                    <span>👩‍💻</span>
-                                    <span>오늘의 일기 분석하기</span>
-                                </button>
+                                    <button className="button">
+                                        <span>👩‍💻</span>
+                                        <span>오늘의 일기 분석하기</span>
+                                    </button>
                                 </div>
                             </Link>
                         </div>
+
+                        <p></p>
+
+
+                        
+
                     </div>
                 </div>
 

@@ -1,5 +1,5 @@
-import React, { useLayoutEffect } from "react";
-import { withRouter, Link , useLocation} from "react-router-dom";
+import React,{ useState } from "react";
+import { withRouter, Link } from "react-router-dom";
 import SideMenu from "./SideMenu";
 import SadIcon from "../assets/image/splash/sad-icon.png";
 import NormalIcon from "../assets/image/splash/normal-icon.png";
@@ -8,20 +8,31 @@ import AngryIcon from "../assets/image/splash/angry-icon.png";
 import Progressbar from "../assets/image/result/progressbar.png";
 import axios from "axios";
 
-async function postDiary({userId}) {
-    const response = await axios.post(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/​my-diary​/${userId}`)
-    return response.data;
-}
-
-class Result extends React.Component {
-
-
-    render(){
+function Result (){
+    
+    // render(){
+        const userId = sessionStorage.getItem("userId");
+        console.log("userID",userId);
+        const [userName, set_name] = useState();
         
-        const dictation = this.props.location.state.data.dictation; //사용자의 음성인식된 일기 내용
+        useState(() => {
+            axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/user/${userId}/info`)
+                .then((res) => {
+                    set_name(res.data.name);
+                })
+        });
+        var dt = new Date();
+        var year = dt.getFullYear();
+        var month = dt.getMonth()+1;
+        var date = dt.getDate();
+        var nowTime = year+'/'+month+'/'+date
+        // const dictation = this.props.location.state.data.dictation; //사용자의 음성인식된 일기 내용
+        // const emotion = this.props.location.state.emotion.RE; //사용자의 감정인식된 감정
+        const dictation = "사용자의 음성인식된 일기 내용"
+        const emotion = 1
 
-        const emotion = this.props.location.state.emotion.Emotion; //사용자의 감정인식된 감정
-
+        console.log("여기", dictation, emotion);
+        
         //감정 0 - happy
         if(emotion==0){ 
             return (
@@ -45,7 +56,7 @@ class Result extends React.Component {
                                     </div>
                                 </div>
                                 <div className="result-container-left-row-second">
-                                    <p>오늘 세종님은 67% 확률로 행복한 날입니다.<br/></p>
+                                    <p>오늘 {userName}님은 67% 확률로 행복한 날입니다.<br/></p>
                                     
                                 </div>
                                 <div className="result-container-left-row-third">
@@ -53,8 +64,8 @@ class Result extends React.Component {
                                     <span className="result-container-left-row-third-second-feel">HAPPY</span>
                                     <span className="result-container-left-row-third-second-bar"><img src={Progressbar} alt="Progressbar" style={{"width":"120px","hight":"120px"}}/></span>
                                     <span className="result-container-left-row-third-second-percent">67%</span>
-                                    <div className="result-container-left-row-third-face">세종님의 행복한 표정이 기록되었어요.</div>
-                                    <div className="result-container-left-row-third-voice">세종님의 평온한 목소리가 기록되었어요.</div>
+                                    <div className="result-container-left-row-third-face">{userName}님의 행복한 표정이 기록되었어요.</div>
+                                    <div className="result-container-left-row-third-voice">{userName}님의 평온한 목소리가 기록되었어요.</div>
                                 </div>
                             </div>
                             <div className="result-container-right">
@@ -63,7 +74,7 @@ class Result extends React.Component {
                                 </div>
                                 <div className="result-container-right-row-second">
                                     <div className="result-container-right-row-second-date">
-                                        2022/12/24
+                                        {nowTime}
                                     </div>
                                     <div className="result-container-right-row-second-content-happy">
                                         <div className="result-container-right-row-second-content-happy-font">
@@ -86,13 +97,7 @@ class Result extends React.Component {
                     </div>
                 </div>
             );
-
         }
-
-
-
-
-
 
         // 감정 1 - neutral
         else if(emotion==1){ //neutral
@@ -115,7 +120,7 @@ class Result extends React.Component {
                                     </div>
                                 </div>
                                 <div className="result-container-left-row-second">
-                                    <p>오늘 세종님은 67% 확률로 그저그런 날입니다.<br/></p>
+                                    <p>오늘 {userName}은 67% 확률로 그저그런 날입니다.<br/></p>
                                     
                                 </div>
                                 <div className="result-container-left-row-third">
@@ -123,8 +128,8 @@ class Result extends React.Component {
                                     <span className="result-container-left-row-third-second-feel">NORMAL</span>
                                     <span className="result-container-left-row-third-second-bar"><img src={Progressbar} alt="Progressbar" style={{"width":"120px","hight":"120px"}}/></span>
                                     <span className="result-container-left-row-third-second-percent">67%</span>
-                                    <div className="result-container-left-row-third-face">세종님의 그저그런 표정이 기록되었어요.</div>
-                                    <div className="result-container-left-row-third-voice">세종님의 평온한 목소리가 기록되었어요.</div>
+                                    <div className="result-container-left-row-third-face">{userName}님의 그저그런 표정이 기록되었어요.</div>
+                                    <div className="result-container-left-row-third-voice">{userName}의 평온한 목소리가 기록되었어요.</div>
                                 </div>
                             </div>
                             <div className="result-container-right">
@@ -133,7 +138,7 @@ class Result extends React.Component {
                                 </div>
                                 <div className="result-container-right-row-second">
                                     <div className="result-container-right-row-second-date">
-                                        2022/12/24
+                                        {nowTime}
                                     </div>
                                     <div className="result-container-right-row-second-content-normal">
                                         <div className="result-container-right-row-second-content-normal-font">
@@ -156,18 +161,12 @@ class Result extends React.Component {
                     </div>
                 </div>
             );
-
         }
-
-
-
 
         //감정 2 -sad 
         else if(emotion==2){ //sad
             return (
-
                 <div className="result-sad">
-    
                     <div className="result-sad-header"> {/*헤더*/}
                         <Link to="/" className="result-sad-header-link">GroomingMood</Link>
                         <p>당신의 감정을<br/>어루만지는 AI 일기</p>
@@ -185,7 +184,7 @@ class Result extends React.Component {
                                     </div>
                                 </div>
                                 <div className="result-container-left-row-second">
-                                    <p>오늘 세종님은 67% 확률로 슬픈 날입니다.<br/></p>
+                                    <p>오늘 {userName}님은 67% 확률로 슬픈 날입니다.<br/></p>
                                     
                                 </div>
                                 <div className="result-container-left-row-third">
@@ -193,8 +192,8 @@ class Result extends React.Component {
                                     <span className="result-container-left-row-third-second-feel">SAD</span>
                                     <span className="result-container-left-row-third-second-bar"><img src={Progressbar} alt="Progressbar" style={{"width":"120px","hight":"120px"}}/></span>
                                     <span className="result-container-left-row-third-second-percent">67%</span>
-                                    <div className="result-container-left-row-third-face">세종님의 슬픈 표정이 기록되었어요.</div>
-                                    <div className="result-container-left-row-third-voice">세종님의 슬픈 목소리가 기록되었어요.</div>
+                                    <div className="result-container-left-row-third-face">{userName}님의 슬픈 표정이 기록되었어요.</div>
+                                    <div className="result-container-left-row-third-voice">{userName}님의 슬픈 목소리가 기록되었어요.</div>
                                 </div>
                             </div>
                             <div className="result-container-right">
@@ -203,7 +202,7 @@ class Result extends React.Component {
                                 </div>
                                 <div className="result-container-right-row-second">
                                     <div className="result-container-right-row-second-date">
-                                        2022/12/24
+                                        {nowTime}
                                     </div>
                                     <div className="result-container-right-row-second-content-sad">
                                         <div className="result-container-right-row-second-content-sad-font">
@@ -228,14 +227,10 @@ class Result extends React.Component {
             );
         }
 
-
-
         //감정 3 - angry
         else if(emotion==3){ //angry
             return (
-
                 <div className="result-angry">
-        
                     <div className="result-angry-header"> {/*헤더*/}
                         <Link to="/" className="result-angry-header-link">GroomingMood</Link>
                         <p>당신의 감정을<br/>어루만지는 AI 일기</p>
@@ -253,7 +248,7 @@ class Result extends React.Component {
                                     </div>
                                 </div>
                                 <div className="result-container-left-row-second">
-                                    <p>오늘 세종님은 67% 확률로 화난 날입니다.<br/></p>
+                                    <p>오늘 {userName}님은 67% 확률로 화난 날입니다.<br/></p>
                                     
                                 </div>
                                 <div className="result-container-left-row-third">
@@ -261,8 +256,8 @@ class Result extends React.Component {
                                     <span className="result-container-left-row-third-second-feel">ANGRY</span>
                                     <span className="result-container-left-row-third-second-bar"><img src={Progressbar} alt="Progressbar" style={{"width":"120px","hight":"120px"}}/></span>
                                     <span className="result-container-left-row-third-second-percent">67%</span>
-                                    <div className="result-container-left-row-third-face">세종님의 화난 표정이 기록되었어요.</div>
-                                    <div className="result-container-left-row-third-voice">세종님의 평온한 목소리가 기록되었어요.</div>
+                                    <div className="result-container-left-row-third-face">{userName}님의 화난 표정이 기록되었어요.</div>
+                                    <div className="result-container-left-row-third-voice">{userName}님의 평온한 목소리가 기록되었어요.</div>
                                 </div>
                             </div>
                             <div className="result-container-right">
@@ -271,7 +266,7 @@ class Result extends React.Component {
                                 </div>
                                 <div className="result-container-right-row-second">
                                     <div className="result-container-right-row-second-date">
-                                        2022/12/24
+                                        {nowTime}
                                     </div>
                                     <div className="result-container-right-row-second-content-angry">
                                         <div className="result-container-right-row-second-content-angry-font">
@@ -294,10 +289,9 @@ class Result extends React.Component {
                     </div>
                 </div>
             );
-
         }
         
     }
-}
+// }
 
 export default withRouter(Result);
