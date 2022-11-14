@@ -51,12 +51,12 @@ export const FeedList = ({ dataList }) => {
                                     <span>{ it.createdDate[0] +"-" + it.createdDate[1] + "-" + it.createdDate[2] + " " + it.createdDate[3] + ":" + it.createdDate[4] }</span>
                                 </div>
 
-                                <div className="data-likes">
-                                    {
-                                        (convertIcon(it.feeling, toggleLike))
-                                    }
-                                    <span>( { it.likes ? it.likes : 0 } )</span>
-                                </div>
+                                {/*<div className="data-likes">*/}
+                                {/*    {*/}
+                                {/*        (convertIcon(it.feeling, toggleLike))*/}
+                                {/*    }*/}
+                                {/*    <span>( { it.likes ? it.likes : 0 } )</span>*/}
+                                {/*</div>*/}
                             </div>
                         );
                     })}
