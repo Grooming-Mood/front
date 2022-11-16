@@ -28,18 +28,27 @@ function Result (){
     const dictation = sessionStorage.getItem("dictation"); //사용자의 음성인식된 일기 내용
     const emotion = sessionStorage.getItem("Emotion"); //사용자의 감정 인덱스 (0: 행복, 1: 노말, 2: 슬픔, 3: 화남)
     const prob = sessionStorage.getItem("Prob"); //사용자의 감정 확률
-    const emotion_type = "NORMAL"
-    console.log(emotion, prob, emotion_type);
 
+    // const emotion_type = "NORMAL"
+    // console.log(emotion, prob, emotion_type);
 
     //일기 저장 통신
     const onClickPublic = async() => {
 
-        // console.log("공개 저장");
-        // console.log("일기 내용:", dictation);
-        // console.log("감정:",emotion_type);
-        // let emotion_type = "NORMAL"
-        
+        if (emotion = 0){
+            var emotion_type = "HAPPY";
+        }
+        else if (emotion = 1){
+            var emotion_type = "NORMAL";
+        }
+        else if (emotion = 3){
+            var emotion_type = "SAD";
+        }
+        else if (emotion = 4){
+            var emotion_type = "ANGRY";
+        }
+        console.log("emotion", emotion_type);
+
         let data = JSON.stringify({
             feeling: emotion_type,
             diaryContent: dictation,
