@@ -1422,7 +1422,8 @@ button{
     direction: row;
     background-color: #FAF4DF;
     width: 100%;
-    margin: 5% 5% 5% 5%;
+    height: 300px;
+    margin: 0% 0% 5% 0%;
 }
 
 .result-container-right-row-second-content-happy-font{
