@@ -352,6 +352,19 @@ button{
     margin: 0% 0% 8% 0%;
 }
 
+.login-top{
+    font-family: 'KyoboHand';
+    text-align: center;
+    font-size: 30px;
+    flex: 1;
+    float: center;
+    font-weight: bold;
+    flex-direction: column;
+    margin-bottom: 5%;
+
+    /* border-right: 2px dashed #D7D7D7; */
+}
+
 .login-left{
     /* font-family: 'KyoboHand'; */
     font-size: 20px;
@@ -378,7 +391,7 @@ button{
     flex: 1;
     float: left;
     flex-direction: column;
-    margin: 0 0 0 15%
+    margin: 0 0 0 30%
 }
 
 .login-button-center{
