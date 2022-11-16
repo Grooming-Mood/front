@@ -85,8 +85,21 @@ function Login(props) {
                 <div className="login-parent">
                     <div className="login-left">
                         <img src={User} alt={User} style={{"width":"200px","hight":"200px"}}></img>
+                        <div className="home-title">
+                        Grooming Mood
+                    </div>
+
+                    <div className="home-sub">
+                        <span>
+                            당신의 감정을<br/>
+                            어루만지는 AI 일기
+                        </span>
+                    </div>
                     </div>
                     <div className="login-right">
+                        <div className="login-top">
+                            Login
+                        </div>
                         <div className="login-center">
                             <div style={loginStyleTextArea}>
                                 <input
