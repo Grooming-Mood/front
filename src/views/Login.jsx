@@ -2,48 +2,48 @@ import React, {useState } from "react";
 import { withRouter, Link } from "react-router-dom";
 import axios from 'axios';
 import SideMenu from "./SideMenu";
-import User from "../assets/image/user/user.png";
+import User from "../assets/image/splash/all-icon.png";
 
 
-//로그인 컴포넌트 css
-const loginStyleTextArea = {
-    alignContent: "center",
-    borderRadius: "22px",
-    marginBottom: "35px",
-    width: "80%",
-    height: "64px",
-    boxShadow: "0 0 8px 0 rgba(0, 0, 0, 0.2), 0 0 20px 0 rgba(0, 0, 0, 0.19)"
-  };
+// //로그인 컴포넌트 css
+// const loginStyleTextArea = {
+//     alignContent: "center",
+//     borderRadius: "22px",
+//     marginBottom: "35px",
+//     width: "80%",
+//     height: "64px",
+//     boxShadow: "0 0 8px 0 rgba(0, 0, 0, 0.2), 0 0 20px 0 rgba(0, 0, 0, 0.19)"
+// };
 
-const loginStyleTextInput = {
-    marginTop: "1.2rem",
-    fontFamily: "Montserrat regular",
-    fontSize: "15px",
-    border: "none",
-    width: "80%"
+// const loginStyleTextInput = {
+//     marginTop: "1.2rem",
+//     fontFamily: "Montserrat regular",
+//     fontSize: "15px",
+//     border: "none",
+//     width: "80%"
 
-}
+// }
 
-const loginStyleForm = {
-    height: "50%",
-    width: "50%",
-    marginBottom: "170px"
-}
+// const loginStyleForm = {
+//     height: "50%",
+//     width: "50%",
+//     marginBottom: "170px"
+// }
 
-const loginBtn = {
-    marginTop: "28px",
-    width: "165px",
-    height: "60px",
-    borderRadius: "30px",
-    background: "#FF99CC",
-    border: "none",
-    fontFamily: 'Montserrat',
-    fontSize: "20px",
-    color: "#FFFFFF",
-    boxShadow: "0 4px 8px 0 rgba(255, 204, 229, 0.7), 0 6px 20px 0 rgba(255, 204, 229, 0.9)",
-    cursor: "pointer"
+// const loginBtn = {
+//     marginTop: "28px",
+//     width: "165px",
+//     height: "60px",
+//     borderRadius: "30px",
+//     background: "#FF99CC",
+//     border: "none",
+//     fontFamily: 'Montserrat',
+//     fontSize: "20px",
+//     color: "#FFFFFF",
+//     boxShadow: "0 4px 8px 0 rgba(255, 204, 229, 0.7), 0 6px 20px 0 rgba(255, 204, 229, 0.9)",
+//     cursor: "pointer"
 
-}
+// }
 
 
 
@@ -95,41 +95,36 @@ function Login(props) {
             </div>
 
             <div className="home-content">
-                <div className="setting-parent">
-                    <div className="setting-left">
-                        <div style={{"font-size": "30px"}}>
-                            <p>로그인</p>
-                        </div>
+                <div className="login-parent">
+                    <div className="login-left">
                         <img src={User} alt={User} style={{"width":"200px","hight":"200px"}}></img>
-                        <div>
-                            <p>김세종 님</p>
-                        </div>
                     </div>
-                    <div className="setting-right">
+                    {/* <div className="login-right">
                         <form style={loginStyleForm}>
-                            <div style={loginStyleTextArea}>
+                            <div style={loginStyleTextArea}> */}
                                 <input
-                                    style={loginStyleTextInput}
+                                    // style={loginStyleTextInput}
                                     type="email"
                                     placeholder="이메일을 입력하세요"
                                     name="input_id"
                                     value={inputId}
                                     onChange={handleInputId}
                                 />
-                            </div>
-                            <div style={loginStyleTextArea}>
+                            {/* </div>
+                            <div style={loginStyleTextArea}> */}
                                 <input
-                                    style={loginStyleTextInput}
+                                    // style={loginStyleTextInput}
                                     type="password"
                                     placeholder="비밀번호를 입력하세요"
                                     name="input_pw"
                                     value={inputPw}
                                     onChange={handleInputPw}
                                 />
-                            </div>
+                            {/* </div> */}
 
-                            <button style={loginBtn} onClick={onClickLogin}>로그인하기</button>
-                        </form>
+                            <button onClick={onClickLogin}>로그인하기</button>
+                            {/* <button style={loginBtn} onClick={onClickLogin}>로그인하기</button> */}
+                        {/* </form> */}
 
 
                         
@@ -141,7 +136,7 @@ function Login(props) {
             </div>
 
 
-        </div>
+        // </div>
 
     );
 }
