@@ -371,6 +371,26 @@ button{
     border-left: 2px dashed #D7D7D7;
 }
 
+.login-center{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    text-align: left;
+    flex: 1;
+    float: left;
+    flex-direction: column;
+    margin: 0 0 0 15%
+}
+
+.login-button-center{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    text-align: center;
+    flex: 1;
+    float: center;
+    flex-direction: column;
+    margin: 0 0 0 0%
+}
+
 
 @font-face {
     font-family: 'KyoboHand';
