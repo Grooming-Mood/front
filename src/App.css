@@ -336,6 +336,41 @@ button{
     flex-direction: column;
 }
 
+.login-parent{
+    box-sizing: border-box;
+    border: 1px dashed #888787;
+    background-color: #F9F9F9;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    width: 80%;
+    height: 700px;
+    border-radius: 20px;
+    padding: 8% 0% 10% 0;
+    margin: 0% 0% 8% 0%;
+}
+
+.login-left{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    flex: 1;
+    float: left;
+    flex-direction: column;
+
+    /* border-right: 2px dashed #D7D7D7; */
+}
+.login-right{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    text-align: left;
+    flex: 1;
+    float: left;
+    flex-direction: column;
+    border-left: 2px dashed #D7D7D7;
+}
+
 
 @font-face {
     font-family: 'KyoboHand';
