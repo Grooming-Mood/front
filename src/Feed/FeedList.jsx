@@ -47,9 +47,9 @@ export const FeedList = ({ dataList }) => {
                                 </div>
 
                                 <div className="data-button">
-                                    {/*<Link to={`/detail/${it.diaryId}`}>*/}
-                                    <button className="custom-btn btn-16" onClick={ sessionStorage.setItem('diaryId', it.diaryId )}>상세 보기</button>
-                                    {/*</Link>*/}
+                                    <Link to={`/detail`}>
+                                        <button className="custom-btn btn-16" onClick={ sessionStorage.setItem('diaryId', it.diaryId )}>상세 보기</button>
+                                    </Link>
                                 </div>
 
                                 <div className="data-date">
