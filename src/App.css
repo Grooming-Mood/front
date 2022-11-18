@@ -425,7 +425,6 @@ button{
     box-sizing: border-box;
     border: 1px dashed #888787;
     background-color: #F9F9F9;
-
     width: 80%;
     height: 900px;
     border-radius: 20px;
@@ -436,6 +435,7 @@ button{
 .diary-container {
     margin: 0%;
     padding: 0%;
+
 }
 
 .diary-title {
@@ -446,8 +446,7 @@ button{
 .data-container {
     box-sizing: border-box;
     border-bottom: 1px solid #D7D7D7;
-    padding: 5% 0%;
-
+    padding: 3% 0%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -509,8 +508,9 @@ button{
 }
 
 .calendar {
-    width: 70%;
-    height: 70%;
+    width: 60%;
+    height: 60%;
+    scale: 90%;
 
 }
 .calendar .header {
