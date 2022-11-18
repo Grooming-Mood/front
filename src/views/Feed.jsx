@@ -19,7 +19,7 @@ function Feed(props) {
     const handlePageChange = (page) => {
         set_page(page);
         set_loading(true);
-        console.log('cursor' + cursor);
+
         axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feed-diary/all-paging?cursor=${cursor}&size=3`)
             .then((res) => {
                 const data = res.data;
@@ -41,9 +41,6 @@ function Feed(props) {
                 set_feed(data.diaryList);
 
                 if(data.hasNext) {
-                    // console.log('cursor' + cursor);
-                    // console.log(data);
-                    // console.log(data.hasNext);
                     set_cursor(data.nextCursor);
                 }
 
