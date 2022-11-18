@@ -138,17 +138,30 @@ function DetailView() {
 
     //감정 3 - angry
     else if(feeling == 'ANGRY' ){ //angry
-        console.log("BBcheckdiaryId",diaryId);
-        sessionStorage.removeItem("diaryId");
-        console.log("AAcheckdiaryId",diaryId);
         return (
-            <div className="result-happy">
-                <div className="result-happy-header"> {/*헤더*/}
-                    <Link to="/" className="result-happy-header-link">GroomingMood</Link>
+            <div className="result-angry">
+                <div className="result-angry-header"> {/*헤더*/}
+                    <Link to="/" className="result-angry-header-link">GroomingMood</Link>
                     <p>당신의 감정을<br/>어루만지는 AI 일기</p>
                 </div>
                 <div className="home-content">
-                    <div className="result-container">
+                    <div className="detail-container">
+                        <div className="detail-container-row">
+                            <div className="detail-container-row-first">
+                            <img src={AngryIcon} alt="Angry" style={{"width":"50px","hight":"50px"}}/>
+                            </div>
+                            <div className="detail-container-row-first-second">
+                                {userName}
+                            </div>
+                            <div className="detail-container-row-first-thrid">
+                                {createdDate[0] +"-" + createdDate[1] + "-" + createdDate[2] + " " + createdDate[3] + ":" + createdDate[4]}
+                            </div>
+                        </div>
+                        <div className="detail-angry">
+                            <div className="detail-angry-font">
+                                {diaryContent}
+                            </div>
+                        </div>
                     </div>
                     <SideMenu></SideMenu>
                 </div>
