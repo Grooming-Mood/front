@@ -12,7 +12,7 @@ import axios from "axios";
 function SadHome(props) {
     const [page, set_page] = useState(1);
     const [feed, set_feed] = useState([]);
-    const [user_id, set_userId] = useState(0);
+    const [user_id, set_userId] = useState(sessionStorage.getItem("userId"));
     const [cursor, set_cursor] = useState('');
     const [loading, set_loading] = useState(false);
 
