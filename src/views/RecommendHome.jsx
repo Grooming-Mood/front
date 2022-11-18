@@ -8,6 +8,7 @@ function RecommendHome(props) {
     const [loading, setLoading] = useState(true);
     const [user_id, set_userId] = useState(sessionStorage.getItem("userId"));
 
+
     useEffect(() => {
         fetch(`https://api.themoviedb.org?i=${props.match.params.id}&apikey=${process.env.APIKEY}`)
             .then(res => res.json())
@@ -28,7 +29,7 @@ function RecommendHome(props) {
                 <div className="recommend-container">
                     <div className="recommend-header-container">
                         <h2 className="recommend-header-title">
-                            세종님! 오늘 기분이 좋아보이시네요
+                            세종님! 기분 좋은 날에는 영화 어때요?
                         </h2>
                     </div>
 

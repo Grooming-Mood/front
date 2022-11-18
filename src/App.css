@@ -1801,6 +1801,11 @@ button {
     padding : 0% 0% 0% 10%;
 }
 
+.recommend-header-desciption {
+    text-align: left;
+    padding : 0% 0% 0% 10%;
+}
+
 /* movies */
 .movies {
     scale: 90%;
