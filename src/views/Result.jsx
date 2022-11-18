@@ -28,45 +28,92 @@ function Result (){
     const dictation = sessionStorage.getItem("dictation"); //사용자의 음성인식된 일기 내용
     const emotion = sessionStorage.getItem("Emotion"); //사용자의 감정 인덱스 (0: 행복, 1: 노말, 2: 슬픔, 3: 화남)
     const prob = sessionStorage.getItem("Prob"); //사용자의 감정 확률
+    // const dictation = "공개 일기 버튼 테스트 용도" //사용자의 음성인식된 일기 내용
+    // const emotion = 0;
 
     // const emotion_type = "NORMAL"
     // console.log(emotion, prob, emotion_type);
 
     //일기 저장 통신
     const onClickPublic = async() => {
+        // const formData = new FormData()
 
-        if (emotion = 0){
+        console.log("emotion", emotion);
+        
+        if (emotion == 0){
             var emotion_type = "HAPPY";
         }
-        else if (emotion = 1){
+        else if (emotion == 1){
             var emotion_type = "NORMAL";
         }
-        else if (emotion = 3){
+        else if (emotion == 2){
             var emotion_type = "SAD";
         }
-        else if (emotion = 4){
+        else if (emotion == 3){
             var emotion_type = "ANGRY";
         }
-        console.log("emotion", emotion_type);
+        console.log("emotion_type", emotion_type);
 
-        let data = JSON.stringify({
-            feeling: emotion_type,
+        let data = {
             diaryContent: dictation,
+            feeling: emotion_type,
             isPublic: Boolean(true)
-        });
+        };
         console.log("공개 저장");
         console.log("일기 내용:", dictation);
-        axios.post("http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/my-diary/${userId}",
+        axios.post(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/my-diary/${userId}`,
         data,{headers:{"Content-Type" : "application/json"}})
         .then((res)=> {
             console.log("res출력");
-            res.setHeader('Access-Control-Allow-origin', '*');
+            // res.setHeader('Access-Control-Allow-origin', '*');
             console.log(res);
             console.log("성공");
 
             //작업 완료 되면 페이지 이동
-            document.location.href = "/feed";
+            document.location.href = "/my-page";
         });
+
+    };
+
+    //일기 저장 통신
+    const onClickPrivate = async() => {
+        // const formData = new FormData()
+
+        console.log("emotion", emotion);
+        
+        if (emotion == 0){
+            var emotion_type = "HAPPY";
+        }
+        else if (emotion == 1){
+            var emotion_type = "NORMAL";
+        }
+        else if (emotion == 2){
+            var emotion_type = "SAD";
+        }
+        else if (emotion == 3){
+            var emotion_type = "ANGRY";
+        }
+        console.log("emotion_type", emotion_type);
+
+        let data = {
+            diaryContent: dictation,
+            feeling: emotion_type,
+            isPublic: Boolean(false)
+        };
+        console.log("비밀 저장");
+        console.log("일기 내용:", dictation);
+        axios.post(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/my-diary/${userId}`,
+        data,{headers:{"Content-Type" : "application/json"}})
+        .then((res)=> {
+            console.log("res출력");
+            // res.setHeader('Access-Control-Allow-origin', '*');
+            console.log(res);
+            console.log("성공");
+
+            //작업 완료 되면 페이지 이동
+            document.location.href = "/my-page";
+        });
+
     };
         
         //감정 0 - happy
@@ -123,8 +170,8 @@ function Result (){
                                         저장 방식을 선택해주세요!
                                     </div>
                                     <div className="result-container-right-row-thrid-select-button">
-                                        <button className="result-button">개인 피드에 저장하기</button>
-                                        <button className="result-button">공유 피드에 저장하기</button>
+                                        <button className="result-button" onClick={onClickPrivate}>개인 피드에 저장하기</button>
+                                        <button className="result-button" onClick={onClickPublic} >공유 피드에 저장하기</button>
                                     </div>
                                 </div>
                             </div>
@@ -187,7 +234,7 @@ function Result (){
                                         저장 방식을 선택해주세요!
                                     </div>
                                     <div className="result-container-right-row-thrid-select-button">
-                                        <button className="result-button" >개인 피드에 저장하기</button>
+                                        <button className="result-button" onClick={onClickPrivate}>개인 피드에 저장하기</button>
                                         <button className="result-button" onClick={onClickPublic}>공유 피드에 저장하기</button>
                                     </div>
                                 </div>
@@ -251,8 +298,8 @@ function Result (){
                                         저장 방식을 선택해주세요!
                                     </div>
                                     <div className="result-container-right-row-thrid-select-button">
-                                        <button className="result-button">개인 피드에 저장하기</button>
-                                        <button className="result-button">공유 피드에 저장하기</button>
+                                        <button className="result-button" onClick={onClickPrivate}>개인 피드에 저장하기</button>
+                                        <button className="result-button" onClick={onClickPublic} >공유 피드에 저장하기</button>
                                     </div>
                                 </div>
                             </div>
@@ -315,8 +362,8 @@ function Result (){
                                         저장 방식을 선택해주세요!
                                     </div>
                                     <div className="result-container-right-row-thrid-select-button">
-                                        <button className="result-button">개인 피드에 저장하기</button>
-                                        <button className="result-button">공유 피드에 저장하기</button>
+                                        <button className="result-button" onClick={onClickPrivate} >개인 피드에 저장하기</button>
+                                        <button className="result-button" onClick={onClickPublic} >공유 피드에 저장하기</button>
                                     </div>
                                 </div>
                             </div>
