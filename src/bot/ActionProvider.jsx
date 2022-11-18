@@ -4,6 +4,30 @@ class ActionProvider {
         this.setState = setStateFunc;
         this.createClientMessage = createClientMessage;
     }
+
+    handleFlaskAPI = () => {
+        const messages= this.createChatbotMessage(
+            sessionStorage.getItem('ChatbotRes'),
+            { withAvatar: true }
+        );
+        this.addMessageToBotState(messages);
+    };
+
+    addMessageToBotState = (messages, newState) => {
+        if (Array.isArray(messages)) {
+          this.setState((state) => ({
+            ...state,
+            ...newState,
+            messages: [...state.messages, ...messages],
+          }));
+        } else {
+          this.setState((state) => ({
+            ...state,
+            ...newState,
+            messages: [...state.messages, messages],
+          }));
+        }
+      };
 }
 
 export default ActionProvider;
