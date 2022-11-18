@@ -2132,3 +2132,22 @@ button {
     direction: row;
     margin: 5% 5% 5% 5%;
 }
+
+.detail-sad{
+    /* float: left; */
+    /* flex: 1; */
+    /* direction: ; */
+    flex-direction: column;
+    background-color: #D7D7D7;
+    width: 80%;
+    height: 1000px;
+    margin: 2% 10% 2% 10%;
+}
+.detail-sad-font{
+    font-family: 'UhBeeann';
+    font-size: 20px;
+    float: left;
+    /* flex: 1; */
+    direction: row;
+    margin: 5% 5% 5% 5%;
+}
