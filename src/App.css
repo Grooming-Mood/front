@@ -1844,6 +1844,8 @@ button {
     scale: 90%;
     display: flex;
     padding: 8px 18px;
+    justify-content: center;
+    align-items: center;
 }
 .movies .movie {
     padding: 10px;
