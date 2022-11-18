@@ -14,6 +14,7 @@ import NormalHome from "./views/NormalHome";
 import Chatbot from "./views/Chatbot";
 import MyPage from "./views/MyPage";
 import Chart from "./views/Chart";
+import RecommendHome from "./views/RecommendHome";
 
 function App() {
     return (
@@ -36,6 +37,7 @@ function App() {
                   <Route path="/result" component={ Result } exact /> {/*회원 정보 프사, 닉네임 수정*/}
 
                   <Route path="/chatbot" component={ Chatbot }/>
+                  <Route path="/recommendation" component={ RecommendHome } exact />
               </div>
             </div>
         </BrowserRouter>
