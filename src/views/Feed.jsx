@@ -8,24 +8,28 @@ import { FeedList } from "../Feed/FeedList";
 import Pagination from "react-js-pagination";
 import "../styles/pagination.css";
 import axios from "axios";
-import Button from "./Button";
 
 function Feed(props) {
     const [page, set_page] = useState(1);
     const [feed, set_feed] = useState([]);
     const [myfeed, set_myfeed] = useState([]);
     const [userId, set_userId] = useState(0);
-    const [button, set_button] = useState(false);
+    const [cursor, set_cursor] = useState(1);
 
     const handlePageChange = (page) => {
         set_page(page);
     };
-
+    // https://chanhuiseok.github.io/posts/react-13/
     useState(() => {
-        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feed-diary/all-paging?cursor=1&size=3`)
+        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feed-diary/all-paging?cursor=${cursor}&size=3`)
             .then((res) => {
-                console.log(res.data);
-                set_feed(res.data.diaryList);
+                const data = res.data;
+                set_feed(data.diaryList);
+                console.log(data);
+
+                if(data.hasNext) {
+                    set_cursor(res.data.diaryList.nextCursor);
+                }
             });
     }, []);
 
@@ -61,9 +65,7 @@ function Feed(props) {
                 onChange={handlePageChange}
             />
         </div>
-
     );
-
 }
 
 export default withRouter(Feed);

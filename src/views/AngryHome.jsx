@@ -9,27 +9,6 @@ import Pagination from "react-js-pagination";
 import "../styles/angry-pagination.css";
 import axios from "axios";
 
-const dummyList = [
-    {
-        "createdDate": "2022-10-31T07:29:57.732Z",
-        "diaryContent": "하이1",
-        "diaryId": 1,
-        "feeling": "ANGRY",
-        "profileImg": "",
-        "userName": "doha1",
-        "likes" : 5,
-    },
-    {
-        "createdDate": "2022-10-31T07:29:57.732Z",
-        "diaryContent": "하이2",
-        "diaryId": 2,
-        "feeling": "ANGRY",
-        "profileImg": "",
-        "userName": "doha2",
-        "likes" : 5,
-    },
-];
-
 function AngryHome(props) {
     const [page, setPage] = useState(1);
     const [feed, set_feed] = useState([]);
