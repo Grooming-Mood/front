@@ -8,7 +8,6 @@ import { FeedList } from "../Feed/FeedList";
 import Pagination from "react-js-pagination";
 import "../styles/pagination.css";
 import axios from "axios";
-import Button from "./Button";
 
 function Feed(props) {
     const [page, set_page] = useState(1);
