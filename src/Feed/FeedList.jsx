@@ -10,7 +10,6 @@ import {Link} from "react-router-dom";
 
 export const FeedList = ({ dataList }) => {
     const [like, setLike] = useState(false);
-
     useEffect(async() => {
         const fetchData = async () => {
             // const res = await axios.get(...)
@@ -48,7 +47,9 @@ export const FeedList = ({ dataList }) => {
 
                                 <div className="data-button">
                                     <Link to={`/detail`}>
-                                        <button className="custom-btn btn-16" onClick={ sessionStorage.setItem('diaryId', it.diaryId )}>상세 보기</button>
+                                        <button className="custom-btn btn-16" onClick={ 
+                                            sessionStorage.setItem('diaryId', it.diaryId )}
+                                            >상세 보기</button>
                                     </Link>
                                 </div>
 
