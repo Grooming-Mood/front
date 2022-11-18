@@ -12,25 +12,38 @@ import axios from "axios";
 function MyPage(props) {
     const [page, set_page] = useState(1);
     const [feed, set_feed] = useState([]);
-    const [myfeed, set_myfeed] = useState([]);
-    const [userId, set_userId] = useState(1);
-    const [cursor, set_cursor] = useState(1);
+    const [user_id, set_userId] = useState(sessionStorage.getItem("userId"));
+    const [cursor, set_cursor] = useState('');
+    const [loading, set_loading] = useState(false);
 
     const handlePageChange = (page) => {
         set_page(page);
-    };
+        set_loading(true);
 
-    // https://chanhuiseok.github.io/posts/react-13/
-    useState(() => {
-        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/my-diary/${userId}?cursor=${cursor}&size=3`)
+        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/my-diary/${user_id}?cursor=${cursor}&size=3`)
             .then((res) => {
                 const data = res.data;
                 set_feed(data.diaryList);
-                console.log(data);
 
                 if(data.hasNext) {
-                    set_cursor(res.data.diaryList.nextCursor);
+                    set_cursor(data.nextCursor);
                 }
+
+                set_loading(false);
+            });
+    };
+
+    useState(() => {
+        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/my-diary/${user_id}?size=3`)
+            .then((res) => {
+                const data = res.data;
+                set_feed(data.diaryList);
+
+                if(data.hasNext) {
+                    set_cursor(data.nextCursor);
+                }
+
+                set_loading(false);
             });
     }, []);
 
