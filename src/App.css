@@ -1316,7 +1316,7 @@ button{
     font-weight: bold;
     float: left;
     flex-direction: column;
-    margin: 0% 10% 0% 10%;
+    margin: 9% 10% 0% 10%;
 }
 
 .result-container-left-row-first-right{
@@ -1324,7 +1324,7 @@ button{
     flex: 1;
     float: right;
     flex-direction: column;
-    margin: 0% 10% 0% 0%;
+    margin: 3% 10% 0% 0%;
 }
 
 .result-container-left-row-second{
@@ -1356,7 +1356,7 @@ button{
     flex: 1;
     float: center;
     flex-direction: row;
-    margin: 2% 0% 5% 0%;
+    margin: 2% 0% 1% 0%;
 }
 
 .result-container-left-row-third-second-feel{
@@ -1391,25 +1391,25 @@ button{
     flex: 1;
     float: center;
     flex-direction: row;
-    margin: 10% 0% 5% 2%;
+    margin: 1% 0% 1% 2%;
 }
 
 .result-container-left-row-third-face{
     /* font-family: 'KyoboHand'; */
-    font-size: 20px;
+    font-size: 15px;
     flex: 1;
     float: center;
     flex-direction: row;
-    margin: 10% 0% 5% 2%;
+    margin: 1% 0% 1% 2%;
 }
 
 .result-container-left-row-third-voice{
     /* font-family: 'KyoboHand'; */
-    font-size: 20px;
+    font-size: 15px;
     flex: 1;
     float: center;
     flex-direction: row;
-    margin: 3% 0% 5% 2%;
+    margin: 1% 0% 1% 2%;
 }
 
 .result-container-right{

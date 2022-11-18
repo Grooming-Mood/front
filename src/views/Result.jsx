@@ -97,7 +97,8 @@ function Result (){
     const emotion = sessionStorage.getItem("Face Emotion"); //사용자의 감정 인덱스 (0: 행복, 1: 노말, 2: 슬픔, 3: 화남)
     const prob = sessionStorage.getItem("Face Prob"); //사용자의 감정 확률
     // const dictation = "공개 일기 버튼 테스트 용도" //사용자의 음성인식된 일기 내용
-    // const emotion = 0;
+    // const emotion = 3
+    // const prob = 70
 
     // const emotion_type = "NORMAL"
     // console.log(emotion, prob, emotion_type);
@@ -138,7 +139,7 @@ function Result (){
             console.log("성공");
 
             //작업 완료 되면 페이지 이동
-            document.location.href = "/my-page";
+            document.location.href = "/recommendation";
         });
 
     };
@@ -179,7 +180,7 @@ function Result (){
             console.log("성공");
 
             //작업 완료 되면 페이지 이동
-            document.location.href = "/my-page";
+            document.location.href = "/recommendation";
         });
 
     };
@@ -187,9 +188,9 @@ function Result (){
         //감정 0 - happy
         if(emotion==0){ 
             return (
-                <div className="result-normal">
-                    <div className="result-normal-header"> {/*헤더*/}
-                        <Link to="/" className="result-normal-header-link">GroomingMood</Link>
+                <div className="result-happy">
+                    <div className="result-happy-header"> {/*헤더*/}
+                        <Link to="/" className="result-happy-header-link">GroomingMood</Link>
                         <p>당신의 감정을<br/>어루만지는 AI 일기</p>
                     </div>
                     <div className="home-content">
@@ -200,7 +201,7 @@ function Result (){
                                         AI 루밍이가 분석한<br/> 오늘의 일기입니다!<br/>
                                     </div>
                                     <div className="result-container-left-row-first-right">
-                                        <img src={NormalIcon} alt="Normal" style={{"width":"150px","hight":"150px"}}/>
+                                        <img src={HappyIcon} alt="Happy" style={{"width":"150px","hight":"150px"}}/>
                                         <br/>
                                     </div>
                                 </div>
@@ -223,8 +224,8 @@ function Result (){
                                     <div className="result-container-right-row-second-date">
                                         {nowTime}
                                     </div>
-                                    <div className="result-container-right-row-second-content-normal">
-                                        <div className="result-container-right-row-second-content-normal-font">
+                                    <div className="result-container-right-row-second-content-happy">
+                                        <div className="result-container-right-row-second-content-happy-font">
                                             {dictation}
                                         </div>
                                     </div>
@@ -311,9 +312,9 @@ function Result (){
         //감정 2 -sad 
         else if(emotion==2){ //sad
             return (
-                <div className="result-normal">
-                    <div className="result-normal-header"> {/*헤더*/}
-                        <Link to="/" className="result-normal-header-link">GroomingMood</Link>
+                <div className="result-sad">
+                    <div className="result-sad-header"> {/*헤더*/}
+                        <Link to="/" className="result-sad-header-link">GroomingMood</Link>
                         <p>당신의 감정을<br/>어루만지는 AI 일기</p>
                     </div>
                     <div className="home-content">
@@ -324,7 +325,7 @@ function Result (){
                                         AI 루밍이가 분석한<br/> 오늘의 일기입니다!<br/>
                                     </div>
                                     <div className="result-container-left-row-first-right">
-                                        <img src={NormalIcon} alt="Normal" style={{"width":"150px","hight":"150px"}}/>
+                                        <img src={SadIcon} alt="Sad" style={{"width":"150px","hight":"150px"}}/>
                                         <br/>
                                     </div>
                                 </div>
@@ -347,8 +348,8 @@ function Result (){
                                     <div className="result-container-right-row-second-date">
                                         {nowTime}
                                     </div>
-                                    <div className="result-container-right-row-second-content-normal">
-                                        <div className="result-container-right-row-second-content-normal-font">
+                                    <div className="result-container-right-row-second-content-sad">
+                                        <div className="result-container-right-row-second-content-sad-font">
                                             {dictation}
                                         </div>
                                     </div>
@@ -373,9 +374,9 @@ function Result (){
         //감정 3 - angry
         else if(emotion==3){ //angry
             return (
-                <div className="result-normal">
-                    <div className="result-normal-header"> {/*헤더*/}
-                        <Link to="/" className="result-normal-header-link">GroomingMood</Link>
+                <div className="result-angry">
+                    <div className="result-angry-header"> {/*헤더*/}
+                        <Link to="/" className="result-angry-header-link">GroomingMood</Link>
                         <p>당신의 감정을<br/>어루만지는 AI 일기</p>
                     </div>
                     <div className="home-content">
@@ -386,7 +387,7 @@ function Result (){
                                         AI 루밍이가 분석한<br/> 오늘의 일기입니다!<br/>
                                     </div>
                                     <div className="result-container-left-row-first-right">
-                                        <img src={NormalIcon} alt="Normal" style={{"width":"150px","hight":"150px"}}/>
+                                        <img src={AngryIcon} alt="Angry" style={{"width":"150px","hight":"150px"}}/>
                                         <br/>
                                     </div>
                                 </div>
@@ -409,8 +410,8 @@ function Result (){
                                     <div className="result-container-right-row-second-date">
                                         {nowTime}
                                     </div>
-                                    <div className="result-container-right-row-second-content-normal">
-                                        <div className="result-container-right-row-second-content-normal-font">
+                                    <div className="result-container-right-row-second-content-angry">
+                                        <div className="result-container-right-row-second-content-angry-font">
                                             {dictation}
                                         </div>
                                     </div>
