@@ -1737,11 +1737,9 @@ button {
 
 /* 영화 추천 */
 .recommend-home {
-
     background-color: #E6808E;
     width: 100%;
     height: 1080px;
-
 }
 
 .recommend-home-header {
@@ -1774,6 +1772,7 @@ button {
     margin: 0;
     padding: 0% 1.2% 0% 0%;
 }
+
 .recommend-content {
     display: flex;
     flex-direction: row;
@@ -1781,7 +1780,7 @@ button {
     background-color: #E6808E;
 }
 
-.angry-container {
+.recommend-container {
     box-sizing: border-box;
     border: 1px dashed #888787;
     background-color: #F9F9F9;
@@ -1792,14 +1791,192 @@ button {
     margin: 0% 0% 8% 0%;
 }
 
-/*.angry-diary-container {*/
-/*    margin: 0%;*/
-/*    padding: 0%;*/
-/*}*/
+.recommend-header-container {
+    margin: 0%;
+    padding: 0%;
+}
 
-.recommend-title {
+.recommend-header-title {
     text-align: left;
     padding : 0% 0% 0% 10%;
 }
 
+.recommend-header-desciption {
+    text-align: left;
+    padding : 0% 0% 0% 10%;
+}
 
+/* movies */
+.movies {
+    scale: 90%;
+    display: flex;
+    padding: 8px 18px;
+}
+.movies .movie {
+    padding: 10px;
+    cursor: pointer;
+}
+.movies .movie .poster {
+    width: 100%;
+    margin-bottom: 6px;
+    border-radius: 4px;
+}
+.movies .movie .poster.active {
+    opacity: 0;
+}
+.movies .movie .title {
+    color: #525661;
+    margin-bottom: 4px;
+    font-size: 16px;
+}
+.movies .movie .info {
+    font-size: 11px;
+    opacity: 0.8;
+}
+.movies .movie .desc {
+    display: none;
+}
+
+/* movie - detail */
+.detail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    padding: 37px 30px 30px 255px;
+    display: none;
+}
+.detail::before {
+    content: "";
+    background: #fff;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    opacity: 0;
+    -webkit-transition: all 0.4s cubic-bezier(0.67, 0.13, 0.1, 0.81);
+    transition: all 0.4s cubic-bezier(0.67, 0.13, 0.1, 0.81);
+}
+.detail .close {
+    position: absolute;
+    top: 21px;
+    right: 22px;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+    border: 6px solid #FFF;
+    box-sizing: content-box;
+    z-index: 10;
+}
+.detail .poster {
+    position: absolute;
+    z-index: 2;
+    top: -10%;
+    left: -6%;
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s cubic-bezier(0.67, 0.13, 0.1, 0.81);
+}
+
+.detail .title,
+.detail .info,
+.detail .desc,
+.detail .play,
+.detail .close {
+    transform: translateX(-50px);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.67, 0.13, 0.1, 0.81);
+}
+.detail .close {
+    transform: translateX(10px);
+}
+.detail .title {
+    font-size: 35px;
+    font-weight: 300;
+    color: #525661;
+    margin-bottom: 5px;
+}
+.detail .info {
+    font-size: 11px;
+    opacity: 0;
+    margin-left: 2px;
+}
+.detail .desc {
+    margin-top: 30px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+.detail .play {
+    background: -webkit-linear-gradient(0deg, #E4761F, #FF8B32);
+    background: linear-gradient(90deg, #E4761F, #FF8B32);
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 12px;
+    line-height: 1.5;
+    padding: 8px 17px;
+    margin: 30px 0 0 -2px;
+    text-transform: uppercase;
+    z-index: 10;
+    outline: none !important;
+    cursor: pointer;
+    opacity: 0;
+}
+.detail .play svg {
+    vertical-align: middle;
+    position: relative;
+    top: -2px;
+    margin-right: 3px;
+}
+
+.detail.ready::before {
+    opacity: 1;
+}
+.detail.ready .info {
+    opacity: 0.8;
+}
+.detail.ready .poster {
+    opacity: 1;
+    transition-duration: 0.5s;
+}
+.detail.ready .title,
+.detail.ready .info,
+.detail.ready .desc,
+.detail.ready .play,
+.detail.ready .close {
+    transform: translateX(0);
+    opacity: 1;
+    transition-delay: 0s;
+    transition-duration: 0.5s;
+}
+.detail.ready .title {
+    transition-delay: 0.2s;
+}
+.detail.ready .info {
+    transition-delay: 0.3s;
+}
+.detail.ready .desc {
+    transition-delay: 0.4s;
+}
+.detail.ready .play {
+    transition-delay: 0.5s;
+}
+
+.the-most {
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    width: 50vw;
+    max-width: 200px;
+    padding: 10px;
+}
+.the-most img {
+    max-width: 100%;
+}

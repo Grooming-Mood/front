@@ -8,6 +8,7 @@ function RecommendHome(props) {
     const [loading, setLoading] = useState(true);
     const [user_id, set_userId] = useState(sessionStorage.getItem("userId"));
 
+
     useEffect(() => {
         fetch(`https://api.themoviedb.org?i=${props.match.params.id}&apikey=${process.env.APIKEY}`)
             .then(res => res.json())
@@ -19,7 +20,6 @@ function RecommendHome(props) {
 
     return (
         <div className="recommend-home">
-
             <div className="recommend-home-header">
                 <Link to="/" className="recommend-header-link">GroomingMood</Link>
                 <p>당신의 감정을<br/>어루만지는 AI 일기</p>
@@ -27,9 +27,11 @@ function RecommendHome(props) {
 
             <div className="recommend-content">
                 <div className="recommend-container">
-                    <h2 className="recommend-title">
-                        추천
-                    </h2>
+                    <div className="recommend-header-container">
+                        <h2 className="recommend-header-title">
+                            세종님! 기분 좋은 날에는 영화 어때요?
+                        </h2>
+                    </div>
 
 
                     <section className="movies">
@@ -92,47 +94,10 @@ function RecommendHome(props) {
                             </div>
                         </div>
                     </section>
-                    <div className="detail">
-                        {/*<svg className="close">*/}
-                        {/*    <use xlink:href="#close"></use>*/}
-                        {/*</svg>*/}
-                        <div className="movie">
-
-                            <img src="https://github.com/supahfunk/supah-codepen/blob/master/movie-room.jpg?raw=true"
-                                 alt="" className="poster"/>
-                            <div className="title">Room</div>
-                            <div className="info">
-                                <span className="length">117 min</span>
-                                <span className="year">2015</span>
-                            </div>
-                            <div className="desc">
-                                Jack is a young boy of 5 years old who has lived all his life in one room. He believes
-                                everything within it are the only real things in the world. But what will happen when
-                                his Ma suddenly tells him that there are other things outside of Room?
-                            </div>
-
-        {/*                    <button className="play">*/}
-        {/*                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"*/}
-        {/*                             version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 232.153 232.153"*/}
-        {/*                             style="enable-background:new 0 0 232.153 232.153;" xml:space="preserve"*/}
-        {/*                             width="10px" height="10px">*/}
-        {/*  <g id="Play">*/}
-        {/*    <path style="fill-rule:evenodd;clip-rule:evenodd;"*/}
-        {/*          d="M203.791,99.628L49.307,2.294c-4.567-2.719-10.238-2.266-14.521-2.266   c-17.132,0-17.056,13.227-17.056,16.578v198.94c0,2.833-0.075,16.579,17.056,16.579c4.283,0,9.955,0.451,14.521-2.267   l154.483-97.333c12.68-7.545,10.489-16.449,10.489-16.449S216.471,107.172,203.791,99.628z"*/}
-        {/*          fill="#FFFFFF"/>*/}
-        {/*  </g>*/}
-        {/*</svg>*/}
-        {/*                        play movie*/}
-        {/*                    </button>*/}
-
-
-                        </div>
-                    </div>
-
 
                 </div>
+                <SideMenu></SideMenu>
             </div>
-            <SideMenu></SideMenu>
         </div>
     );
 }

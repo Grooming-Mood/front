@@ -97,7 +97,7 @@ function Result (){
     // const emotion = sessionStorage.getItem("Face Emotion"); //사용자의 감정 인덱스 (0: 행복, 1: 노말, 2: 슬픔, 3: 화남)
     // const prob = sessionStorage.getItem("Face Prob"); //사용자의 감정 확률
     const dictation = "공개 일기 버튼 테스트 용도" //사용자의 음성인식된 일기 내용
-    const emotion = 3
+    const emotion = 1
     const prob = 70
 
     // const emotion_type = "NORMAL"
