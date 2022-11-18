@@ -67,7 +67,7 @@ function Home(props) {
             console.log(res);
             console.log("로그인 성공");
             sessionStorage.setItem("userId",res.data.id)
-
+            sessionStorage.setItem('diaryId', 1 )
             //작업 완료 되면 페이지 이동
             document.location.href = "/my-page";
         });

@@ -34,7 +34,7 @@ function App() {
                   <Route path="/sad-feed" component={ SadHome }/>
                   <Route path="/angry-feed" component={ AngryHome }/>
                   <Route path="/nomal-feed" component={ NormalHome }/>
-                  <Route path="/detail" component={ DetailView }/>
+                  <Route path="/detail/:diaryId" component={ DetailView }/>
 
                   <Route path="/chart" component={ Chart } exact />
                   <Route path="/record" component={ Record } exact /> {/*레코드 화면*/}

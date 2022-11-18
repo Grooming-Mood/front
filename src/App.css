@@ -426,9 +426,9 @@ button{
     border: 1px dashed #888787;
     background-color: #F9F9F9;
     width: 80%;
-    height: 900px;
+    height: 800px;
     border-radius: 20px;
-    padding: 8% 0% 10% 0;
+    padding: 3% 0% 5% 0;
     margin: 0% 0% 8% 0%;
 }
 
@@ -1100,9 +1100,9 @@ button {
     border: 1px dashed #888787;
     background-color: #F9F9F9;
     width: 80%;
-    height: 900px;
+    height: 800px;
     border-radius: 20px;
-    padding: 8% 0% 10% 0;
+    padding: 3% 0% 5% 0;
     margin: 0% 0% 8% 0%;
 }
 
@@ -1167,10 +1167,10 @@ button {
     box-sizing: border-box;
     border: 1px dashed #888787;
     background-color: #F9F9F9;
-    height: 900px;
+    height: 800px;
     width: 80%;
     border-radius: 20px;
-    padding: 8% 0% 10% 0;
+    padding: 3% 0% 5% 0;
     margin: 0% 0% 8% 0%;
 }
 
@@ -1235,10 +1235,10 @@ button {
     box-sizing: border-box;
     border: 1px dashed #888787;
     background-color: #F9F9F9;
-    height: 900px;
+    height: 800px;
     width: 80%;
     border-radius: 20px;
-    padding: 8% 0% 10% 0;
+    padding: 3% 0% 5% 0;
     margin: 0% 0% 8% 0%;
 }
 
@@ -1305,9 +1305,9 @@ button {
     background-color: #F9F9F9;
 
     width: 80%;
-    height: 900px;
+    height: 800px;
     border-radius: 20px;
-    padding: 8% 0% 10% 0;
+    padding: 3% 0% 5% 0;
     margin: 0% 0% 8% 0%;
 }
 
@@ -2014,4 +2014,159 @@ button {
 }
 .the-most img {
     max-width: 100%;
+}
+
+/* */
+.detail-container {
+    box-sizing: border-box;
+    border: 1px dashed #888787;
+    background-color: #F9F9F9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 80%;
+    height: 700px;
+    border-radius: 20px;
+    padding: 5% 0% 5% 0;
+    margin: 0% 0% 8% 0%;
+}
+
+.detail-date{
+    float: right;
+    flex: 1;
+    direction: row;
+    width: 100%;
+    height: 60%;
+    margin: 10% 10% 5% 10%;
+}
+
+.detail-container-center{
+    font-size: 20px;
+    /* flex: 1; */
+    float: center;
+    flex-direction: column;
+    border-right: 2px dashed #D7D7D7;
+    margin: 10% 5% 10% 5%;
+}
+
+.detail-container-row{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    flex: 1;
+    float: left;
+    flex-direction: row;
+    margin: 2% 0% 0% 0%;
+}
+
+.detail-container-row-first{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    flex: 1;
+    float: left;
+    /* flex-direction: row; */
+    margin: 3% 3% 3% 3%;
+}
+
+.detail-container-row-first-second{
+    /* font-family: 'KyoboHand'; */
+    font-size: 20px;
+    flex: 1;
+    /* font-weight: bold; */
+    float: left;
+    flex-direction: row;
+    margin: 0% 0% 0% 0%;
+}
+
+.detail-container-row-first-thrid{
+    /* font-family: 'KyoboHand'; */
+    /* /* flex: 1; */
+    float: right;
+    flex-direction: column;
+    margin: 3% 10% 0% 0%;
+
+    float: right;
+    /* flex: 1; */
+    /* direction: column; */
+    /* width: 100%; */
+    /* height: 60%; */
+    margin: 0% 0% 0% 0%;
+}
+
+.detail-happy{
+    font-family: 'KyoboHand';
+    /* float: left; */
+    /* flex: 1; */
+    /* direction: ; */
+    flex-direction: column;
+    background-color: #FAF4DF;
+    width: 80%;
+    height: 1000px;
+    margin: 2% 10% 2% 10%;
+}
+.detail-happy-font{
+    font-family: 'KyoboHand';
+    font-size: 20px;
+    float: left;
+    /* flex: 1; */
+    direction: row;
+    margin: 5% 5% 5% 5%;
+}
+
+.detail-normal{
+    /* float: left; */
+    /* flex: 1; */
+    /* direction: ; */
+    flex-direction: column;
+    background-color: #C6E4E1;
+    width: 80%;
+    height: 1000px;
+    margin: 2% 10% 2% 10%;
+}
+.detail-normal-font{
+    font-family: 'GangwonEdu_OTFBoldA';
+    font-size: 20px;
+    float: left;
+    /* flex: 1; */
+    direction: row;
+    margin: 5% 5% 5% 5%;
+}
+
+.detail-sad{
+    /* float: left; */
+    /* flex: 1; */
+    /* direction: ; */
+    flex-direction: column;
+    background-color: #D7D7D7;
+    width: 80%;
+    height: 1000px;
+    margin: 2% 10% 2% 10%;
+}
+.detail-sad-font{
+    font-family: 'UhBeeann';
+    font-size: 20px;
+    float: left;
+    /* flex: 1; */
+    direction: row;
+    margin: 5% 5% 5% 5%;
+}
+
+.detail-angry{
+    /* float: left; */
+    /* flex: 1; */
+    /* direction: ; */
+    flex-direction: column;
+    background-color: #F1B8B8;
+    width: 80%;
+    height: 1000px;
+    margin: 2% 10% 2% 10%;
+}
+.detail-angry-font{
+    font-family: 'HSGyoulnoonkot';
+    font-size: 20px;
+    float: left;
+    /* flex: 1; */
+    direction: row;
+    margin: 5% 5% 5% 5%;
 }
