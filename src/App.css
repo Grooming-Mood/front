@@ -2113,3 +2113,22 @@ button {
     direction: row;
     margin: 5% 5% 5% 5%;
 }
+
+.detail-normal{
+    /* float: left; */
+    /* flex: 1; */
+    /* direction: ; */
+    flex-direction: column;
+    background-color: #C6E4E1;
+    width: 80%;
+    height: 1000px;
+    margin: 2% 10% 2% 10%;
+}
+.detail-normal-font{
+    font-family: 'GangwonEdu_OTFBoldA';
+    font-size: 20px;
+    float: left;
+    /* flex: 1; */
+    direction: row;
+    margin: 5% 5% 5% 5%;
+}

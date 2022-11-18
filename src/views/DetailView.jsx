@@ -35,16 +35,7 @@ function DetailView() {
             })
     });
 
-    var dt = new Date();
-    var year = dt.getFullYear();
-    var month = dt.getMonth()+1;
-    var date = dt.getDate();
-    var nowTime = year+'/'+month+'/'+date
-
     if(feeling == 'HAPPY'){ 
-        console.log("BBcheckdiaryId",diaryId);
-        // sessionStorage.removeItem('diaryId');
-        console.log("AAcheckdiaryId",diaryId);
         return (
             <div className="result-happy">
                 <div className="result-happy-header"> {/*헤더*/}
@@ -78,17 +69,30 @@ function DetailView() {
 
     // 감정 1 - neutral
     else if(feeling == 'NORMAL'){ //neutral
-        console.log("BBcheckdiaryId",diaryId);
-        sessionStorage.removeItem('diaryId');
-        console.log("AAcheckdiaryId",diaryId);
         return (
-            <div className="result-happy">
-                <div className="result-happy-header"> {/*헤더*/}
-                    <Link to="/" className="result-happy-header-link">GroomingMood</Link>
+            <div className="result-normal">
+                <div className="result-normal-header"> {/*헤더*/}
+                    <Link to="/" className="result-normal-header-link">GroomingMood</Link>
                     <p>당신의 감정을<br/>어루만지는 AI 일기</p>
                 </div>
                 <div className="home-content">
-                    <div className="result-container">
+                <div className="detail-container">
+                        <div className="detail-container-row">
+                            <div className="detail-container-row-first">
+                            <img src={NormalIcon} alt="Normal" style={{"width":"50px","hight":"50px"}}/>
+                            </div>
+                            <div className="detail-container-row-first-second">
+                                {userName}
+                            </div>
+                            <div className="detail-container-row-first-thrid">
+                                {createdDate[0] +"-" + createdDate[1] + "-" + createdDate[2] + " " + createdDate[3] + ":" + createdDate[4]}
+                            </div>
+                        </div>
+                        <div className="detail-normal">
+                            <div className="detail-normal-font">
+                                {diaryContent}
+                            </div>
+                        </div>
                     </div>
                     <SideMenu></SideMenu>
                 </div>
