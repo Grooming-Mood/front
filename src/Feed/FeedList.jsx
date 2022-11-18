@@ -47,9 +47,12 @@ export const FeedList = ({ dataList }) => {
                                     <span>{ it.diaryContent }</span>
                                 </div>
 
+                                <button className="custom-btn btn-16">상세 보기</button>
+
                                 <div className="data-date">
                                     <span>{ it.createdDate[0] +"-" + it.createdDate[1] + "-" + it.createdDate[2] + " " + it.createdDate[3] + ":" + it.createdDate[4] }</span>
                                 </div>
+
 
                                 {/*<div className="data-likes">*/}
                                 {/*    {*/}
