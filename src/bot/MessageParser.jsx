@@ -6,20 +6,24 @@ class MessageParser {
         this.state = state;
     }
 
-    parse(message) {        
+    parse = (message) => {        
         console.log(message);
-        let data = {
-            userChatMessage: message
-        };
-        axios.post(`http://127.0.0.1:5000/chatbot`,
-        data,{headers:{"Content-Type" : "application/json"}})
-        .then((res)=> {
-            console.log("res출력");
-            // res.setHeader('Access-Control-Allow-origin', '*');
-            console.log(res);
-            sessionStorage.setItem('ChatbotRes', res.data); //챗봇의 응답 저장
-        });
-    }
+         let data = {
+             userChatMessage: message
+         };
+         axios.post(`http://127.0.0.1:5000/chatbot`,
+         data,{headers:{"Content-Type" : "application/json"}})
+         .then((res)=> {
+             console.log("res출력");
+             res.setHeader('Access-Control-Allow-origin', '*');
+             console.log(res);
+             sessionStorage.setItem('ChatbotRes', res.data); //챗봇의 응답 저장
+         });
+
+        return this.actionProvider.handleFlaskAPI();
+        
+    };
+    
 }
 
 export default MessageParser;
