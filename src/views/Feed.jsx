@@ -65,9 +65,7 @@ function Feed(props) {
                 onChange={handlePageChange}
             />
         </div>
-
     );
-
 }
 
 export default withRouter(Feed);

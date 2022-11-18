@@ -2,13 +2,16 @@
     display: flex;
     justify-content: center;
     background-color: #22BA8E;
-    padding-bottom: 5%;
+    margin: 0;
+    padding: 0;
 }
 
 ul {
     margin: 0;
     list-style: none;
     background-color: #22BA8E;
+    justify-content: center;
+    align-items: center;
 }
 
 ul.pagination li {
