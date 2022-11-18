@@ -4,7 +4,7 @@ import SideMenu from "./SideMenu";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-function RecommendHome(props) {
+function RecommendNomal(props) {
     const [movie, setMovie] = useState(null);
     const [loading, setLoading] = useState(true);
     const [user_id, set_userId] = useState(sessionStorage.getItem("userId"));
@@ -28,7 +28,7 @@ function RecommendHome(props) {
     }, []);
 
     return (
-        <div className="recommend-home">
+        <div className="recommend-normal">
             <div className="recommend-home-header">
                 <Link to="/" className="recommend-header-link">GroomingMood</Link>
                 <p>당신의 감정을<br/>어루만지는 AI 일기</p>
@@ -38,7 +38,7 @@ function RecommendHome(props) {
                 <div className="recommend-container">
                     <div className="recommend-header-container">
                         <h2 className="recommend-header-title">
-                            {user_name}님! 기분 좋은 날에는 영화 어때요?
+                            {user_name}님! 그럭 저럭인 날에 영화 어때요?
                         </h2>
                     </div>
 
@@ -111,4 +111,4 @@ function RecommendHome(props) {
     );
 }
 
-export default withRouter(RecommendHome);
+export default withRouter(RecommendNomal);
