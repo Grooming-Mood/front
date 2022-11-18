@@ -12,9 +12,39 @@ import ApexCharts from "react-apexcharts";
 //상세페이지 컴포넌트
 function DetailView() {
     // const{id} = useParams();
-    const emotion = 0;
+    const diaryId = sessionStorage.getItem("diaryId");
+    console.log("diaryId",diaryId);
+    console.log("checkdiaryId",diaryId);
+    const [userName, set_name] = useState();
+    const [profileImg, set_profileImg] = useState();
+    const [diaryContent, set_diaryContent] = useState();
+    const [feeling, set_feeling] = useState();
+    const [createdDate, set_createdDate] = useState();
 
-    if(emotion==0){ 
+
+    useState(() => {
+        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/my-diary/${diaryId}/diary-detail`)
+            .then((res) => {
+                const data = res.data;
+                console.log("data",data);
+                set_name(data.userName);
+                set_profileImg(data.profileImg);
+                set_diaryContent(data.diaryContent);
+                set_feeling(data.feeling);
+                set_createdDate(data.createdDate);
+            })
+    });
+
+    var dt = new Date();
+    var year = dt.getFullYear();
+    var month = dt.getMonth()+1;
+    var date = dt.getDate();
+    var nowTime = year+'/'+month+'/'+date
+
+    if(feeling == 'HAPPY'){ 
+        console.log("BBcheckdiaryId",diaryId);
+        // sessionStorage.removeItem('diaryId');
+        console.log("AAcheckdiaryId",diaryId);
         return (
             <div className="result-happy">
                 <div className="result-happy-header"> {/*헤더*/}
@@ -22,7 +52,23 @@ function DetailView() {
                     <p>당신의 감정을<br/>어루만지는 AI 일기</p>
                 </div>
                 <div className="home-content">
-                    <div className="result-container">
+                    <div className="detail-container">
+                        <div className="detail-container-row">
+                            <div className="detail-container-row-first">
+                            <img src={HappyIcon} alt="Happy" style={{"width":"50px","hight":"50px"}}/>
+                            </div>
+                            <div className="detail-container-row-first-second">
+                                {userName}
+                            </div>
+                            <div className="detail-container-row-first-thrid">
+                                {createdDate[0] +"-" + createdDate[1] + "-" + createdDate[2] + " " + createdDate[3] + ":" + createdDate[4]}
+                            </div>
+                        </div>
+                        <div className="detail-happy">
+                            <div className="detail-happy-font">
+                                {diaryContent}
+                            </div>
+                        </div>
                     </div>
                     <SideMenu></SideMenu>
                 </div>
@@ -31,7 +77,10 @@ function DetailView() {
     }
 
     // 감정 1 - neutral
-    else if(emotion==1){ //neutral
+    else if(feeling == 'NORMAL'){ //neutral
+        console.log("BBcheckdiaryId",diaryId);
+        sessionStorage.removeItem('diaryId');
+        console.log("AAcheckdiaryId",diaryId);
         return (
             <div className="result-happy">
                 <div className="result-happy-header"> {/*헤더*/}
@@ -48,7 +97,10 @@ function DetailView() {
     }
 
     //감정 2 -sad 
-    else if(emotion==2){ //sad
+    else if(feeling == 'SAD' ){ //sad
+        console.log("BBcheckdiaryId",diaryId);
+        sessionStorage.removeItem(diaryId);
+        console.log("AAcheckdiaryId",sessionStorage.getItem(diaryId));
         return (
             <div className="result-happy">
                 <div className="result-happy-header"> {/*헤더*/}
@@ -65,7 +117,10 @@ function DetailView() {
     }
 
     //감정 3 - angry
-    else if(emotion==3){ //angry
+    else if(feeling == 'ANGRY' ){ //angry
+        console.log("BBcheckdiaryId",diaryId);
+        sessionStorage.removeItem("diaryId");
+        console.log("AAcheckdiaryId",diaryId);
         return (
             <div className="result-happy">
                 <div className="result-happy-header"> {/*헤더*/}
@@ -80,7 +135,6 @@ function DetailView() {
             </div>
         );
     }
-  }
-
+}
 
 export default withRouter(DetailView);
