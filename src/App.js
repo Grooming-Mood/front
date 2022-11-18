@@ -15,6 +15,10 @@ import Chatbot from "./views/Chatbot";
 import MyPage from "./views/MyPage";
 import Chart from "./views/Chart";
 import RecommendHome from "./views/RecommendHome";
+import RecommendHappy from "./views/RecommendHappy";
+import RecommendNormal from "./views/RecommendNormal";
+import RecommendSad from "./views/RecommendSad";
+import RecommendAngry from "./views/RecommendAngry";
 
 function App() {
     return (
@@ -37,7 +41,14 @@ function App() {
                   <Route path="/result" component={ Result } exact /> {/*회원 정보 프사, 닉네임 수정*/}
 
                   <Route path="/chatbot" component={ Chatbot }/>
-                  <Route path="/recommendation" component={ RecommendHome } exact />
+                  <Route path="/recommendation-happy" component={ RecommendHappy } exact />
+                  <Route path="/recommendation-normal" component={ RecommendNormal } exact />
+                  <Route path="/recommendation-sad" component={ RecommendSad } exact />
+                  <Route path="/recommendation-angry" component={ RecommendAngry } exact />
+
+
+
+
               </div>
             </div>
         </BrowserRouter>
