@@ -19,7 +19,6 @@ function RecommendHome(props) {
 
     return (
         <div className="recommend-home">
-
             <div className="recommend-home-header">
                 <Link to="/" className="recommend-header-link">GroomingMood</Link>
                 <p>당신의 감정을<br/>어루만지는 AI 일기</p>
@@ -27,9 +26,11 @@ function RecommendHome(props) {
 
             <div className="recommend-content">
                 <div className="recommend-container">
-                    <h2 className="recommend-title">
-                        추천
-                    </h2>
+                    <div className="recommend-header-container">
+                        <h2 className="recommend-header-title">
+                            NORMAL 감정 일기
+                        </h2>
+                    </div>
 
 
                     <section className="movies">
@@ -92,24 +93,24 @@ function RecommendHome(props) {
                             </div>
                         </div>
                     </section>
-                    <div className="detail">
-                        {/*<svg className="close">*/}
-                        {/*    <use xlink:href="#close"></use>*/}
-                        {/*</svg>*/}
-                        <div className="movie">
+                    {/*<div className="detail">*/}
+                    {/*    /!*<svg className="close">*!/*/}
+                    {/*    /!*    <use xlink:href="#close"></use>*!/*/}
+                    {/*    /!*</svg>*!/*/}
+                    {/*    <div className="movie">*/}
 
-                            <img src="https://github.com/supahfunk/supah-codepen/blob/master/movie-room.jpg?raw=true"
-                                 alt="" className="poster"/>
-                            <div className="title">Room</div>
-                            <div className="info">
-                                <span className="length">117 min</span>
-                                <span className="year">2015</span>
-                            </div>
-                            <div className="desc">
-                                Jack is a young boy of 5 years old who has lived all his life in one room. He believes
-                                everything within it are the only real things in the world. But what will happen when
-                                his Ma suddenly tells him that there are other things outside of Room?
-                            </div>
+                    {/*        <img src="https://github.com/supahfunk/supah-codepen/blob/master/movie-room.jpg?raw=true"*/}
+                    {/*             alt="" className="poster"/>*/}
+                    {/*        <div className="title">Room</div>*/}
+                    {/*        <div className="info">*/}
+                    {/*            <span className="length">117 min</span>*/}
+                    {/*            <span className="year">2015</span>*/}
+                    {/*        </div>*/}
+                    {/*        <div className="desc">*/}
+                    {/*            Jack is a young boy of 5 years old who has lived all his life in one room. He believes*/}
+                    {/*            everything within it are the only real things in the world. But what will happen when*/}
+                    {/*            his Ma suddenly tells him that there are other things outside of Room?*/}
+                    {/*        </div>*/}
 
         {/*                    <button className="play">*/}
         {/*                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"*/}
@@ -126,13 +127,13 @@ function RecommendHome(props) {
         {/*                    </button>*/}
 
 
-                        </div>
-                    </div>
+                    {/*    </div>*/}
+                    {/*</div>*/}
 
 
                 </div>
+                <SideMenu></SideMenu>
             </div>
-            <SideMenu></SideMenu>
         </div>
     );
 }
