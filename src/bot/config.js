@@ -5,7 +5,7 @@ import ChatMessage from "../components/ChatMessage";
 const config = {
     initialMessages: [
         createChatBotMessage(
-            "안녕하세요! 궁금한 내용을 입력해주세요."
+            "언제든지 AI 루밍과 함께 대화하세요."
         ),
     ],
     customComponents: {
