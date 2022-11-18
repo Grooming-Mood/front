@@ -1,5 +1,5 @@
-import React,{ useState } from "react";
-import { withRouter, Link } from "react-router-dom";
+import React,{ useEffect, useState } from "react";
+import { useParams, withRouter, Link } from "react-router-dom";
 import SideMenu from "./SideMenu";
 import SadIcon from "../assets/image/splash/sad-icon.png";
 import NormalIcon from "../assets/image/splash/normal-icon.png";
@@ -7,21 +7,20 @@ import HappyIcon from "../assets/image/splash/happy-icon.png";
 import AngryIcon from "../assets/image/splash/angry-icon.png";
 import axios from "axios";
 import ApexCharts from "react-apexcharts";
+// import { getPostByNo } from '../Feed/FeedList';
 
 
 //상세페이지 컴포넌트
-function DetailView() {
-    // const{id} = useParams();
-    const diaryId = sessionStorage.getItem("diaryId");
+
+function DetailView(){
+
+    const { diaryId }= useParams();
     console.log("diaryId",diaryId);
-    console.log("checkdiaryId",diaryId);
     const [userName, set_name] = useState();
     const [profileImg, set_profileImg] = useState();
     const [diaryContent, set_diaryContent] = useState();
     const [feeling, set_feeling] = useState();
     const [createdDate, set_createdDate] = useState();
-
-
     useState(() => {
         axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/my-diary/${diaryId}/diary-detail`)
             .then((res) => {
@@ -102,9 +101,6 @@ function DetailView() {
 
     //감정 2 -sad 
     else if(feeling == 'SAD' ){ //sad
-        console.log("BBcheckdiaryId",diaryId);
-        sessionStorage.removeItem(diaryId);
-        console.log("AAcheckdiaryId",sessionStorage.getItem(diaryId));
         return (
             <div className="result-sad">
                 <div className="result-sad-header"> {/*헤더*/}
