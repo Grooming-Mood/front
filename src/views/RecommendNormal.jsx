@@ -4,7 +4,7 @@ import SideMenu from "./SideMenu";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-function RecommendNomal(props) {
+function RecommendNormal(props) {
     const [movie, setMovie] = useState(null);
     const [loading, setLoading] = useState(true);
     const [user_id, set_userId] = useState(sessionStorage.getItem("userId"));
@@ -111,4 +111,4 @@ function RecommendNomal(props) {
     );
 }
 
-export default withRouter(RecommendNomal);
+export default withRouter(RecommendNormal);
