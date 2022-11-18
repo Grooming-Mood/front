@@ -12,6 +12,7 @@ import axios from "axios";
 function SadHome(props) {
     const [page, setPage] = useState(1);
     const [feed, set_feed] = useState([]);
+
     const handlePageChange = (page) => {
         setPage(page);
     };
