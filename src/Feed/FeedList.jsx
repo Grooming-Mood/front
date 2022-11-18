@@ -55,10 +55,10 @@ export const FeedList = ({ dataList }) => {
                                     <br/>
                                     <span>{ it.diaryContent }</span>
                                 </div>
+
                                 <Link to={{pathname: `/detail/${it.diaryId}`}}>
                                     <div className="data-button">
-                                            <button className="custom-btn btn-16">상세 보기</button>
-                                        
+                                        <button className="custom-btn btn-16">상세 보기</button>
                                     </div>
                                 </Link>
 
