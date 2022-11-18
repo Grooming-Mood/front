@@ -4,12 +4,12 @@ import {
     convertImage
 } from "../utils/function";
 import dateFormat from "dateformat";
+import {Link} from "react-router-dom";
 
 
 
 export const FeedList = ({ dataList }) => {
-    console.log(dataList);
-    const [like, setLike] = useState(false)
+    const [like, setLike] = useState(false);
 
     useEffect(async() => {
         const fetchData = async () => {
@@ -32,8 +32,7 @@ export const FeedList = ({ dataList }) => {
                     {dataList.map((it) => {
                         return (
 
-                            <div className="data-container"
-                                 key = {it.diaryId}>
+                            <div className="data-container" key={ it.diaryId }>
 
                                 <div className="data-image">
                                     {
@@ -47,7 +46,11 @@ export const FeedList = ({ dataList }) => {
                                     <span>{ it.diaryContent }</span>
                                 </div>
 
-                                <button className="custom-btn btn-16">상세 보기</button>
+                                <div className="data-button">
+                                    <Link to={`/detail/${it.diaryId}`}>
+                                        <button className="custom-btn btn-16">상세 보기</button>
+                                    </Link>
+                                </div>
 
                                 <div className="data-date">
                                     <span>{ it.createdDate[0] +"-" + it.createdDate[1] + "-" + it.createdDate[2] + " " + it.createdDate[3] + ":" + it.createdDate[4] }</span>
