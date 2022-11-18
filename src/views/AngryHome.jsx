@@ -35,7 +35,7 @@ function AngryHome(props) {
 
     useState(() => {
         set_loading(true);
-        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feed-diary/angry-paging?cursor=${cursor}&size=3`)
+        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feed-diary/angry-paging?size=3`)
             .then((res) => {
                 const data = res.data;
                 set_feed(data.diaryList);
