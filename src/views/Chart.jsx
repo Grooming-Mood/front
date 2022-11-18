@@ -5,12 +5,6 @@ import ApexCharts from "react-apexcharts";
 import axios from "axios";
 import {setAngryAmount, setHappyAmount, setNormalAmount, setSadAmount} from "../utils/function";
 
-const dummyList = [{
-    "lastweek" : [19, 26, 20, 9]
-}, {
-    "todayweek": [30, 26, 34, 10]
-}];
-
 
 function Chart(props){
     const [lastWeekData, set_lastWeekData] = useState([]);
@@ -19,13 +13,14 @@ function Chart(props){
     const [thisTotalCount, set_thisTotalCount] = useState(0);
     const [lastresultweek, set_lastresultweek] = useState([]);
     const [todayresultweek, set_todayresultweek] = useState([]);
+    const [userId, set_userId] = useState(sessionStorage.getItem("userId"));
 
     const lastweek = [];
 
     const todayweek = [];
 
     useEffect(() => {
-        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feeling-history/last-week/userId/1`)
+        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feeling-history/last-week/userId/${userId}`)
             .then((res) => {
 
                 const lists = res.data.feelingStatisticInfoList;
@@ -38,7 +33,7 @@ function Chart(props){
                 set_lastresultweek(lastweek);
             })
 
-        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feeling-history/today-week/userId/1`)
+        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feeling-history/today-week/userId/${userId}`)
             .then((res) => {
                 set_thisWeekData(res.data.feelingStatisticInfoList);
 
@@ -52,12 +47,12 @@ function Chart(props){
                 set_todayresultweek(todayweek);
             })
 
-        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feeling-history/last-week/total-count/userId/1`)
+        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feeling-history/last-week/total-count/userId/${userId}`)
             .then((res) => {
                 set_lastTotalCount(res.data);
             })
 
-        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feeling-history/today-week/total-count/userId/1`)
+        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feeling-history/today-week/total-count/userId/${userId}`)
             .then((res) => {
                 set_thisTotalCount(res.data);
             })

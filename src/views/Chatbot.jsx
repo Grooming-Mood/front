@@ -35,7 +35,6 @@ function Chatbot(props) {
                          actionProvider={ActionProvider}
                 />
                 <SideMenu />
-
             </div>
         </div>
 
