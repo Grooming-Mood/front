@@ -138,8 +138,14 @@ function Result (){
             console.log(res);
             console.log("성공");
 
-            //작업 완료 되면 페이지 이동
-            document.location.href = "/recommendation";
+            if (emotion == 0)
+                document.location.href = "/recommendation-happy";
+            else if(emotion == 1)
+                document.location.href = "/recommendation-normal";
+            else if(emotion == 2)
+                document.location.href = "/recommendation-sad";
+            else if(emotion == 3)
+                document.location.href = "/recommendation-angry";
         });
 
     };
@@ -179,8 +185,14 @@ function Result (){
             console.log(res);
             console.log("성공");
 
-            //작업 완료 되면 페이지 이동
-            document.location.href = "/recommendation";
+            if (emotion == 0)
+                document.location.href = "/recommendation-happy";
+            else if(emotion == 1)
+                document.location.href = "/recommendation-normal";
+            else if(emotion == 2)
+                document.location.href = "/recommendation-sad";
+            else if(emotion == 3) 
+                document.location.href = "/recommendation-angry";
         });
 
     };
