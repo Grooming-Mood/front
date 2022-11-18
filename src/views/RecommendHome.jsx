@@ -2,12 +2,21 @@ import { Link, withRouter } from "react-router-dom";
 import SideMenu from "./SideMenu";
 
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 function RecommendHome(props) {
     const [movie, setMovie] = useState(null);
     const [loading, setLoading] = useState(true);
     const [user_id, set_userId] = useState(sessionStorage.getItem("userId"));
 
+    const [user_name, set_userName] = useState();
+
+    useState(() => {
+        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/user/${user_id}/info`)
+            .then((res) => {
+                set_userName(res.data.name);
+            })
+    });
 
     useEffect(() => {
         fetch(`https://api.themoviedb.org?i=${props.match.params.id}&apikey=${process.env.APIKEY}`)
@@ -29,7 +38,7 @@ function RecommendHome(props) {
                 <div className="recommend-container">
                     <div className="recommend-header-container">
                         <h2 className="recommend-header-title">
-                            세종님! 기분 좋은 날에는 영화 어때요?
+                            {user_name}님! 기분 좋은 날에는 영화 어때요?
                         </h2>
                     </div>
 
