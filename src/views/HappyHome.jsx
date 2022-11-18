@@ -36,7 +36,7 @@ function HappyHome(props) {
 
     useState(() => {
         set_loading(true);
-        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feed-diary/happy-paging?cursor=${cursor}&size=3`)
+        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feed-diary/happy-paging?size=3`)
             .then((res) => {
                 const data = res.data;
                 set_feed(data.diaryList);
