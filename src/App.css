@@ -508,8 +508,9 @@ button{
 }
 
 .calendar {
-    width: 70%;
-    height: 70%;
+    width: 60%;
+    height: 60%;
+    scale: 90%;
 
 }
 .calendar .header {
