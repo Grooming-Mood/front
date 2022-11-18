@@ -1,0 +1,65 @@
+.recommend-home {
+
+    background-color: #E6808E;
+    width: 100%;
+    height: 1080px;
+
+}
+
+.recommend-home-header {
+    padding: 1.6% 0 2% 0;
+    background-color: #E6808E;
+}
+
+.recommend-home-header .recommend-header-link {
+    /* font-family: 'Poppins'; */
+    font-family: 'KyoboHand';
+    font-style: italic;
+    font-size: 30px;
+    color: #fff;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.recommend-home-header p {
+    /* font-family: 'Noto Sans KR'; */
+    font-family: 'KyoboHand';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 22px;
+    text-align: right;
+    color: #fff;
+    margin: 0;
+    padding: 0% 1.2% 0% 0%;
+}
+.recommend-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #E6808E;
+}
+
+.angry-container {
+    box-sizing: border-box;
+    border: 1px dashed #888787;
+    background-color: #F9F9F9;
+    width: 80%;
+    height: 900px;
+    border-radius: 20px;
+    padding: 8% 0% 10% 0;
+    margin: 0% 0% 8% 0%;
+}
+
+/*.angry-diary-container {*/
+/*    margin: 0%;*/
+/*    padding: 0%;*/
+/*}*/
+
+.recommend-title {
+    text-align: left;
+    padding : 0% 0% 0% 10%;
+}

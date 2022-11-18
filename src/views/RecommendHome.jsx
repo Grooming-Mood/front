@@ -2,6 +2,7 @@ import { Link, withRouter } from "react-router-dom";
 import SideMenu from "./SideMenu";
 
 import React, { useEffect, useState } from "react";
+import "../styles/recommend-home.css";
 
 function RecommendHome(props) {
     const [movie, setMovie] = useState(null);
@@ -21,7 +22,7 @@ function RecommendHome(props) {
         <div className="recommend-home">
 
             <div className="recommend-home-header">
-                <Link to="/" className="angry-header-link">GroomingMood</Link>
+                <Link to="/" className="recommend-header-link">GroomingMood</Link>
                 <p>당신의 감정을<br/>어루만지는 AI 일기</p>
             </div>
 
