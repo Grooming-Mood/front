@@ -1765,6 +1765,20 @@ button {
     background-color: #E6808E;
 }
 
+.recommend-sad-header {
+    padding: 1.6% 0 2% 0;    background-color: #91B1E3;
+}
+
+.recommend-normal-header {
+    background-color: #CCE3E2;
+    padding: 1.6% 0 2% 0;
+}
+
+.recommend-happy-header {
+    padding: 1.6% 0 2% 0;
+    background-color: #FAE992;
+}
+
 .recommend-home-header .recommend-header-link {
     /* font-family: 'Poppins'; */
     font-family: 'KyoboHand';
@@ -1830,6 +1844,8 @@ button {
     scale: 90%;
     display: flex;
     padding: 8px 18px;
+    justify-content: center;
+    align-items: center;
 }
 .movies .movie {
     padding: 10px;
