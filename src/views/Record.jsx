@@ -105,11 +105,13 @@ function Record(props) {
                 console.log("감정 분석 완료");
                 console.log(res.data);
 
-                sessionStorage.setItem("Emotion", res.data['Face Emotion']);
-                sessionStorage.setItem("Prob", (res.data['Face Prob']*100).toFixed(1));
+                sessionStorage.setItem("Face Emotion", res.data['Face Emotion']);
+                sessionStorage.setItem("Face Prob", (res.data['Face Prob']*100).toFixed(1));
+                sessionStorage.setItem("Voice Emotion", res.data['Voice Emotion']);
+                sessionStorage.setItem("Voice Prob", (res.data['Voice Prob']*100).toFixed(1));
 
-                console.log(sessionStorage.getItem('Emotion'));
-                console.log(sessionStorage.getItem('Prob'));
+                console.log(sessionStorage.getItem('Face Emotion'));
+                console.log(sessionStorage.getItem('Voice Emotion'));
 
             };
         });

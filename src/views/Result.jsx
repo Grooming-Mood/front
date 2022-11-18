@@ -5,8 +5,76 @@ import SadIcon from "../assets/image/splash/sad-icon.png";
 import NormalIcon from "../assets/image/splash/normal-icon.png";
 import HappyIcon from "../assets/image/splash/happy-icon.png";
 import AngryIcon from "../assets/image/splash/angry-icon.png";
-import Progressbar from "../assets/image/result/progressbar.png";
 import axios from "axios";
+import ApexCharts from "react-apexcharts";
+
+
+
+//게이지bar 컴포넌트
+function Gagebar(props){
+    console.log(sessionStorage.getItem('Face Prob'));
+    console.log(sessionStorage.getItem('Voice Prob'));
+
+
+    return(
+        <div>
+            <ApexCharts 
+                type="radialBar"
+                height={250}
+                series={
+                    [sessionStorage.getItem('Face Prob'), sessionStorage.getItem('Voice Prob')]
+                }             
+                options={{
+                    chart: {
+                        height : 100,
+                        width: 100,
+                        type: "radialBar"
+                    },
+                    plotOptions: {
+                        radialBar: {
+                            offsetY: 0,
+                            startAngle: 0,
+                            endAngle: 270,
+                            hollow: {
+                                margin: 5,
+                                size: '20%',
+                                background: 'transparent',
+                                image : undefined,
+                            },
+                            dataLabels:{
+                                name: {
+                                    show: false,
+                                },
+                                value: {
+                                    show: false,
+                                }
+                            }
+                        }
+                    },
+                    colors: ['#39539E', '#1ab7ea'],
+                    labels: ['Face', 'Voice'],
+                    legend: {
+                        show: true,
+                        floating: true,
+                        fontSize: '16px',
+                        position: 'left',
+                        offsetX: 160,
+                        offsetY: 15,
+                        labels: { useSeriesColors: true },
+                        markers: {size:0},
+                        itemMargin: { vertical: 3}
+                    },
+                    responsive: [{
+                        breakpoint: 480,
+                        options: { legend: {show : false}}
+                    }]
+                }}>              
+            </ApexCharts>
+        </div>
+
+    );
+}
+
 
 function Result (){
     const userId = sessionStorage.getItem("userId");
@@ -26,10 +94,11 @@ function Result (){
     var nowTime = year+'/'+month+'/'+date
 
     const dictation = sessionStorage.getItem("dictation"); //사용자의 음성인식된 일기 내용
-    const emotion = sessionStorage.getItem("Emotion"); //사용자의 감정 인덱스 (0: 행복, 1: 노말, 2: 슬픔, 3: 화남)
-    const prob = sessionStorage.getItem("Prob"); //사용자의 감정 확률
+    const emotion = sessionStorage.getItem("Face Emotion"); //사용자의 감정 인덱스 (0: 행복, 1: 노말, 2: 슬픔, 3: 화남)
+    const prob = sessionStorage.getItem("Face Prob"); //사용자의 감정 확률
     // const dictation = "공개 일기 버튼 테스트 용도" //사용자의 음성인식된 일기 내용
-    // const emotion = 0;
+    // const emotion = 3
+    // const prob = 70
 
     // const emotion_type = "NORMAL"
     // console.log(emotion, prob, emotion_type);
@@ -70,7 +139,7 @@ function Result (){
             console.log("성공");
 
             //작업 완료 되면 페이지 이동
-            document.location.href = "/my-page";
+            document.location.href = "/recommendation";
         });
 
     };
@@ -111,7 +180,7 @@ function Result (){
             console.log("성공");
 
             //작업 완료 되면 페이지 이동
-            document.location.href = "/my-page";
+            document.location.href = "/recommendation";
         });
 
     };
@@ -119,9 +188,7 @@ function Result (){
         //감정 0 - happy
         if(emotion==0){ 
             return (
-
                 <div className="result-happy">
-        
                     <div className="result-happy-header"> {/*헤더*/}
                         <Link to="/" className="result-happy-header-link">GroomingMood</Link>
                         <p>당신의 감정을<br/>어루만지는 AI 일기</p>
@@ -139,16 +206,14 @@ function Result (){
                                     </div>
                                 </div>
                                 <div className="result-container-left-row-second">
-                                    <p>오늘 {userName}님은 {prob}% 확률로 행복한 날입니다.<br/></p>
+                                    <p>오늘 {userName}님은 {prob}% 확률로 기쁜 날입니다.<br/></p>
                                     
                                 </div>
                                 <div className="result-container-left-row-third">
-                                    <div className="result-container-left-row-third-first">AI 루밍이의 분석결과<br/></div>
-                                    <span className="result-container-left-row-third-second-feel">HAPPY</span>
-                                    <span className="result-container-left-row-third-second-bar"><img src={Progressbar} alt="Progressbar" style={{"width":"120px","hight":"120px"}}/></span>
-                                    <span className="result-container-left-row-third-second-percent">{prob}%</span>
+                                    <div className="result-container-left-row-third-first">AI 루밍이의 분석결과</div>
                                     <div className="result-container-left-row-third-face">{userName}님의 행복한 표정이 기록되었어요.</div>
-                                    <div className="result-container-left-row-third-voice">{userName}님의 평온한 목소리가 기록되었어요.</div>
+                                    <div className="result-container-left-row-third-voice">{userName}님의 행복한 목소리가 기록되었어요.</div>
+                                    <Gagebar></Gagebar>
                                 </div>
                             </div>
                             <div className="result-container-right">
@@ -171,7 +236,7 @@ function Result (){
                                     </div>
                                     <div className="result-container-right-row-thrid-select-button">
                                         <button className="result-button" onClick={onClickPrivate}>개인 피드에 저장하기</button>
-                                        <button className="result-button" onClick={onClickPublic} >공유 피드에 저장하기</button>
+                                        <button className="result-button" onClick={onClickPublic}>공유 피드에 저장하기</button>
                                     </div>
                                 </div>
                             </div>
@@ -207,12 +272,10 @@ function Result (){
                                     
                                 </div>
                                 <div className="result-container-left-row-third">
-                                    <div className="result-container-left-row-third-first">AI 루밍이의 분석결과<br/></div>
-                                    <span className="result-container-left-row-third-second-feel">NORMAL</span>
-                                    <span className="result-container-left-row-third-second-bar"><img src={Progressbar} alt="Progressbar" style={{"width":"120px","hight":"120px"}}/></span>
-                                    <span className="result-container-left-row-third-second-percent">{prob}%</span>
-                                    <div className="result-container-left-row-third-face">{userName}님의 그저그런 표정이 기록되었어요.</div>
+                                    <div className="result-container-left-row-third-first">AI 루밍이의 분석결과</div>
+                                    <div className="result-container-left-row-third-face">{userName}님의 평온한 표정이 기록되었어요.</div>
                                     <div className="result-container-left-row-third-voice">{userName}님의 평온한 목소리가 기록되었어요.</div>
+                                    <Gagebar></Gagebar>
                                 </div>
                             </div>
                             <div className="result-container-right">
@@ -267,16 +330,14 @@ function Result (){
                                     </div>
                                 </div>
                                 <div className="result-container-left-row-second">
-                                    <p>오늘 {userName}님은 {prob}% 확률로 슬픈 날입니다.<br/></p>
+                                    <p>오늘 {userName}님은 {prob}% 확률로 우울한 날입니다.<br/></p>
                                     
                                 </div>
                                 <div className="result-container-left-row-third">
-                                    <div className="result-container-left-row-third-first">AI 루밍이의 분석결과<br/></div>
-                                    <span className="result-container-left-row-third-second-feel">SAD</span>
-                                    <span className="result-container-left-row-third-second-bar"><img src={Progressbar} alt="Progressbar" style={{"width":"120px","hight":"120px"}}/></span>
-                                    <span className="result-container-left-row-third-second-percent">{prob}%</span>
+                                    <div className="result-container-left-row-third-first">AI 루밍이의 분석결과</div>
                                     <div className="result-container-left-row-third-face">{userName}님의 슬픈 표정이 기록되었어요.</div>
                                     <div className="result-container-left-row-third-voice">{userName}님의 슬픈 목소리가 기록되었어요.</div>
+                                    <Gagebar></Gagebar>
                                 </div>
                             </div>
                             <div className="result-container-right">
@@ -299,7 +360,7 @@ function Result (){
                                     </div>
                                     <div className="result-container-right-row-thrid-select-button">
                                         <button className="result-button" onClick={onClickPrivate}>개인 피드에 저장하기</button>
-                                        <button className="result-button" onClick={onClickPublic} >공유 피드에 저장하기</button>
+                                        <button className="result-button" onClick={onClickPublic}>공유 피드에 저장하기</button>
                                     </div>
                                 </div>
                             </div>
@@ -331,16 +392,14 @@ function Result (){
                                     </div>
                                 </div>
                                 <div className="result-container-left-row-second">
-                                    <p>오늘 {userName}님은 {prob}% 확률로 화난 날입니다.<br/></p>
+                                    <p>오늘 {userName}님은 {prob}% 확률로 분노한 날입니다.<br/></p>
                                     
                                 </div>
                                 <div className="result-container-left-row-third">
-                                    <div className="result-container-left-row-third-first">AI 루밍이의 분석결과<br/></div>
-                                    <span className="result-container-left-row-third-second-feel">ANGRY</span>
-                                    <span className="result-container-left-row-third-second-bar"><img src={Progressbar} alt="Progressbar" style={{"width":"120px","hight":"120px"}}/></span>
-                                    <span className="result-container-left-row-third-second-percent">{prob}%</span>
+                                    <div className="result-container-left-row-third-first">AI 루밍이의 분석결과</div>
                                     <div className="result-container-left-row-third-face">{userName}님의 화난 표정이 기록되었어요.</div>
-                                    <div className="result-container-left-row-third-voice">{userName}님의 평온한 목소리가 기록되었어요.</div>
+                                    <div className="result-container-left-row-third-voice">{userName}님의 화난 목소리가 기록되었어요.</div>
+                                    <Gagebar></Gagebar>
                                 </div>
                             </div>
                             <div className="result-container-right">
@@ -362,8 +421,8 @@ function Result (){
                                         저장 방식을 선택해주세요!
                                     </div>
                                     <div className="result-container-right-row-thrid-select-button">
-                                        <button className="result-button" onClick={onClickPrivate} >개인 피드에 저장하기</button>
-                                        <button className="result-button" onClick={onClickPublic} >공유 피드에 저장하기</button>
+                                        <button className="result-button" onClick={onClickPrivate}>개인 피드에 저장하기</button>
+                                        <button className="result-button" onClick={onClickPublic}>공유 피드에 저장하기</button>
                                     </div>
                                 </div>
                             </div>
