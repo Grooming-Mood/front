@@ -2,7 +2,6 @@ import { Link, withRouter } from "react-router-dom";
 import SideMenu from "./SideMenu";
 
 import React, { useEffect, useState } from "react";
-import "../styles/recommend-home.css";
 
 function RecommendHome(props) {
     const [movie, setMovie] = useState(null);
