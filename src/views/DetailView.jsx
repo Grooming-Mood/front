@@ -60,7 +60,7 @@ function DetailView(){
                             <div className="detail-container-row-first-second">
                                 {userName}
                             </div>
-                            <div className="detail-container-row-first-thrid">
+                            <div className="detail-container-row-first-date">
                                 {createdDate[0] +"/" + createdDate[1] + "/" + createdDate[2] + " " + createdDate[3] + ":" + createdDate[4]}
                             </div>
                             <div className="detail-container-row-first-like">

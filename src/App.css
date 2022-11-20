@@ -2060,14 +2060,6 @@ button {
     margin: 4% 0% 0% 0%;
 }
 
-.detail-container-row-first-thrid{
-    flex-direction: column;
-    margin: 4.7% 2% 0% 3%;
-    float: left;
-    /* flex: 1; */
-    /* direction: column; */
-}
-
 .detail-container-row-first-like{
     font-family: 'KyoboHand';
     float: right;
@@ -2081,6 +2073,12 @@ button {
     font-weight: bold;
     flex-direction: column;
     margin: 4% 1% 0% 0%;
+}
+
+.detail-container-row-first-date{
+    flex-direction: column;
+    margin: 4.5% 2% 0% 3%;
+    float: left;
 }
 
 .detail-happy{
