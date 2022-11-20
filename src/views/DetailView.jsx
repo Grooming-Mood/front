@@ -5,6 +5,7 @@ import SadIcon from "../assets/image/splash/sad-icon.png";
 import NormalIcon from "../assets/image/splash/normal-icon.png";
 import HappyIcon from "../assets/image/splash/happy-icon.png";
 import AngryIcon from "../assets/image/splash/angry-icon.png";
+import Heart from "../assets/image/likes/like.png";
 import axios from "axios";
 
 
@@ -19,6 +20,7 @@ function DetailView(){
     const [diaryContent, set_diaryContent] = useState();
     const [feeling, set_feeling] = useState();
     const [createdDate, set_createdDate] = useState();
+    const [likesCount, set_like] = useState();
 
     useState(() => {
         axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/my-diary/${diaryId}/diary-detail`)
@@ -30,6 +32,14 @@ function DetailView(){
                 set_diaryContent(data.diaryContent);
                 set_feeling(data.feeling);
                 set_createdDate(data.createdDate);
+                set_like(data.likesCount);
+            })
+    });
+
+    useState(() => {
+        axios.post(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080//feed-diary/${diaryId}/like`)
+            .then((res) => {
+                const data = res.data;
             })
     });
 
@@ -44,13 +54,17 @@ function DetailView(){
                     <div className="detail-container">
                         <div className="detail-container-row">
                             <div className="detail-container-row-first">
-                            <img src={HappyIcon} alt="Happy" style={{"width":"50px","hight":"50px"}}/>
+                                <img src={HappyIcon} alt="Happy" style={{"width":"50px","hight":"50px"}}/>
                             </div>
                             <div className="detail-container-row-first-second">
                                 {userName}
                             </div>
                             <div className="detail-container-row-first-thrid">
-                                {createdDate[0] +"-" + createdDate[1] + "-" + createdDate[2] + " " + createdDate[3] + ":" + createdDate[4]}
+                                {createdDate[0] +"/" + createdDate[1] + "/" + createdDate[2] + " " + createdDate[3] + ":" + createdDate[4]}
+                            </div>
+                            <div className="detail-container-row-first-like">
+                                <img src={Heart} alt="Heart" style={{"width":"50px","hight":"50px"}}/>
+                                {likesCount}
                             </div>
                         </div>
                         <div className="detail-happy">
