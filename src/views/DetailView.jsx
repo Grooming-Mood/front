@@ -141,8 +141,15 @@ function DetailView(){
                             <div className="detail-container-row-first-second">
                                 {userName}
                             </div>
-                            <div className="detail-container-row-first-thrid">
-                                {createdDate[0] +"-" + createdDate[1] + "-" + createdDate[2] + " " + createdDate[3] + ":" + createdDate[4]}
+                            <div className="detail-container-row-first-date">
+                                {createdDate[0] +"/" + createdDate[1] + "/" + createdDate[2] + " " + createdDate[3] + ":" + createdDate[4]}
+                            </div>
+                            <div className="detail-container-row-first-like">
+                                <img src={Heart} alt="Heart" style={{"width":"50px","hight":"50px"}}/>
+                                
+                            </div>
+                            <div className="detail-container-row-first-like-count">
+                                {likesCount}
                             </div>
                         </div>
                         <div className="detail-sad">
@@ -173,9 +180,6 @@ function DetailView(){
                             </div>
                             <div className="detail-container-row-first-second">
                                 {userName}
-                            </div>
-                            <div className="detail-container-row-first-thrid">
-                                {createdDate[0] +"-" + createdDate[1] + "-" + createdDate[2] + " " + createdDate[3] + ":" + createdDate[4]}
                             </div>
                         </div>
                         <div className="detail-angry">
