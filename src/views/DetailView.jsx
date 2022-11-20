@@ -13,6 +13,7 @@ import axios from "axios";
 function DetailView(){
 
     const { diaryId }= useParams();
+    const userId = sessionStorage.getItem("userId");
     console.log("diaryId",diaryId);
     
     const [userName, set_name] = useState();
