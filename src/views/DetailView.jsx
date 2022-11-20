@@ -13,6 +13,7 @@ import axios from "axios";
 function DetailView(){
 
     const { diaryId }= useParams();
+    const userId = sessionStorage.getItem("userId");
     console.log("diaryId",diaryId);
     
     const [userName, set_name] = useState();
@@ -20,7 +21,7 @@ function DetailView(){
     const [diaryContent, set_diaryContent] = useState();
     const [feeling, set_feeling] = useState();
     const [createdDate, set_createdDate] = useState();
-    const [likesCount, set_like] = useState();
+    const [likesCount, set_likes] = useState();
 
     useState(() => {
         axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/my-diary/${diaryId}/diary-detail`)
@@ -32,16 +33,17 @@ function DetailView(){
                 set_diaryContent(data.diaryContent);
                 set_feeling(data.feeling);
                 set_createdDate(data.createdDate);
-                set_like(data.likesCount);
+                set_likes(data.likesCount);
+                console.log("dlikeata",data.likesCount);
             })
     });
 
-    useState(() => {
-        axios.post(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080//feed-diary/${diaryId}/like`)
-            .then((res) => {
-                const data = res.data;
-            })
-    });
+    // useState(() => {
+    //     axios.post(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080//feed-diary/${diaryId}/like`)
+    //         .then((res) => {
+    //             const data = res.data;
+    //         })
+    // });
 
     if(feeling == 'HAPPY'){ 
         return (
@@ -59,11 +61,14 @@ function DetailView(){
                             <div className="detail-container-row-first-second">
                                 {userName}
                             </div>
-                            <div className="detail-container-row-first-thrid">
+                            <div className="detail-container-row-first-date">
                                 {createdDate[0] +"/" + createdDate[1] + "/" + createdDate[2] + " " + createdDate[3] + ":" + createdDate[4]}
                             </div>
                             <div className="detail-container-row-first-like">
                                 <img src={Heart} alt="Heart" style={{"width":"50px","hight":"50px"}}/>
+                                
+                            </div>
+                            <div className="detail-container-row-first-like-count">
                                 {likesCount}
                             </div>
                         </div>
