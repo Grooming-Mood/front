@@ -2070,10 +2070,17 @@ button {
 
 .detail-container-row-first-like{
     font-family: 'KyoboHand';
-
     float: right;
     flex-direction: column;
     margin: 3% 0% 0% 0%;
+}
+.detail-container-row-first-like-count{
+    font-size: 20px;
+    font-family: 'KyoboHand';
+    float: right;
+    font-weight: bold;
+    flex-direction: column;
+    margin: 4% 1% 0% 0%;
 }
 
 .detail-happy{

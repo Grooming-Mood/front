@@ -65,6 +65,9 @@ function DetailView(){
                             </div>
                             <div className="detail-container-row-first-like">
                                 <img src={Heart} alt="Heart" style={{"width":"50px","hight":"50px"}}/>
+                                
+                            </div>
+                            <div className="detail-container-row-first-like-count">
                                 {likesCount}
                             </div>
                         </div>
