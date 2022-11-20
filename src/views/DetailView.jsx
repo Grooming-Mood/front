@@ -21,7 +21,7 @@ function DetailView(){
     const [diaryContent, set_diaryContent] = useState();
     const [feeling, set_feeling] = useState();
     const [createdDate, set_createdDate] = useState();
-    const [likesCount, set_like] = useState();
+    const [likesCount, set_likes] = useState();
 
     useState(() => {
         axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/my-diary/${diaryId}/diary-detail`)
@@ -33,16 +33,17 @@ function DetailView(){
                 set_diaryContent(data.diaryContent);
                 set_feeling(data.feeling);
                 set_createdDate(data.createdDate);
-                set_like(data.likesCount);
+                set_likes(data.likesCount);
+                console.log("dlikeata",data.likesCount);
             })
     });
 
-    useState(() => {
-        axios.post(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080//feed-diary/${diaryId}/like`)
-            .then((res) => {
-                const data = res.data;
-            })
-    });
+    // useState(() => {
+    //     axios.post(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080//feed-diary/${diaryId}/like`)
+    //         .then((res) => {
+    //             const data = res.data;
+    //         })
+    // });
 
     if(feeling == 'HAPPY'){ 
         return (
