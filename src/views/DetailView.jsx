@@ -34,16 +34,24 @@ function DetailView(){
                 set_feeling(data.feeling);
                 set_createdDate(data.createdDate);
                 set_likes(data.likesCount);
-                console.log("dlikeata",data.likesCount);
             })
     });
+    const onClickLike = async() => {
+        console.log("here");
+        let data = {
+            userId: userId
+        };
 
-    // useState(() => {
-    //     axios.post(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080//feed-diary/${diaryId}/like`)
-    //         .then((res) => {
-    //             const data = res.data;
-    //         })
-    // });
+        axios.post(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feed-diary/${diaryId}/like`,
+        data,{headers:{"Content-Type" : "application/json"}})
+        .then((res)=> {
+            console.log("res출력");
+            // res.setHeader('Access-Control-Allow-origin', '*');
+            console.log(res);
+            console.log("성공");
+        });
+
+    };
 
     if(feeling == 'HAPPY'){ 
         return (
@@ -64,7 +72,7 @@ function DetailView(){
                             <div className="detail-container-row-first-date">
                                 {createdDate[0] +"/" + createdDate[1] + "/" + createdDate[2] + " " + createdDate[3] + ":" + createdDate[4]}
                             </div>
-                            <div className="detail-container-row-first-like">
+                            <div className="detail-container-row-first-like" onClick={onClickLike}>
                                 <img src={Heart} alt="Heart" style={{"width":"50px","hight":"50px"}}/>
                                 
                             </div>

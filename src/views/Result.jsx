@@ -147,7 +147,6 @@ function Result (){
             else if(emotion == 3)
                 document.location.href = "/recommendation-angry";
         });
-
     };
 
     //일기 저장 통신
