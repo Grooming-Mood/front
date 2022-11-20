@@ -2062,8 +2062,8 @@ button {
 
 .detail-container-row-first-thrid{
     flex-direction: column;
-    margin: 4% 2% 0% 0%;
-    float: right;
+    margin: 4.7% 2% 0% 3%;
+    float: left;
     /* flex: 1; */
     /* direction: column; */
 }
