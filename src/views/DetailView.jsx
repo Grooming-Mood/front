@@ -11,7 +11,6 @@ import axios from "axios";
 
 //상세페이지 컴포넌트
 function DetailView(){
-
     const { diaryId }= useParams();
     const userId = sessionStorage.getItem("userId");
     console.log("diaryId",diaryId);
@@ -53,7 +52,7 @@ function DetailView(){
 
     };
 
-    if(feeling == 'HAPPY'){ 
+    if(feeling == 'HAPPY'){
         return (
             <div className="result-happy">
                 <div className="result-happy-header"> {/*헤더*/}
