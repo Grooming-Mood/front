@@ -15,7 +15,6 @@ class MessageParser {
          data,{headers:{"Content-Type" : "application/json"}})
          .then((res)=> {
              console.log("res출력");
-             res.setHeader('Access-Control-Allow-origin', '*');
              console.log(res);
              sessionStorage.setItem('ChatbotRes', res.data); //챗봇의 응답 저장
          });
