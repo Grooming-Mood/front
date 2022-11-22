@@ -7,10 +7,6 @@ import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognitio
 import { rest } from 'lodash';
 
 
-
-//Progress bar 컴포넌트
-
-
 //미리보기 영상 컴포넌트
 const VideoPreview = ({ stream }) => {
     const videoRef = useRef(null);
@@ -28,6 +24,7 @@ const VideoPreview = ({ stream }) => {
 
 //분석 후 페이지 이동 버튼 컴포넌트
 const NextButton = () => {
+    console.log("nextbutton 진입");
     return(
         <div>
             <Link to={{pathname: "/result"}}>
@@ -233,7 +230,8 @@ function Record(props) {
                             </button>
                         </div>
 
-                        <NextButton></NextButton>
+                        {sessionStorage.getItem('IsFinished') && <NextButton></NextButton>}
+
 
                     </div>
                 </div>
