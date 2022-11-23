@@ -38,7 +38,6 @@ function DetailView(){
     const onClickLike = async() => {
         console.log("here");
         let data = {
-            userId: userId
         };
 
         axios.post(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/feed-diary/${diaryId}/like`,
@@ -49,6 +48,18 @@ function DetailView(){
             console.log(res);
             console.log("성공");
         });
+        axios.get(`http://ec2-52-196-145-123.ap-northeast-1.compute.amazonaws.com:8080/my-diary/${diaryId}/diary-detail`)
+            .then((res) => {
+                const data = res.data;
+                console.log("data",data);
+                set_name(data.userName);
+                set_profileImg(data.profileImg);
+                set_diaryContent(data.diaryContent);
+                set_feeling(data.feeling);
+                set_createdDate(data.createdDate);
+                set_likes(data.likesCount);
+            })
+        
 
     };
 
