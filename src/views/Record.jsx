@@ -1,11 +1,10 @@
-import React, { useEffect,useState, useRef } from 'react';
+import React, { useEffect,useState, useRef, useCallback } from 'react';
 import { withRouter, Link, useLocation } from "react-router-dom";
 import SideMenu from "./SideMenu";
 import {useReactMediaRecorder} from "react-media-recorder";
 import axios from 'axios';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import { rest } from 'lodash';
-
 
 
 //미리보기 영상 컴포넌트
@@ -23,6 +22,23 @@ const VideoPreview = ({ stream }) => {
     return <video ref={videoRef} width={500} height={500} autoPlay controls />;
   };
 
+//분석 후 페이지 이동 버튼 컴포넌트
+const NextButton = () => {
+    console.log("nextbutton 진입");
+    return(
+        <div>
+            <Link to={{pathname: "/result"}}>
+                <div className='button-status'>
+                    <button className='button'>
+                        <span>👩‍💻</span>
+                        <span>오늘의 일기 분석하기</span>
+                    </button>
+                </div>
+            </Link>
+        </div>
+    );
+
+}
 
 
 
@@ -93,6 +109,7 @@ function Record(props) {
     //감정분석 Flask api 요청
     const loadFlaskapi = async() => {
         
+        sessionStorage.setItem("IsFinished", 0);
         const formData = new FormData();
         formData.append("file",videoFilePath); // 분석할 동영상
 
@@ -113,17 +130,22 @@ function Record(props) {
                 console.log(sessionStorage.getItem('Face Emotion'));
                 console.log(sessionStorage.getItem('Voice Emotion'));
 
+                sessionStorage.setItem("IsFinished", 1);
+
+                if(sessionStorage.getItem('IsFinished') == 1){
+                    console.log("분석 상태가 1입니다.");
+                }else{
+                    console.log("분석 상태가 0입니다.");
+                }
+
             };
         });
+
+        
+
         
     };
     
-
-
-
-
-
-
 
 
 
@@ -208,24 +230,8 @@ function Record(props) {
                             </button>
                         </div>
 
+                        {sessionStorage.getItem('IsFinished') && <NextButton></NextButton>}
 
-                        <div>
-                            <Link to={{
-                                pathname: "/result"
-                            }}>
-                                <div className="button-status">
-                                    <button className="button">
-                                        <span>👩‍💻</span>
-                                        <span>오늘의 일기 분석하기</span>
-                                    </button>
-                                </div>
-                            </Link>
-                        </div>
-
-                        <p></p>
-
-
-                        
 
                     </div>
                 </div>
