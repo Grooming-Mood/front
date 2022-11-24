@@ -3,6 +3,7 @@ import SideMenu from "./SideMenu";
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import '../styles/recommendation-normal.css';
 
 function RecommendNormal(props) {
     const [movie, setMovie] = useState(null);

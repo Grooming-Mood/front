@@ -3,6 +3,7 @@ import SideMenu from "./SideMenu";
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import '../styles/recommendation-angry.css';
 
 function RecommendAngry(props) {
     const [movie, setMovie] = useState(null);

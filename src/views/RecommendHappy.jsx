@@ -3,6 +3,7 @@ import SideMenu from "./SideMenu";
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import '../styles/recommendation-happy.css';
 
 function RecommendHappy(props) {
     const [movie, setMovie] = useState(null);
