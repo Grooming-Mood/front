@@ -1,4 +1,3 @@
-/* 영화 추천 */
 .recommend-sad {
     background-color: #91B1E3;
     width: 100%;
@@ -10,7 +9,7 @@
     background-color: #91B1E3;
 }
 
-.recommend-home-header .recommend-header-link {
+.recommend-sad-header .recommend-header-link {
     /* font-family: 'Poppins'; */
     font-family: 'KyoboHand';
     font-style: italic;
@@ -23,7 +22,7 @@
     align-items: center;
 }
 
-.recommend-home-header p {
+.recommend-sad-header p {
     /* font-family: 'Noto Sans KR'; */
     font-family: 'KyoboHand';
     font-style: normal;
@@ -36,7 +35,7 @@
     padding: 0% 1.2% 0% 0%;
 }
 
-.recommend-content {
+.recommend-sad-content {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -44,7 +43,7 @@
     padding-bottom: 9%;
 }
 
-.recommend-container {
+.recommend-sad-container {
     box-sizing: border-box;
     border: 1px dashed #888787;
     background-color: #F9F9F9;
@@ -55,17 +54,17 @@
     margin: 0% 0% 8% 0%;
 }
 
-.recommend-header-container {
+.recommend-sad-container .recommend-header-container {
     margin: 0%;
     padding: 0%;
 }
 
-.recommend-header-title {
+.recommend-sad-container .recommend-header-title {
     text-align: left;
     padding : 0% 0% 0% 10%;
 }
 
-.recommend-header-desciption {
-    text-align: left;
-    padding : 0% 0% 0% 10%;
-}
+/*.recommend-header-desciption {*/
+/*    text-align: left;*/
+/*    padding : 0% 0% 0% 10%;*/
+/*}*/

@@ -3,6 +3,7 @@ import SideMenu from "./SideMenu";
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import '../styles/recommendation-angry.css';
 
 function RecommendAngry(props) {
     const [movie, setMovie] = useState(null);
@@ -28,15 +29,15 @@ function RecommendAngry(props) {
 
     return (
         <div className="recommend-angry">
-            <div className="recommend-home-header">
+            <div className="recommend-angry-home-header ">
                 <Link to="/" className="recommend-header-link">GroomingMood</Link>
                 <p>당신의 감정을<br/>어루만지는 AI 일기</p>
             </div>
 
-            <div className="recommend-content">
-                <div className="recommend-container">
-                    <div className="recommend-header-container">
-                        <h2 className="recommend-header-title">
+            <div className="recommend-angry-content">
+                <div className="recommend-angry-container">
+                    <div className="recommend-angry-header-container">
+                        <h2 className="recommend-angry-header-title">
                             {user_name}님! 화나는 날에는 영화 어때요?
                         </h2>
                     </div>
