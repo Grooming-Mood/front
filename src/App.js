@@ -14,7 +14,6 @@ import NormalHome from "./views/NormalHome";
 import Chatbot from "./views/Chatbot";
 import MyPage from "./views/MyPage";
 import Chart from "./views/Chart";
-import RecommendHome from "./views/RecommendHome";
 import RecommendHappy from "./views/RecommendHappy";
 import RecommendNormal from "./views/RecommendNormal";
 import RecommendSad from "./views/RecommendSad";
