@@ -30,13 +30,13 @@ function RecommendSad(props) {
 
     return (
         <div className="recommend-sad">
-            <div className="recommend-home-header">
+            <div className="recommend-sad-header">
                 <Link to="/" className="recommend-header-link">GroomingMood</Link>
                 <p>당신의 감정을<br/>어루만지는 AI 일기</p>
             </div>
 
-            <div className="recommend-content">
-                <div className="recommend-container">
+            <div className="recommend-sad-content">
+                <div className="recommend-sad-container">
                     <div className="recommend-header-container">
                         <h2 className="recommend-header-title">
                             {user_name}님! 슬픈 날에 영화 어때요?
