@@ -6,6 +6,7 @@ class ActionProvider {
     }
 
     handleFlaskAPI = () => {
+        console.log("대답 진입");
         const messages= this.createChatbotMessage(
             sessionStorage.getItem('ChatbotRes'),
             { withAvatar: true }

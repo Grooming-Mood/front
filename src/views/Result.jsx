@@ -56,13 +56,16 @@ function Gagebar(props){
                     legend: {
                         show: true,
                         floating: true,
-                        fontSize: '16px',
+                        fontSize: '13px',
                         position: 'left',
                         offsetX: 160,
                         offsetY: 15,
                         labels: { useSeriesColors: true },
                         markers: {size:0},
-                        itemMargin: { vertical: 3}
+                        itemMargin: { vertical: 3},
+                        formatter: function(seriesName, opts) {
+                            return seriesName + ":  " + opts.w.globals.series[opts.seriesIndex]+"%"
+                        },
                     },
                     responsive: [{
                         breakpoint: 480,
@@ -147,7 +150,6 @@ function Result (){
             else if(emotion == 3)
                 document.location.href = "/recommendation-angry";
         });
-
     };
 
     //일기 저장 통신
