@@ -10,7 +10,7 @@
     background-color: #FAE992;
 }
 
-.recommend-home-header .recommend-header-link {
+.recommend-happy-header .recommend-header-link {
     /* font-family: 'Poppins'; */
     font-family: 'KyoboHand';
     font-style: italic;
@@ -23,7 +23,7 @@
     align-items: center;
 }
 
-.recommend-home-header p {
+.recommend-happy-header p {
     /* font-family: 'Noto Sans KR'; */
     font-family: 'KyoboHand';
     font-style: normal;
@@ -36,7 +36,7 @@
     padding: 0% 1.2% 0% 0%;
 }
 
-.recommend-content {
+.recommend-happy-content {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -44,7 +44,7 @@
     padding-bottom: 9%;
 }
 
-.recommend-container {
+.recommend-happy-container {
     box-sizing: border-box;
     border: 1px dashed #888787;
     background-color: #F9F9F9;
@@ -55,17 +55,17 @@
     margin: 0% 0% 8% 0%;
 }
 
-.recommend-header-container {
+.recommend-happy-container .recommend-header-container {
     margin: 0%;
     padding: 0%;
 }
 
-.recommend-header-title {
+.recommend-happy-container .recommend-header-title {
     text-align: left;
     padding : 0% 0% 0% 10%;
 }
 
-.recommend-header-desciption {
-    text-align: left;
-    padding : 0% 0% 0% 10%;
-}
+/*.recommend-header-desciption {*/
+/*    text-align: left;*/
+/*    padding : 0% 0% 0% 10%;*/
+/*}*/
