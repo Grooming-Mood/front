@@ -24,6 +24,7 @@ function Chart(props){
             .then((res) => {
 
                 const lists = res.data.feelingStatisticInfoList;
+                console.log(lists);
 
                 lastweek.push(setHappyAmount(lists));
                 lastweek.push(setNormalAmount(lists));
@@ -38,7 +39,6 @@ function Chart(props){
                 set_thisWeekData(res.data.feelingStatisticInfoList);
 
                 const today_lists = res.data.feelingStatisticInfoList;
-
                 todayweek.push(setHappyAmount(today_lists));
                 todayweek.push(setNormalAmount(today_lists));
                 todayweek.push(setSadAmount(today_lists));
