@@ -35,7 +35,6 @@ Movie.propTypes = {
     title: propTypes.string.isRequired,
     summary: propTypes.string.isRequired,
     poster: propTypes.string.isRequired,
-    vote: propTypes.number.isRequired
     // genres: propTypes.arrayOf(propTypes.string).isRequired
 };
 
