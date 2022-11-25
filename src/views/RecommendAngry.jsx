@@ -29,7 +29,7 @@ function RecommendAngry(props) {
         const results = data.results;
 
         const filteredResults = results.filter(movie => movie.genre_ids.includes(28));
-        const startIndex = Math.random() * 16;
+        const startIndex = Math.random() * 13;
         const splitResults = filteredResults.slice(startIndex, startIndex + 4);
         await setResults(splitResults);
     }, []);
