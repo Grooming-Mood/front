@@ -31,7 +31,7 @@ const NextButton = () => {
                 <div className='button-status'>
                     <button className='button'>
                         <span>👩‍💻</span>
-                        <span>오늘의 일기 분석하기</span>
+                        <span>오늘의 일기 분석하기</span>기
                     </button>
                 </div>
             </Link>

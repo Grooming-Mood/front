@@ -3,6 +3,7 @@ import SideMenu from "./SideMenu";
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import '../styles/recommendation-normal.css';
 
 function RecommendNormal(props) {
     const [movie, setMovie] = useState(null);
@@ -29,13 +30,13 @@ function RecommendNormal(props) {
 
     return (
         <div className="recommend-normal">
-            <div className="recommend-home-header">
+            <div className="recommend-normal-header">
                 <Link to="/" className="recommend-header-link">GroomingMood</Link>
                 <p>당신의 감정을<br/>어루만지는 AI 일기</p>
             </div>
 
-            <div className="recommend-content">
-                <div className="recommend-container">
+            <div className="recommend-normal-content">
+                <div className="recommend-normal-container">
                     <div className="recommend-header-container">
                         <h2 className="recommend-header-title">
                             {user_name}님! 그럭 저럭인 날에 영화 어때요?

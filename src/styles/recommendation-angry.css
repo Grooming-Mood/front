@@ -5,12 +5,12 @@
     height: 1080px;
 }
 
-.recommend-home-header {
+.recommend-angry-home-header {
     padding: 1.6% 0 2% 0;
     background-color: #E6808E;
 }
 
-.recommend-home-header .recommend-header-link {
+.recommend-angry-home-header .recommend-header-link {
     /* font-family: 'Poppins'; */
     font-family: 'KyoboHand';
     font-style: italic;
@@ -23,7 +23,7 @@
     align-items: center;
 }
 
-.recommend-home-header p {
+.recommend-angry-home-header p {
     /* font-family: 'Noto Sans KR'; */
     font-family: 'KyoboHand';
     font-style: normal;
@@ -36,7 +36,7 @@
     padding: 0% 1.2% 0% 0%;
 }
 
-.recommend-content {
+.recommend-angry-content {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -44,7 +44,7 @@
     padding-bottom: 9%;
 }
 
-.recommend-container {
+.recommend-angry-container {
     box-sizing: border-box;
     border: 1px dashed #888787;
     background-color: #F9F9F9;
@@ -55,17 +55,17 @@
     margin: 0% 0% 8% 0%;
 }
 
-.recommend-header-container {
+.recommend-angry-header-container {
     margin: 0%;
     padding: 0%;
 }
 
-.recommend-header-title {
+.recommend-angry-header-title {
     text-align: left;
     padding : 0% 0% 0% 10%;
 }
 
-.recommend-header-desciption {
-    text-align: left;
-    padding : 0% 0% 0% 10%;
-}
+/*.recommend-header-desciption {*/
+/*    text-align: left;*/
+/*    padding : 0% 0% 0% 10%;*/
+/*}*/
