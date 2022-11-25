@@ -4,9 +4,10 @@ import SideMenu from "./SideMenu";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import '../styles/recommendation-normal.css';
+import Movie from "../Movie/Movie";
 
 function RecommendNormal(props) {
-    const [movie, setMovie] = useState(null);
+    const [results, setResults] = useState([]);
     const [loading, setLoading] = useState(true);
     const [user_id, set_userId] = useState(sessionStorage.getItem("userId"));
 
@@ -19,13 +20,17 @@ function RecommendNormal(props) {
             })
     });
 
-    useEffect(() => {
-        fetch(`https://api.themoviedb.org?i=${props.match.params.id}&apikey=${process.env.APIKEY}`)
-            .then(res => res.json())
-            .then(data => {
-                setMovie(data);
-                setLoading(false);
-            });
+    useState(async() => {
+        const response = await fetch(
+            `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_TMDB_API_KEY}&page=1&&language=ko-KR`
+        );
+
+        const data = await response.json();
+        const results = data.results;
+        const filteredResults = results.filter(movie => movie.genre_ids.includes(53));
+        const startIndex = Math.random() * 16;
+        const splitResults = filteredResults.slice(startIndex, startIndex + 4);
+        await setResults(splitResults);
     }, []);
 
     return (
@@ -44,66 +49,18 @@ function RecommendNormal(props) {
                     </div>
 
 
-                    <section className="movies">
-                        <div className="movie">
-                            <img src="https://github.com/supahfunk/supah-codepen/blob/master/movie-room.jpg?raw=true"
-                                 alt="" className="poster"/>
-                            <div className="title">Room</div>
-                            <div className="info">
-                                <span className="length">117 min</span>
-                                <span className="year">2015</span>
-                            </div>
-                            <div className="desc">
-                                Jack is a young boy of 5 years old who has lived all his life in one room. He believes
-                                everything within it are the only real things in the world. But what will happen when
-                                his Ma suddenly tells him that there are other things outside of Room?
-                            </div>
-                        </div>
-                        <div className="movie">
-                            <img
-                                src="https://github.com/supahfunk/supah-codepen/blob/master/movie-whiplash.jpg?raw=true"
-                                alt="" className="poster"/>
-                            <div className="title">Whiplash</div>
-                            <div className="info">
-                                <span className="length">167 min</span>
-                                <span className="year">2015</span>
-                            </div>
-                            <div className="desc">
-                                Under the direction of a ruthless instructor, a talented young drummer begins to pursue
-                                perfection at any cost, even his humanity.
-                            </div>
-                        </div>
-                        <div className="movie">
-                            <img src="https://github.com/supahfunk/supah-codepen/blob/master/movie-madmax.jpg?raw=true"
-                                 alt="" className="poster"/>
-                            <div className="title">Mad Max</div>
-                            <div className="info">
-                                <span className="length">120 min</span>
-                                <span className="year">2015</span>
-                            </div>
-                            <div className="desc">
-                                An apocalyptic story set in the furthest reaches of our planet, in a stark desert
-                                landscape where humanity is broken, and most everyone is crazed fighting for the
-                                necessities of life. Within this world exist two rebels on the run who just might be
-                                able to restore order. There's Max, a man of action and a man of few words, who seeks
-                                peace of mind following the loss of his wife and child in the aftermath of the chaos.
-                            </div>
-                        </div>
-                        <div className="movie">
-                            <img
-                                src="https://github.com/supahfunk/supah-codepen/blob/master/movie-therevenant.jpg?raw=true"
-                                alt="" className="poster"/>
-                            <div className="title">The Revenant</div>
-                            <div className="info">
-                                <span className="length">156 min</span>
-                                <span className="year">2015</span>
-                            </div>
-                            <div className="desc">
-                                In the 1820s, a frontiersman, Hugh Glass, sets out on a path of vengeance against those
-                                who left him for dead after a bear mauling.
-                            </div>
-                        </div>
-                    </section>
+                    <div className="movies">
+                        { results.map(movie => (
+                            <Movie
+                                key={movie.id}
+                                id={movie.id}
+                                year={movie.release_date}
+                                title={movie.title}
+                                summary={movie.overview}
+                                poster= {movie.poster_path}
+                            />
+                        ))}
+                    </div>
 
                 </div>
                 <SideMenu></SideMenu>
