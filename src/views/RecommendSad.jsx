@@ -1,7 +1,6 @@
 import { Link, withRouter } from "react-router-dom";
 import SideMenu from "./SideMenu";
-
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import '../styles/recommendation-sad.css';
 import Movie from "../Movie/Movie";
@@ -27,8 +26,8 @@ function RecommendSad(props) {
         );
         const data = await response.json();
         const results = data.results;
-        console.log(results);
-        setResults(results);
+        const filteredResults = results.filter(movie => movie.genre_ids.includes(35));
+        await setResults(filteredResults);
     }, []);
 
     return (
