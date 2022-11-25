@@ -24,6 +24,7 @@ function RecommendSad(props) {
         const response = await fetch(
             `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_TMDB_API_KEY}&page=1&&language=ko-KR`
         );
+
         const data = await response.json();
         const results = data.results;
         const filteredResults = results.filter(movie => movie.genre_ids.includes(35));
