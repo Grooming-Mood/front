@@ -18,13 +18,13 @@ function RecommendHappy(props) {
             })
     });
 
-    useEffect(() => {
-        fetch(`https://api.themoviedb.org?i=${props.match.params.id}&apikey=${process.env.APIKEY}`)
-            .then(res => res.json())
-            .then(data => {
-                setMovie(data);
-                setLoading(false);
-            });
+    useState(async() => {
+        const response = await fetch(
+            `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_TMDB_API_KEY}&page=1&&language=ko-KR`
+        );
+        const data = await response.json();
+        const results = data.results;
+        console.log(results);
     }, []);
 
     return (
