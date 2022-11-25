@@ -27,7 +27,8 @@ function RecommendHappy(props) {
         const data = await response.json();
         const results = data.results;
         const filteredResults = results.filter(movie => movie.genre_ids.includes(16 | 12));
-        const splitResults = filteredResults.slice(0, 4);
+        const startIndex = Math.random() * 16;
+        const splitResults = filteredResults.slice(startIndex, startIndex + 4);
         await setResults(splitResults);
     }, []);
 
