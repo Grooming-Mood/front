@@ -1,73 +1,36 @@
+# AI가 감정 분석과 디자인 해주는 일기 Grooming Mood
 
-### ********************npm i react-media-recorder 추가 설치 해주세요!!****************
+</br>
 
-# Getting Started with Create React App
+## 주제
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+일기를 카메라와 마이크로 기록하면 AI 알아서 일기를 작성해주고 꾸며주는 것은 물론 내 감정을 분석해준다.  
+감정에 따른 영화 추천과 AI 챗봇 상담기능까지 구현되어있다.  
 
-## Available Scripts
+아래의 영상으로 보면 이해가 빠를 것이다.
 
-In the project directory, you can run:
+</br>
 
-### `npm start`
+## 데모영상
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+https://user-images.githubusercontent.com/71878202/205049283-ea543d56-2f61-4043-9bc1-07fe8a1213ac.MP4
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+</br>
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 주요기능
+- [x] 회원가입 및 로그인
+- [x] 오늘의 일기 기록
+- [x] 표정과 말의 내용에 따른 감정 분석 (react-speach-kit / react-media-recorder)
+- [x] AI에 의한 감정 분석 내용 확인
+- [x] 각 감정별 영화 리스트 랜덤 추천(TMDB API)
+- [x] 나의 일기 리스트 확인
+- [x] 감정별로 다른 사람들과의 일기 공유
+  - 행복
+  - 슬픔
+  - 그럭저럭
+  - 화남
+  
+- [x] 마이페이지 정보 수정
+- [x] 감정 인식 챗봇과의 대화 기능 (react-chatbot-kit)
+- [x] 지난주와 이번주의 감정 통계 제공(apexcharts)
+- [x] 공유 및 반응 남기기
