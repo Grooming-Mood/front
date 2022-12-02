@@ -1,4 +1,4 @@
-# AI가 감정 분석과 디자인 해주는 일기 Grooming Mood
+# 감정을 어루만지는 AI 일기 Grooming Mood
 
 </br>
 
